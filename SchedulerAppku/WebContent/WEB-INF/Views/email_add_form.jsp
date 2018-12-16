@@ -29,18 +29,8 @@
 		<div class="row">
 
 			<div class="col-6">
-				<form:form modelAttribute="remail" action="saveremail"
+				<form:form modelAttribute="email" action="saveemail"
 					cssClass="form-horizontal" role="form" method="post">
-
-					<div class="form-group row">
-						<label for="email_id" class="col-6 col-form-label"><spring:message
-								code="lbl.emailid" /></label>
-						<div class="col-6">
-							<form:input path="email_id" cssClass="form-control" />
-							<form:errors path="email_id" cssClass="alert-danger" />
-							<text class="alert-danger">${message}</text>
-						</div>
-					</div>
 
 					<div class="form-group row">
 						<label for="sender" class="col-6 col-form-label"><spring:message
