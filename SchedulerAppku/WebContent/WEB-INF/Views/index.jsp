@@ -16,9 +16,8 @@
 		<div class="row">
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 				<div class="jumbotron">
-					<h1 class="display-4">Welcome Bank Apps</h1>
-					<p class="Lead">Happiness = A Good Bank Account, A good Cook
-						and Good digestion - Jean</p>
+					<h1 class="display-4">Welcome Scheduler Apps</h1>
+					<p class="Lead">Provided by - Nana Febriana</p>
 					<a href="user/new" class="btn btn-lg btn-success">Register Here</a>
 					<p>
 						<br /> Existing Users: <a href="user/login">Login Here</a>
