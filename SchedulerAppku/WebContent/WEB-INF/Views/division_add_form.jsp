@@ -29,25 +29,15 @@
 		<div class="row">
 
 			<div class="col-6">
-				<form:form modelAttribute="rdivision" action="saverdivision"
+				<form:form modelAttribute="division" action="savedivision"
 					cssClass="form-horizontal" role="form" method="post">
 
 					<div class="form-group row">
-						<label for="division_id" class="col-6 col-form-label"><spring:message
-								code="lbl.division" /></label>
-						<div class="col-6">
-							<form:input path="division_id" cssClass="form-control" />
-							<form:errors path="division_id" cssClass="alert-danger" />
-							<text class="alert-danger">${message}</text>
-						</div>
-					</div>
-
-					<div class="form-group row">
-						<label for="division_name" class="col-6 col-form-label"><spring:message
+						<label for="divisionName" class="col-6 col-form-label"><spring:message
 								code="lbl.divisionName" /></label>
 						<div class="col-6">
-							<form:input path="division_name" cssClass="form-control" />
-							<form:errors path="division_name" cssClass="alert-danger" />
+							<form:input path="divisionName" cssClass="form-control" />
+							<form:errors path="divisionName" cssClass="alert-danger" />
 							<text class="alert-danger">${message}</text>
 						</div>
 					</div>

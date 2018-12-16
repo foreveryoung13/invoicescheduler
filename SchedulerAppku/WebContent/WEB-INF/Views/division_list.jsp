@@ -17,7 +17,7 @@
 
 		<div class="row">
 			<div class="col-12">
-				<a href="<c:url value='/newrdivision'/>" class="btn btn-primary">Add New Divisions</a>
+				<a href="<c:url value='/newdivision'/>" class="btn btn-primary">Add New Division</a>
 			</div>
 		</div>
 
@@ -26,23 +26,21 @@
 				<table class="table table-bordered table-hover">
 					<thead>
 						<tr>
-							<th><spring:message code="lbl.division" /></th>
 							<th><spring:message code="lbl.divisionName" /></th>
 							<th>&nbsp;</th>
 							<th>&nbsp;</th>
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="rdivs" items="${rdivision}">
-							<c:url var="updateLink" value="/rdivisionedit">
-								<c:param name="division_id" value="${rdivs.division_id}" />
+						<c:forEach var="divs" items="${division}">
+							<c:url var="updateLink" value="/divisionedit">
+								<c:param name="divisionId" value="${divs.divisionId}" />
 							</c:url>
-							<c:url var="deleteLink" value="/rdivisiondelete">
-								<c:param name="division_id" value="${rdivs.division_id}" />
+							<c:url var="deleteLink" value="/divisiondelete">
+								<c:param name="divisionId" value="${divs.divisionId}" />
 							</c:url>
 							<tr>
-								<td>${rdivs.division_id}</td>
-								<td>${rdivs.division_name}</td>
+								<td>${divs.divisionName}</td>
 								<td><a href="${updateLink}" class="btn btn-warning">Edit</a></td>
 								<td><a href="${deleteLink}" class="btn btn-danger"
 									onclick="if(!(confirm('Are you sure to delete'))) return false">Delete</a></td>
