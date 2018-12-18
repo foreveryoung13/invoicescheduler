@@ -1,7 +1,5 @@
 package com.nana.bankapp.entity;
 
-import java.util.UUID;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,8 +11,8 @@ public class ProjectEntity {
 
 	@Id
 	@Column(name = "PROJECT_ID")
-	protected UUID projectId;
-	
+	protected String projectId;
+
 	@Column(name = "PROJECT_NAME")
 	protected String projectName;
 
@@ -22,17 +20,17 @@ public class ProjectEntity {
 
 	}
 
-	public ProjectEntity(UUID projectId, String projectName) {
+	public ProjectEntity(String projectId, String projectName) {
 		super();
 		this.projectId = projectId;
 		this.projectName = projectName;
 	}
 
-	public UUID getProjectId() {
+	public String getProjectId() {
 		return projectId;
 	}
 
-	public void setProjectId(UUID projectId) {
+	public void setProjectId(String projectId) {
 		this.projectId = projectId;
 	}
 

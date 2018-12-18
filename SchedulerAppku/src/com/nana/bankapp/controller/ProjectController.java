@@ -1,7 +1,6 @@
 package com.nana.bankapp.controller;
 
 import java.util.List;
-import java.util.UUID;
 
 import javax.validation.Valid;
 
@@ -19,15 +18,36 @@ import com.nana.bankapp.model.Project;
 import com.nana.bankapp.services.ProjectService;
 
 @Controller
+@RequestMapping("/project")
 public class ProjectController {
 
 	@Autowired
 	ProjectService ps;
 
-	@RequestMapping("/newproject")
+	@RequestMapping("/add")
 	public String newProject(Model model) {
 		model.addAttribute("project", new Project());
 		return "project_add_form";
+	}
+
+	@GetMapping("/list")
+	public String listProjects(Model model) {
+		List<Project> project = ps.getProjects();
+		model.addAttribute("project", project);
+		return "project_list";
+	}
+
+	@GetMapping("/edit")
+	public String updateProject(@RequestParam("projectId") String projectId, Model model) {
+		Project project = ps.getProject(projectId);
+		model.addAttribute("project", project);
+		return "project_edit_form";
+	}
+
+	@GetMapping("/delete")
+	public String deleteProject(@RequestParam("projectId") String projectId, Model model) {
+		ps.deleteProject(projectId);
+		return "redirect:/project/list";
 	}
 
 	@RequestMapping(value = "/saveproject", method = RequestMethod.POST)
@@ -36,7 +56,7 @@ public class ProjectController {
 			return "project_add_form";
 		} else {
 			ps.saveProject(project);
-			return "redirect:/project_list";
+			return "redirect:/project/list";
 		}
 	}
 
@@ -46,28 +66,8 @@ public class ProjectController {
 			return "project_edit_form";
 		} else {
 			ps.editProject(project);
-			return "redirect:/project_list";
+			return "redirect:/project/list";
 		}
-	}
-
-	@GetMapping("/project_list")
-	public String listProjects(Model model) {
-		List<Project> project = ps.getProjects();
-		model.addAttribute("project", project);
-		return "project_list";
-	}
-
-	@GetMapping("/projectedit")
-	public String updateProject(@RequestParam("projectId") UUID projectId, Model model) {
-		Project project = ps.getProject(projectId);
-		model.addAttribute("project", project);
-		return "project_edit_form";
-	}
-
-	@GetMapping("/projectdelete")
-	public String deleteProject(@RequestParam("projectId") UUID projectId, Model model) {
-		ps.deleteProject(projectId);
-		return "redirect:/project_list";
 	}
 
 }

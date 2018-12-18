@@ -17,7 +17,7 @@
 
 		<div class="row">
 			<div class="col-12">
-				<a href="<c:url value='newproject'/>" class="btn btn-primary">Add New Project</a>
+				<a href="<c:url value='/project/add'/>" class="btn btn-primary">Add New Project</a>
 			</div>
 		</div>
 
@@ -33,10 +33,10 @@
 					</thead>
 					<tbody>
 						<c:forEach var="pro" items="${project}">
-							<c:url var="updateLink" value="/projectedit">
+							<c:url var="updateLink" value="/project/edit">
 								<c:param name="projectId" value="${pro.projectId}" />
 							</c:url>
-							<c:url var="deleteLink" value="/projectdelete">
+							<c:url var="deleteLink" value="/project/delete">
 								<c:param name="projectId" value="${pro.projectId}" />
 							</c:url>
 							<tr>

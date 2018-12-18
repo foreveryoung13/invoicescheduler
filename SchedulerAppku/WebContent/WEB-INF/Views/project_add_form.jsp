@@ -28,7 +28,7 @@
 
 		<div class="row">
 			<div class="col-6">
-				<form:form modelAttribute="project" action="saveproject"
+				<form:form modelAttribute="project" action="${pageContext.request.contextPath}/project/saveproject"
 					cssClass="form-horizontal" role="form" method="post">
 
 					<div class="form-group row">

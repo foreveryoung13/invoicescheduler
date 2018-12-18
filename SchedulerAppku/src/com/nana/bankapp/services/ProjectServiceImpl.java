@@ -37,13 +37,13 @@ public class ProjectServiceImpl implements ProjectService {
 
 	@Override
 	@Transactional
-	public Project getProject(UUID projectId) {
+	public Project getProject(String projectId) {
 		return projectDAO.getProject(projectId);
 	}
 
 	@Override
 	@Transactional
-	public boolean deleteProject(UUID projectId) {
+	public boolean deleteProject(String projectId) {
 		return projectDAO.deleteProject(projectId);
 	}
 

@@ -1,27 +1,25 @@
 package com.nana.bankapp.model;
 
-import java.util.UUID;
-
 public class Project {
 
-	protected UUID projectId;
+	protected String projectId;
 	protected String projectName;
 
 	public Project() {
 
 	}
 
-	public Project(UUID projectId, String projectName) {
+	public Project(String projectId, String projectName) {
 		super();
 		this.projectId = projectId;
 		this.projectName = projectName;
 	}
 
-	public UUID getProjectId() {
+	public String getProjectId() {
 		return projectId;
 	}
 
-	public void setProjectId(UUID projectId) {
+	public void setProjectId(String projectId) {
 		this.projectId = projectId;
 	}
 

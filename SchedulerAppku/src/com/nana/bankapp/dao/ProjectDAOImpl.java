@@ -23,7 +23,7 @@ public class ProjectDAOImpl implements ProjectDAO {
 	public boolean saveProject(Project project) {
 		boolean saveFlag = true;
 		ProjectEntity pe = new ProjectEntity();
-		pe.setProjectId(UUID.randomUUID());
+		pe.setProjectId(UUID.randomUUID().toString());
 		pe.setProjectName(project.getProjectName());
 		try {
 			Session currentSession = sessionFactory.getCurrentSession();
@@ -45,7 +45,6 @@ public class ProjectDAOImpl implements ProjectDAO {
 			Session currentSession = sessionFactory.getCurrentSession();
 			currentSession.update(pe);
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 			saveFlag = false;
 		}
@@ -75,7 +74,7 @@ public class ProjectDAOImpl implements ProjectDAO {
 	}
 
 	@Override
-	public Project getProject(UUID projectId) {
+	public Project getProject(String projectId) {
 		Project pr = new Project();
 		try {
 			Session session = sessionFactory.getCurrentSession();
@@ -89,7 +88,7 @@ public class ProjectDAOImpl implements ProjectDAO {
 	}
 
 	@Override
-	public boolean deleteProject(UUID projectId) {
+	public boolean deleteProject(String projectId) {
 		boolean deleteFlag = true;
 		try {
 			Session session = sessionFactory.getCurrentSession();
