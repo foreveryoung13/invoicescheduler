@@ -8,26 +8,26 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "account")
+@Table(name = "mst_account")
 public class AccountEntity {
 
 	@Id
-	@Column(name = "accountNo")
+	@Column(name = "ACCOUNT_ID")
 	private int accNo;
 
-	@Column(name = "accountHolderName")
+	@Column(name = "ACCOUNT_HOLDER_NAME")
 	private String accHolderName;
 
-	@Column(name = "balance")
+	@Column(name = "BALANCE")
 	private int balance;
 
-	@Column(name = "accountType")
+	@Column(name = "ACCOUNT_TYPE")
 	private String accountType;
 
-	@Column(name = "dateOfBirth")
+	@Column(name = "DATE_OF_BIRTH")
 	private Date dateOfBirth;
 
-	@Column(name = "psCode")
+	@Column(name = "PSCODE")
 	private String psCode;
 
 	public AccountEntity() {
