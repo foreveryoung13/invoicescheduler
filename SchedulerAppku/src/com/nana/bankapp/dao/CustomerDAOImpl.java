@@ -23,7 +23,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 	public boolean saveCustomer(Customer customer) {
 		boolean saveFlag = true;
 		CustomerEntity ce = new CustomerEntity();
-		ce.setCustomerId(UUID.randomUUID());
+		ce.setCustomerId(UUID.randomUUID().toString());
 		ce.setCustomerName(customer.getCustomerName());
 		ce.setAddress(customer.getAddress());
 		ce.setCity(customer.getCity());
@@ -35,7 +35,6 @@ public class CustomerDAOImpl implements CustomerDAO {
 		try {
 			Session currentSession = sessionFactory.getCurrentSession();
 			currentSession.save(ce);
-//		    currentSession.saveOrUpdate(ce);
 		} catch (Exception e) {
 			e.printStackTrace();
 			saveFlag = false;
@@ -45,7 +44,6 @@ public class CustomerDAOImpl implements CustomerDAO {
 
 	@Override
 	public boolean editCustomer(Customer customer) {
-		// TODO Auto-generated method stub
 		boolean saveFlag = true;
 		CustomerEntity ce = new CustomerEntity();
 		ce.setCustomerId(customer.getCustomerId());
@@ -61,7 +59,6 @@ public class CustomerDAOImpl implements CustomerDAO {
 			Session currentSession = sessionFactory.getCurrentSession();
 			currentSession.update(ce);
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 			saveFlag = false;
 		}
@@ -98,7 +95,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 	}
 
 	@Override
-	public Customer getCustomer(UUID customerId) {
+	public Customer getCustomer(String customerId) {
 		Customer cu = new Customer();
 		try {
 			Session session = sessionFactory.getCurrentSession();
@@ -119,7 +116,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 	}
 
 	@Override
-	public boolean deleteCustomer(UUID customerId) {
+	public boolean deleteCustomer(String customerId) {
 		boolean deleteFlag = true;
 		try {
 			Session session = sessionFactory.getCurrentSession();

@@ -1,10 +1,8 @@
 package com.nana.bankapp.model;
 
-import java.util.UUID;
-
 public class Customer {
 
-	protected UUID customerId;
+	protected String customerId;
 	protected String customerName;
 	protected String address;
 	protected String city;
@@ -13,13 +11,12 @@ public class Customer {
 	protected String faxNumber;
 	protected String phoneNumber;
 	protected String postalCode;
-	
+
 	public Customer() {
-		
 	}
 
-	public Customer(UUID customerId, String customerName, String address, String city, String province, String country,
-			String faxNumber, String phoneNumber, String postalCode) {
+	public Customer(String customerId, String customerName, String address, String city, String province,
+			String country, String faxNumber, String phoneNumber, String postalCode) {
 		super();
 		this.customerId = customerId;
 		this.customerName = customerName;
@@ -32,11 +29,11 @@ public class Customer {
 		this.postalCode = postalCode;
 	}
 
-	public UUID getCustomerId() {
+	public String getCustomerId() {
 		return customerId;
 	}
 
-	public void setCustomerId(UUID customerId) {
+	public void setCustomerId(String customerId) {
 		this.customerId = customerId;
 	}
 

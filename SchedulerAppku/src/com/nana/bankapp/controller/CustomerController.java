@@ -1,7 +1,6 @@
 package com.nana.bankapp.controller;
 
 import java.util.List;
-import java.util.UUID;
 
 import javax.validation.Valid;
 
@@ -19,15 +18,36 @@ import com.nana.bankapp.model.Customer;
 import com.nana.bankapp.services.CustomerService;
 
 @Controller
+@RequestMapping("/customer")
 public class CustomerController {
 
 	@Autowired
 	CustomerService cs;
 
-	@RequestMapping("/newcustomer")
+	@RequestMapping("/add")
 	public String newCustomer(Model model) {
 		model.addAttribute("customer", new Customer());
 		return "customer_add_form";
+	}
+
+	@GetMapping("/list")
+	public String listCustomers(Model model) {
+		List<Customer> customer = cs.getCustomers();
+		model.addAttribute("customer", customer);
+		return "customer_list";
+	}
+
+	@GetMapping("/edit")
+	public String updateCustomer(@RequestParam("customerId") String customerId, Model model) {
+		Customer customer = cs.getCustomer(customerId);
+		model.addAttribute("customer", customer);
+		return "customer_edit_form";
+	}
+
+	@GetMapping("/delete")
+	public String deleteCustomer(@RequestParam("customerId") String customerId, Model model) {
+		cs.deleteCustomer(customerId);
+		return "redirect:/customer/list";
 	}
 
 	@RequestMapping(value = "/savecustomer", method = RequestMethod.POST)
@@ -36,7 +56,7 @@ public class CustomerController {
 			return "customer_add_form";
 		} else {
 			cs.saveCustomer(customer);
-			return "redirect:/customer_list";
+			return "redirect:/customer/list";
 		}
 	}
 
@@ -46,28 +66,8 @@ public class CustomerController {
 			return "customer_edit_form";
 		} else {
 			cs.editCustomer(customer);
-			return "redirect:/customer_list";
+			return "redirect:/customer/list";
 		}
-	}
-
-	@GetMapping("/customer_list")
-	public String listCustomers(Model model) {
-		List<Customer> customer = cs.getCustomers();
-		model.addAttribute("customer", customer);
-		return "customer_list";
-	}
-
-	@GetMapping("/customeredit")
-	public String updateCustomer(@RequestParam("customerId") UUID customer_id, Model model) {
-		Customer customer = cs.getCustomer(customer_id);
-		model.addAttribute("customer", customer);
-		return "customer_edit_form";
-	}
-
-	@GetMapping("/customerdelete")
-	public String deleteCustomer(@RequestParam("customerId") UUID customer_id, Model model) {
-		cs.deleteCustomer(customer_id);
-		return "redirect:/customer_list";
 	}
 
 }

@@ -1,7 +1,5 @@
 package com.nana.bankapp.entity;
 
-import java.util.UUID;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,37 +11,37 @@ public class CustomerEntity {
 
 	@Id
 	@Column(name = "CUSTOMER_ID")
-	protected UUID customerId;
+	protected String customerId;
 
 	@Column(name = "CUSTOMER_NAME")
 	protected String customerName;
-	
+
 	@Column(name = "ADDRESS")
 	protected String address;
-	
+
 	@Column(name = "CITY")
-	protected String city;	
-	
+	protected String city;
+
 	@Column(name = "PROVINCE")
 	protected String province;
-	
+
 	@Column(name = "COUNTRY")
 	protected String country;
-	
+
 	@Column(name = "FAX_NUMBER")
 	protected String faxNumber;
-	
+
 	@Column(name = "PHONE_NUMBER")
 	protected String phoneNumber;
-	
+
 	@Column(name = "POSTAL_CODE")
 	protected String postalCode;
 
-	public UUID getCustomerId() {
+	public String getCustomerId() {
 		return customerId;
 	}
 
-	public void setCustomerId(UUID customerId) {
+	public void setCustomerId(String customerId) {
 		this.customerId = customerId;
 	}
 

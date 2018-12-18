@@ -28,7 +28,7 @@
 
 		<div class="row">
 			<div class="col-6">
-				<form:form modelAttribute="customer" action="editcustomer"
+				<form:form modelAttribute="customer" action="${pageContext.request.contextPath}/customer/editcustomer"
 					cssClass="form-horizontal" role="form" method="post">
 
 					<div class="form-group row" hidden="true">

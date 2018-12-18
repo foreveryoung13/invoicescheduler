@@ -1,8 +1,6 @@
 package com.nana.bankapp.services;
 
 import java.util.List;
-import java.util.UUID;
-
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,13 +35,13 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	@Transactional
-	public Customer getCustomer(UUID customerId) {
+	public Customer getCustomer(String customerId) {
 		return customerDAO.getCustomer(customerId);
 	}
 
 	@Override
 	@Transactional
-	public boolean deleteCustomer(UUID customerId) {
+	public boolean deleteCustomer(String customerId) {
 		return customerDAO.deleteCustomer(customerId);
 	}
 

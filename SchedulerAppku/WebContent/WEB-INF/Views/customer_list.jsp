@@ -17,7 +17,7 @@
 
 		<div class="row">
 			<div class="col-12">
-				<a href="<c:url value='/newcustomer'/>" class="btn btn-primary">Add New Customer</a>
+				<a href="<c:url value='/customer/add'/>" class="btn btn-primary">Add New Customer</a>
 			</div>
 		</div>
 
@@ -34,10 +34,10 @@
 					</thead>
 					<tbody>
 						<c:forEach var="rcust" items="${customer}">
-							<c:url var="updateLink" value="/customeredit">
+							<c:url var="updateLink" value="/customer/edit">
 								<c:param name="customerId" value="${rcust.customerId}" />
 							</c:url>
-							<c:url var="deleteLink" value="/customerdelete">
+							<c:url var="deleteLink" value="/customer/delete">
 								<c:param name="customerId" value="${rcust.customerId}" />
 							</c:url>
 							<tr>
