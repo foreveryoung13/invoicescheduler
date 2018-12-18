@@ -32,6 +32,11 @@ public class MarketingController {
 	@Autowired
 	DivisionService ds;
 
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+		binder.registerCustomEditor(Division.class, new DivisionEditor());
+	}
+
 	@RequestMapping("/add")
 	public String newMarketing(Model model) {
 		List<Division> divlist = ds.getDivision();
@@ -40,32 +45,7 @@ public class MarketingController {
 		return "marketing_add_form";
 	}
 
-	@InitBinder
-	public void initBinder(WebDataBinder binder) {
-		binder.registerCustomEditor(Division.class, new DivisionEditor());
-	}
-
-	@RequestMapping(value = "/savemarketing", method = RequestMethod.POST)
-	public String saveAccount(@Valid @ModelAttribute("marketing") Marketing marketing, BindingResult result) {
-		if (result.hasErrors()) {
-			return "marketing_add_form";
-		} else {
-			ms.saveMarketing(marketing);
-			return "redirect:/marketings/marketing_list";
-		}
-	}
-
-	@RequestMapping(value = "/editmarketing", method = RequestMethod.POST)
-	public String editMarketing(@Valid @ModelAttribute("marketing") Marketing marketing, BindingResult result) {
-		if (result.hasErrors()) {
-			return "marketing_edit_form";
-		} else {
-			ms.editMarketing(marketing);
-			return "redirect:/marketings/marketing_list";
-		}
-	}
-
-	@GetMapping("/marketing_list")
+	@GetMapping("/list")
 	public String listMarketings(Model model) {
 		List<Marketing> marketing = ms.getMarketings();
 		model.addAttribute("marketing", marketing);
@@ -82,7 +62,27 @@ public class MarketingController {
 	@GetMapping("/delete")
 	public String deleteMarketing(@RequestParam("marketingId") String marketingId, Model model) {
 		ms.deleteMarketing(marketingId);
-		return "redirect:/marketings/marketing_list";
+		return "redirect:/marketings/list";
+	}
+
+	@RequestMapping(value = "/savemarketing", method = RequestMethod.POST)
+	public String saveAccount(@Valid @ModelAttribute("marketing") Marketing marketing, BindingResult result) {
+		if (result.hasErrors()) {
+			return "marketing_add_form";
+		} else {
+			ms.saveMarketing(marketing);
+			return "redirect:/marketings/list";
+		}
+	}
+
+	@RequestMapping(value = "/editmarketing", method = RequestMethod.POST)
+	public String editMarketing(@Valid @ModelAttribute("marketing") Marketing marketing, BindingResult result) {
+		if (result.hasErrors()) {
+			return "marketing_edit_form";
+		} else {
+			ms.editMarketing(marketing);
+			return "redirect:/marketings/list";
+		}
 	}
 
 }
