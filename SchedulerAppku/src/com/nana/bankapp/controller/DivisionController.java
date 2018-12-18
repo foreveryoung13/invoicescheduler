@@ -18,15 +18,36 @@ import com.nana.bankapp.model.Division;
 import com.nana.bankapp.services.DivisionService;
 
 @Controller
+@RequestMapping("/division")
 public class DivisionController {
 
 	@Autowired
 	DivisionService ds;
 
-	@RequestMapping("/newdivision")
+	@RequestMapping("/add")
 	public String newRcustomer(Model model) {
 		model.addAttribute("division", new Division());
 		return "division_add_form";
+	}
+
+	@GetMapping("/list")
+	public String listDivision(Model model) {
+		List<Division> division = ds.getDivision();
+		model.addAttribute("division", division);
+		return "division_list";
+	}
+
+	@GetMapping("/edit")
+	public String updateDivision(@RequestParam("divisionId") String divisionId, Model model) {
+		Division division = ds.getDivision(divisionId);
+		model.addAttribute("division", division);
+		return "division_edit_form";
+	}
+
+	@GetMapping("/delete")
+	public String deleteDivision(@RequestParam("divisionId") String divisionId, Model model) {
+		ds.deleteDivision(divisionId);
+		return "redirect:/division/list";
 	}
 
 	@RequestMapping(value = "/savedivision", method = RequestMethod.POST)
@@ -35,7 +56,7 @@ public class DivisionController {
 			return "division_add_form";
 		} else {
 			ds.saveDivision(division);
-			return "redirect:/division_list";
+			return "redirect:/division/list";
 		}
 	}
 
@@ -45,28 +66,8 @@ public class DivisionController {
 			return "division_edit_form";
 		} else {
 			ds.editDivision(division);
-			return "redirect:/division_list";
+			return "redirect:/division/list";
 		}
-	}
-
-	@GetMapping("/division_list")
-	public String listDivision(Model model) {
-		List<Division> division = ds.getDivision();
-		model.addAttribute("division", division);
-		return "division_list";
-	}
-
-	@GetMapping("/divisionedit")
-	public String updateDivision(@RequestParam("divisionId") String divisionId, Model model) {
-		Division division = ds.getDivision(divisionId);
-		model.addAttribute("division", division);
-		return "division_edit_form";
-	}
-
-	@GetMapping("/divisiondelete")
-	public String deleteDivision(@RequestParam("divisionId") String divisionId, Model model) {
-		ds.deleteDivision(divisionId);
-		return "redirect:/division_list";
 	}
 
 }

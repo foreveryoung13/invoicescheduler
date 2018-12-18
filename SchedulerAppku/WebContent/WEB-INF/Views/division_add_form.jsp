@@ -29,7 +29,7 @@
 		<div class="row">
 
 			<div class="col-6">
-				<form:form modelAttribute="division" action="savedivision"
+				<form:form modelAttribute="division" action="${pageContext.request.contextPath}/division/savedivision"
 					cssClass="form-horizontal" role="form" method="post">
 
 					<div class="form-group row">

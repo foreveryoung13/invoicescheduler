@@ -17,7 +17,7 @@
 
 		<div class="row">
 			<div class="col-12">
-				<a href="<c:url value='/newdivision'/>" class="btn btn-primary">Add New Division</a>
+				<a href="<c:url value='/division/add'/>" class="btn btn-primary">Add New Division</a>
 			</div>
 		</div>
 
@@ -33,10 +33,10 @@
 					</thead>
 					<tbody>
 						<c:forEach var="divs" items="${division}">
-							<c:url var="updateLink" value="/divisionedit">
+							<c:url var="updateLink" value="/division/edit">
 								<c:param name="divisionId" value="${divs.divisionId}" />
 							</c:url>
-							<c:url var="deleteLink" value="/divisiondelete">
+							<c:url var="deleteLink" value="/division/delete">
 								<c:param name="divisionId" value="${divs.divisionId}" />
 							</c:url>
 							<tr>
