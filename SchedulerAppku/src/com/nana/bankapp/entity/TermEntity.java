@@ -1,7 +1,5 @@
 package com.nana.bankapp.entity;
 
-import java.util.UUID;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,25 +11,25 @@ public class TermEntity {
 
 	@Id
 	@Column(name = "TERM_ID")
-	protected UUID termId;
-	
+	protected String termId;
+
 	@Column(name = "TERM_NAME")
 	protected String termName;
 
 	public TermEntity() {
 	}
 
-	public TermEntity(UUID termId, String termName) {
+	public TermEntity(String termId, String termName) {
 		super();
 		this.termId = termId;
 		this.termName = termName;
 	}
 
-	public UUID getTermId() {
+	public String getTermId() {
 		return termId;
 	}
 
-	public void setTermId(UUID termId) {
+	public void setTermId(String termId) {
 		this.termId = termId;
 	}
 

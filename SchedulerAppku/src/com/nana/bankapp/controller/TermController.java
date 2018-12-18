@@ -1,8 +1,6 @@
 package com.nana.bankapp.controller;
 
 import java.util.List;
-import java.util.UUID;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,15 +17,37 @@ import com.nana.bankapp.model.Term;
 import com.nana.bankapp.services.TermService;
 
 @Controller
+
+@RequestMapping("/term")
 public class TermController {
 
 	@Autowired
 	TermService ps;
 
-	@RequestMapping("/newterm")
+	@RequestMapping("/add")
 	public String newTerm(Model model) {
 		model.addAttribute("term", new Term());
 		return "term_add_form";
+	}
+
+	@GetMapping("/list")
+	public String listTerm(Model model) {
+		List<Term> term = ps.getTerm();
+		model.addAttribute("term", term);
+		return "term_list";
+	}
+
+	@GetMapping("/edit")
+	public String updateTerm(@RequestParam("termId") String termId, Model model) {
+		Term term = ps.getTerm(termId);
+		model.addAttribute("term", term);
+		return "term_edit_form";
+	}
+
+	@GetMapping("/delete")
+	public String deleteTerm(@RequestParam("termId") String termId, Model model) {
+		ps.deleteTerm(termId);
+		return "redirect:/term/list";
 	}
 
 	@RequestMapping(value = "/saveterm", method = RequestMethod.POST)
@@ -36,7 +56,7 @@ public class TermController {
 			return "term_add_form";
 		} else {
 			ps.saveTerm(term);
-			return "redirect:/term_list";
+			return "redirect:/term/list";
 		}
 	}
 
@@ -46,28 +66,8 @@ public class TermController {
 			return "term_edit_form";
 		} else {
 			ps.editTerm(term);
-			return "redirect:/term_list";
+			return "redirect:/term/list";
 		}
-	}
-
-	@GetMapping("/term_list")
-	public String listTerm(Model model) {
-		List<Term> term = ps.getTerm();
-		model.addAttribute("term", term);
-		return "term_list";
-	}
-
-	@GetMapping("/termedit")
-	public String updateTerm(@RequestParam("termId") UUID termId, Model model) {
-		Term term = ps.getTerm(termId);
-		model.addAttribute("term", term);
-		return "term_edit_form";
-	}
-
-	@GetMapping("/termdelete")
-	public String deleteTerm(@RequestParam("termId") UUID termId, Model model) {
-		ps.deleteTerm(termId);
-		return "redirect:/term_list";
 	}
 
 }

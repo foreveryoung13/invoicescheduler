@@ -1,26 +1,24 @@
 package com.nana.bankapp.model;
 
-import java.util.UUID;
-
 public class Term {
 
-	protected UUID termId;
+	protected String termId;
 	protected String termName;
 
 	public Term() {
 	}
 
-	public Term(UUID termId, String termName) {
+	public Term(String termId, String termName) {
 		super();
 		this.termId = termId;
 		this.termName = termName;
 	}
 
-	public UUID getTermId() {
+	public String getTermId() {
 		return termId;
 	}
 
-	public void setTermId(UUID termId) {
+	public void setTermId(String termId) {
 		this.termId = termId;
 	}
 

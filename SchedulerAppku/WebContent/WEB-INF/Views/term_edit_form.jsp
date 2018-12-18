@@ -28,7 +28,7 @@
 
 		<div class="row">
 			<div class="col-6">
-				<form:form modelAttribute="term" action="editterm"
+				<form:form modelAttribute="term" action="${pageContext.request.contextPath}/term/editterm"
 					cssClass="form-horizontal" role="form" method="post">
 
 					<div class="form-group row" hidden="true">

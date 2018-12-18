@@ -17,7 +17,7 @@
 
 		<div class="row">
 			<div class="col-12">
-				<a href="<c:url value='newterm'/>" class="btn btn-primary">Add
+				<a href="<c:url value='/term/add'/>" class="btn btn-primary">Add
 					New term</a>
 			</div>
 		</div>
@@ -34,10 +34,10 @@
 					</thead>
 					<tbody>
 						<c:forEach var="term" items="${term}">
-							<c:url var="updateLink" value="/termedit">
+							<c:url var="updateLink" value="/term/edit">
 								<c:param name="termId" value="${term.termId}" />
 							</c:url>
-							<c:url var="deleteLink" value="/termdelete">
+							<c:url var="deleteLink" value="/term/delete">
 								<c:param name="termId" value="${term.termId}" />
 							</c:url>
 							<tr>

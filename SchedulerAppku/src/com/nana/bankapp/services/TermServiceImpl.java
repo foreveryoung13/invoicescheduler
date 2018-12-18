@@ -1,7 +1,6 @@
 package com.nana.bankapp.services;
 
 import java.util.List;
-import java.util.UUID;
 
 import javax.transaction.Transactional;
 
@@ -37,13 +36,13 @@ public class TermServiceImpl implements TermService {
 
 	@Override
 	@Transactional
-	public Term getTerm(UUID termId) {
+	public Term getTerm(String termId) {
 		return termDAO.getTerm(termId);
 	}
 
 	@Override
 	@Transactional
-	public boolean deleteTerm(UUID termId) {
+	public boolean deleteTerm(String termId) {
 		return termDAO.deleteTerm(termId);
 	}
 

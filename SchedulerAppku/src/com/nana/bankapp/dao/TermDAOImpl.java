@@ -23,7 +23,7 @@ public class TermDAOImpl implements TermDAO {
 	public boolean saveTerm(Term term) {
 		boolean saveFlag = true;
 		TermEntity te = new TermEntity();
-		te.setTermId(UUID.randomUUID());
+		te.setTermId(UUID.randomUUID().toString());
 		te.setTermName(term.getTermName());
 		try {
 			Session currentSession = sessionFactory.getCurrentSession();
@@ -74,7 +74,7 @@ public class TermDAOImpl implements TermDAO {
 	}
 
 	@Override
-	public Term getTerm(UUID termId) {
+	public Term getTerm(String termId) {
 		Term term = new Term();
 		try {
 			Session session = sessionFactory.getCurrentSession();
@@ -88,7 +88,7 @@ public class TermDAOImpl implements TermDAO {
 	}
 
 	@Override
-	public boolean deleteTerm(UUID termId) {
+	public boolean deleteTerm(String termId) {
 		boolean deleteFlag = true;
 		try {
 			Session session = sessionFactory.getCurrentSession();
