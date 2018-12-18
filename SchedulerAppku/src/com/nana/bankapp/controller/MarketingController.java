@@ -1,6 +1,5 @@
 package com.nana.bankapp.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -24,6 +23,7 @@ import com.nana.bankapp.services.DivisionService;
 import com.nana.bankapp.services.MarketingService;
 
 @Controller
+@RequestMapping("/marketings")
 public class MarketingController {
 
 	@Autowired
@@ -32,7 +32,7 @@ public class MarketingController {
 	@Autowired
 	DivisionService ds;
 
-	@RequestMapping("/newmarketing")
+	@RequestMapping("/add")
 	public String newMarketing(Model model) {
 		List<Division> divlist = ds.getDivision();
 		model.addAttribute("divlist", divlist);
@@ -51,7 +51,7 @@ public class MarketingController {
 			return "marketing_add_form";
 		} else {
 			ms.saveMarketing(marketing);
-			return "redirect:/marketing_list";
+			return "redirect:/marketings/marketing_list";
 		}
 	}
 
@@ -61,7 +61,7 @@ public class MarketingController {
 			return "marketing_edit_form";
 		} else {
 			ms.editMarketing(marketing);
-			return "redirect:/marketing_list";
+			return "redirect:/marketings/marketing_list";
 		}
 	}
 
@@ -72,25 +72,17 @@ public class MarketingController {
 		return "marketing_list";
 	}
 
-	@GetMapping("/marketingedit")
+	@GetMapping("/edit")
 	public String updateMarketing(@RequestParam("marketingId") String marketingId, Model model) {
 		Marketing marketing = ms.getMarketing(marketingId);
 		model.addAttribute("marketing", marketing);
 		return "marketing_edit_form";
 	}
 
-	@GetMapping("/marketingdelete")
+	@GetMapping("/delete")
 	public String deleteMarketing(@RequestParam("marketingId") String marketingId, Model model) {
 		ms.deleteMarketing(marketingId);
-		return "redirect:/marketing_list";
-	}
-
-	@ModelAttribute("jklist")
-	public List<String> populateDepartments() {
-		ArrayList<String> departments = new ArrayList<String>();
-		departments.add("pria");
-		departments.add("wanita");
-		return departments;
+		return "redirect:/marketings/marketing_list";
 	}
 
 }

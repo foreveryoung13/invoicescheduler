@@ -28,7 +28,7 @@
 
 		<div class="row">
 			<div class="col-6">
-				<form:form modelAttribute="marketing" action="editmarketing"
+				<form:form modelAttribute="marketing" action="${pageContext.request.contextPath}/marketings/editmarketing"
 					cssClass="form-horizontal" role="form" method="post">
 
 					<div class="form-group row" hidden="true">

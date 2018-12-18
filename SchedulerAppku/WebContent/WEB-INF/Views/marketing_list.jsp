@@ -17,7 +17,7 @@
 
 		<div class="row">
 			<div class="col-12">
-				<a href="<c:url value='/newmarketing'/>" class="btn btn-primary">Add
+				<a href="<c:url value='/marketings/add'/>" class="btn btn-primary">Add
 					New Marketing</a>
 			</div>
 		</div>
@@ -34,16 +34,16 @@
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="rcust" items="${marketing}">
-							<c:url var="updateLink" value="/marketingedit">
-								<c:param name="marketingId" value="${rcust.marketingId}" />
+						<c:forEach var="mark" items="${marketing}">
+							<c:url var="updateLink" value="/marketings/edit">
+								<c:param name="marketingId" value="${mark.marketingId}" />
 							</c:url>
-							<c:url var="deleteLink" value="/marketingdelete">
-								<c:param name="marketingId" value="${rcust.marketingId}" />
+							<c:url var="deleteLink" value="/marketings/delete">
+								<c:param name="marketingId" value="${mark.marketingId}" />
 							</c:url>
 							<tr>
-								<td>${rcust.firstName}</td>
-								<td>${rcust.lastName}</td>
+								<td>${mark.firstName}</td>
+								<td>${mark.lastName}</td>
 								<td><a href="${updateLink}" class="btn btn-warning">Edit</a></td>
 								<td><a href="${deleteLink}" class="btn btn-danger"
 									onclick="if(!(confirm('Are you sure to delete'))) return false">Delete</a></td>

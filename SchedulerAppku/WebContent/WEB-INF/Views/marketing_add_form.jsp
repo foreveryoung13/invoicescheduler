@@ -29,7 +29,7 @@
 
 		<div class="row">
 			<div class="col-6">
-				<form:form modelAttribute="marketing" action="savemarketing"
+				<form:form modelAttribute="marketing" action="${pageContext.request.contextPath}/marketings/savemarketing"
 					cssClass="form-horizontal" role="form" method="post">
 
 					<div class="form-group row">
