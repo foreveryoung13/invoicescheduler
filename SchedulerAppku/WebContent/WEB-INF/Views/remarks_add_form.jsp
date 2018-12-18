@@ -28,7 +28,7 @@
 
 		<div class="row">
 			<div class="col-6">
-				<form:form modelAttribute="remarks" action="saveremarks"
+				<form:form modelAttribute="remarks" action="${pageContext.request.contextPath}/remark/saveremarks"
 					cssClass="form-horizontal" role="form" method="post">
 					
 					<div class="form-group row">

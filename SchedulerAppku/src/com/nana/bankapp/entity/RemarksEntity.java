@@ -1,7 +1,5 @@
 package com.nana.bankapp.entity;
 
-import java.util.UUID;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,25 +11,25 @@ public class RemarksEntity {
 
 	@Id
 	@Column(name = "REMARKS_ID")
-	protected UUID remarksId;
-	
+	protected String remarksId;
+
 	@Column(name = "REMARKS_NAME")
 	protected String remarksName;
 
 	public RemarksEntity() {
 	}
 
-	public RemarksEntity(UUID remarksId, String remarksName) {
+	public RemarksEntity(String remarksId, String remarksName) {
 		super();
 		this.remarksId = remarksId;
 		this.remarksName = remarksName;
 	}
 
-	public UUID getRemarksId() {
+	public String getRemarksId() {
 		return remarksId;
 	}
 
-	public void setRemarksId(UUID remarksId) {
+	public void setRemarksId(String remarksId) {
 		this.remarksId = remarksId;
 	}
 

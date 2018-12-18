@@ -17,7 +17,7 @@
 
 		<div class="row">
 			<div class="col-12">
-				<a href="<c:url value='newremarks'/>" class="btn btn-primary">Add
+				<a href="<c:url value='/remark/add'/>" class="btn btn-primary">Add
 					New Project</a>
 			</div>
 		</div>
@@ -34,10 +34,10 @@
 					</thead>
 					<tbody>
 						<c:forEach var="pro" items="${remarks}">
-							<c:url var="updateLink" value="/remarksedit">
+							<c:url var="updateLink" value="/remark/edit">
 								<c:param name="remarksId" value="${pro.remarksId}" />
 							</c:url>
-							<c:url var="deleteLink" value="/remarksdelete">
+							<c:url var="deleteLink" value="/remark/delete">
 								<c:param name="remarksId" value="${pro.remarksId}" />
 							</c:url>
 							<tr>

@@ -1,7 +1,6 @@
 package com.nana.bankapp.services;
 
 import java.util.List;
-import java.util.UUID;
 
 import javax.transaction.Transactional;
 
@@ -37,13 +36,13 @@ public class RemarksServiceImpl implements RemarksService {
 
 	@Override
 	@Transactional
-	public Remarks getRemarks(UUID remarksId) {
+	public Remarks getRemarks(String remarksId) {
 		return remarksDAO.getRemarks(remarksId);
 	}
 
 	@Override
 	@Transactional
-	public boolean deleteRemarks(UUID remarksId) {
+	public boolean deleteRemarks(String remarksId) {
 		return remarksDAO.deleteRemarks(remarksId);
 	}
 

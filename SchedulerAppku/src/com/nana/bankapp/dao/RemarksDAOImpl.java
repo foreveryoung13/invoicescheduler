@@ -23,7 +23,7 @@ public class RemarksDAOImpl implements RemarksDAO {
 	public boolean saveRemarks(Remarks remarks) {
 		boolean saveFlag = true;
 		RemarksEntity re = new RemarksEntity();
-		re.setRemarksId(UUID.randomUUID());
+		re.setRemarksId(UUID.randomUUID().toString());
 		re.setRemarksName(remarks.getRemarksName());
 		try {
 			Session currentSession = sessionFactory.getCurrentSession();
@@ -45,7 +45,6 @@ public class RemarksDAOImpl implements RemarksDAO {
 			Session currentSession = sessionFactory.getCurrentSession();
 			currentSession.update(pe);
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 			saveFlag = false;
 		}
@@ -75,7 +74,7 @@ public class RemarksDAOImpl implements RemarksDAO {
 	}
 
 	@Override
-	public Remarks getRemarks(UUID remarksId) {
+	public Remarks getRemarks(String remarksId) {
 		Remarks rem = new Remarks();
 		try {
 			Session session = sessionFactory.getCurrentSession();
@@ -89,7 +88,7 @@ public class RemarksDAOImpl implements RemarksDAO {
 	}
 
 	@Override
-	public boolean deleteRemarks(UUID remarksId) {
+	public boolean deleteRemarks(String remarksId) {
 		boolean deleteFlag = true;
 		try {
 			Session session = sessionFactory.getCurrentSession();
