@@ -23,7 +23,7 @@ public class EmailDAOImpl implements EmailDAO {
 	public boolean saveEmail(Email email) {
 		boolean saveFlag = true;
 		EmailEntity ee = new EmailEntity();
-		ee.setEmailId(UUID.randomUUID());
+		ee.setEmailId(UUID.randomUUID().toString());
 		ee.setSender(email.getSender());
 		ee.setRecipients(email.getRecipients());
 		ee.setSubject(email.getSubject());
@@ -89,7 +89,7 @@ public class EmailDAOImpl implements EmailDAO {
 	}
 
 	@Override
-	public Email getEmail(UUID emailId) {
+	public Email getEmail(String emailId) {
 		Email email = new Email();
 
 		try {
@@ -109,7 +109,7 @@ public class EmailDAOImpl implements EmailDAO {
 	}
 
 	@Override
-	public boolean deleteEmail(UUID emailId) {
+	public boolean deleteEmail(String emailId) {
 		boolean deleteFlag = true;
 		try {
 			Session session = sessionFactory.getCurrentSession();

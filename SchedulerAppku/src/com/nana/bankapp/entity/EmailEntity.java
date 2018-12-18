@@ -1,7 +1,5 @@
 package com.nana.bankapp.entity;
 
-import java.util.UUID;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,7 +11,7 @@ public class EmailEntity {
 
 	@Id
 	@Column(name = "EMAIL_ID")
-	private UUID emailId;
+	private String emailId;
 
 	@Column(name = "SENDER")
 	private String sender;
@@ -33,11 +31,11 @@ public class EmailEntity {
 	@Column(name = "CONTENT")
 	private String content;
 
-	public UUID getEmailId() {
+	public String getEmailId() {
 		return emailId;
 	}
 
-	public void setEmailId(UUID emailId) {
+	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
 

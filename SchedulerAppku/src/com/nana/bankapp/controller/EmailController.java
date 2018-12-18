@@ -1,7 +1,6 @@
 package com.nana.bankapp.controller;
 
 import java.util.List;
-import java.util.UUID;
 
 import javax.validation.Valid;
 
@@ -19,24 +18,46 @@ import com.nana.bankapp.model.Email;
 import com.nana.bankapp.services.EmailService;
 
 @Controller
+@RequestMapping("/email")
 public class EmailController {
 
 	@Autowired
-	EmailService emailService;
+	EmailService es;
 
-	@RequestMapping("/newemail")
+	@RequestMapping("/add")
 	public String newRcustomer(Model model) {
 		model.addAttribute("email", new Email());
 		return "email_add_form";
 	}
+	
+	@GetMapping("/list")
+	public String listEmail(Model model) {
+		List<Email> email = es.getEmail();
+		model.addAttribute("email", email);
+		return "email_list";
+	}
+
+	@GetMapping("/edit")
+	public String updateEmail(@RequestParam("emailId") String emailId, Model model) {
+		Email email = es.getEmail(emailId);
+		model.addAttribute("email", email);
+		return "email_edit_form";
+	}
+
+	@GetMapping("/delete")
+	public String deleteEmail(@RequestParam("emailId") String emailId, Model model) {
+		es.deleteEmail(emailId);
+		return "redirect:/email/list";
+	}
+
 
 	@RequestMapping(value = "/saveemail", method = RequestMethod.POST)
 	public String saveEmail(@Valid @ModelAttribute("email") Email email, BindingResult result) {
 		if (result.hasErrors()) {
 			return "email_add_form";
 		} else {
-			emailService.saveEmail(email);
-			return "redirect:/email_list";
+			es.saveEmail(email);
+			return "redirect:/email/list";
 		}
 	}
 	
@@ -45,29 +66,10 @@ public class EmailController {
 		if (result.hasErrors()) {
 			return "email_edit_form";
 		} else {
-			emailService.editEmail(email);
-			return "redirect:/email_list";
+			es.editEmail(email);
+			return "redirect:/email/list";
 		}
 	}
 
-	@GetMapping("/email_list")
-	public String listEmail(Model model) {
-		List<Email> email = emailService.getEmail();
-		model.addAttribute("email", email);
-		return "email_list";
-	}
-
-	@GetMapping("/emailedit")
-	public String updateEmail(@RequestParam("emailId") UUID emailId, Model model) {
-		Email email = emailService.getEmail(emailId);
-		model.addAttribute("email", email);
-		return "email_edit_form";
-	}
-
-	@GetMapping("/emaildelete")
-	public String deleteEmail(@RequestParam("emailId") UUID emailId, Model model) {
-		emailService.deleteEmail(emailId);
-		return "redirect:/email_list";
-	}
-
+	
 }

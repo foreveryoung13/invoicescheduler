@@ -17,7 +17,7 @@
 
 		<div class="row">
 			<div class="col-12">
-				 <a href="<c:url value='/newemail'/>" class="btn btn-primary">Add New Email</a> 
+				 <a href="<c:url value='/email/add'/>" class="btn btn-primary">Add New Email</a> 
 			</div>
 		</div>
 
@@ -37,10 +37,10 @@
 					</thead>
 					<tbody>
 						<c:forEach var="email" items="${email}">
-							<c:url var="updateLink" value="/emailedit">
+							<c:url var="updateLink" value="/email/edit">
 								<c:param name="emailId" value="${email.emailId}" />
 							</c:url>
-							<c:url var="deleteLink" value="/emaildelete">
+							<c:url var="deleteLink" value="/email/delete">
 								<c:param name="emailId" value="${email.emailId}" />
 							</c:url>
 							<tr>

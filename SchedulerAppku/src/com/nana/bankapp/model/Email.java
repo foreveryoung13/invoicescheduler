@@ -1,10 +1,8 @@
 package com.nana.bankapp.model;
 
-import java.util.UUID;
-
 public class Email {
 
-	private UUID emailId;
+	private String emailId;
 	private String sender;
 	private String recipients;
 	private String subject;
@@ -15,11 +13,23 @@ public class Email {
 	public Email() {
 	}
 
-	public UUID getEmailId() {
+	public Email(String emailId, String sender, String recipients, String subject, String header, String footer,
+			String content) {
+		super();
+		this.emailId = emailId;
+		this.sender = sender;
+		this.recipients = recipients;
+		this.subject = subject;
+		this.header = header;
+		this.footer = footer;
+		this.content = content;
+	}
+
+	public String getEmailId() {
 		return emailId;
 	}
 
-	public void setEmailId(UUID emailId) {
+	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
 
@@ -70,6 +80,5 @@ public class Email {
 	public void setContent(String content) {
 		this.content = content;
 	}
-
 
 }

@@ -1,7 +1,6 @@
 package com.nana.bankapp.services;
 
 import java.util.List;
-import java.util.UUID;
 
 import javax.transaction.Transactional;
 
@@ -37,13 +36,13 @@ public class EmailServiceImpl implements EmailService {
 
 	@Override
 	@Transactional
-	public Email getEmail(UUID emailId) {
+	public Email getEmail(String emailId) {
 		return dao.getEmail(emailId);
 	}
 
 	@Override
 	@Transactional
-	public boolean deleteEmail(UUID emailId) {
+	public boolean deleteEmail(String emailId) {
 		return dao.deleteEmail(emailId);
 	}
 
