@@ -1,26 +1,24 @@
 package com.nana.bankapp.model;
 
-import java.util.UUID;
-
 public class Division {
 
-	private UUID divisionId;
+	private String divisionId;
 	private String divisionName;
 
 	public Division() {
 	}
-
-	public Division(UUID divisionId, String divisionName) {
+	
+	public Division(String divisionId, String divisionName) {
 		super();
 		this.divisionId = divisionId;
 		this.divisionName = divisionName;
 	}
 
-	public UUID getDivisionId() {
+	public String getDivisionId() {
 		return divisionId;
 	}
 
-	public void setDivisionId(UUID divisionId) {
+	public void setDivisionId(String divisionId) {
 		this.divisionId = divisionId;
 	}
 

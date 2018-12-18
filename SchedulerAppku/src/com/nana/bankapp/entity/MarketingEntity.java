@@ -1,12 +1,13 @@
 package com.nana.bankapp.entity;
 
 import java.util.Date;
-import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.nana.bankapp.model.Division;
 
 @Entity
 @Table(name = "mst_marketing")
@@ -14,7 +15,7 @@ public class MarketingEntity {
 
 	@Id
 	@Column(name = "MARKETING_ID")
-	protected UUID marketingId;
+	protected String marketingId;
 
 	@Column(name = "FIRST_NAME")
 	protected String firstName;
@@ -43,11 +44,15 @@ public class MarketingEntity {
 	@Column(name = "COUNTRY")
 	protected String country;
 
+	@Column(name = "DIVISION_ID")
+	protected String divisionId;
+
 	public MarketingEntity() {
+
 	}
 
-	public MarketingEntity(UUID marketingId, String firstName, String lastName, String placeOfBirth, Date dateOfBirth,
-			Integer age, String address, String city, String province, String country) {
+	public MarketingEntity(String marketingId, String firstName, String lastName, String placeOfBirth, Date dateOfBirth,
+			Integer age, String address, String city, String province, String country, String divisionId) {
 		super();
 		this.marketingId = marketingId;
 		this.firstName = firstName;
@@ -59,13 +64,14 @@ public class MarketingEntity {
 		this.city = city;
 		this.province = province;
 		this.country = country;
+		this.divisionId = divisionId;
 	}
 
-	public UUID getMarketingId() {
+	public String getMarketingId() {
 		return marketingId;
 	}
 
-	public void setMarketingId(UUID marketingId) {
+	public void setMarketingId(String marketingId) {
 		this.marketingId = marketingId;
 	}
 
@@ -139,6 +145,14 @@ public class MarketingEntity {
 
 	public void setCountry(String country) {
 		this.country = country;
+	}
+
+	public String getDivisionId() {
+		return divisionId;
+	}
+
+	public void setDivisionId(String divisionId) {
+		this.divisionId = divisionId;
 	}
 
 }

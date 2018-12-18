@@ -10,9 +10,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.nana.bankapp.entity.CustomerEntity;
 import com.nana.bankapp.entity.MarketingEntity;
-import com.nana.bankapp.model.Customer;
 import com.nana.bankapp.model.Marketing;
 
 @Repository
@@ -25,7 +23,7 @@ public class MarketingDAOImpl implements MarketingDAO {
 	public boolean saveMarketing(Marketing marketing) {
 		boolean saveFlag = true;
 		MarketingEntity me = new MarketingEntity();
-		me.setMarketingId(UUID.randomUUID());
+		me.setMarketingId(UUID.randomUUID().toString());
 		me.setFirstName(marketing.getFirstName());
 		me.setLastName(marketing.getLastName());
 		me.setPlaceOfBirth(marketing.getPlaceOfBirth());
@@ -35,6 +33,7 @@ public class MarketingDAOImpl implements MarketingDAO {
 		me.setCity(marketing.getCity());
 		me.setProvince(marketing.getProvince());
 		me.setCountry(marketing.getCountry());
+		me.setDivisionId(marketing.getDivisionId());
 		try {
 			Session currentSession = sessionFactory.getCurrentSession();
 			currentSession.save(me);
@@ -59,6 +58,7 @@ public class MarketingDAOImpl implements MarketingDAO {
 		me.setCity(marketing.getCity());
 		me.setProvince(marketing.getProvince());
 		me.setCountry(marketing.getCountry());
+		me.setDivisionId(marketing.getDivisionId());
 		try {
 			Session currentSession = sessionFactory.getCurrentSession();
 			currentSession.update(me);
@@ -89,6 +89,7 @@ public class MarketingDAOImpl implements MarketingDAO {
 				me.setCity(marketing.getCity());
 				me.setProvince(marketing.getProvince());
 				me.setCountry(marketing.getCountry());
+				me.setDivisionId(marketing.getDivisionId());
 				list.add(me);
 			}
 
@@ -99,7 +100,7 @@ public class MarketingDAOImpl implements MarketingDAO {
 	}
 
 	@Override
-	public Marketing getMarketing(UUID marketingId) {
+	public Marketing getMarketing(String marketingId) {
 		Marketing me = new Marketing();
 		try {
 			Session session = sessionFactory.getCurrentSession();
@@ -114,6 +115,7 @@ public class MarketingDAOImpl implements MarketingDAO {
 			me.setCity(marketing.getCity());
 			me.setProvince(marketing.getProvince());
 			me.setCountry(marketing.getCountry());
+			me.setDivisionId(marketing.getDivisionId());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -121,7 +123,7 @@ public class MarketingDAOImpl implements MarketingDAO {
 	}
 
 	@Override
-	public boolean deleteMarketing(UUID marketingId) {
+	public boolean deleteMarketing(String marketingId) {
 		boolean deleteFlag = true;
 		try {
 			Session session = sessionFactory.getCurrentSession();

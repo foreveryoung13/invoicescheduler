@@ -1,7 +1,6 @@
 package com.nana.bankapp.controller;
 
 import java.util.List;
-import java.util.UUID;
 
 import javax.validation.Valid;
 
@@ -58,14 +57,14 @@ public class DivisionController {
 	}
 
 	@GetMapping("/divisionedit")
-	public String updateDivision(@RequestParam("divisionId") UUID divisionId, Model model) {
+	public String updateDivision(@RequestParam("divisionId") String divisionId, Model model) {
 		Division division = ds.getDivision(divisionId);
 		model.addAttribute("division", division);
 		return "division_edit_form";
 	}
 
 	@GetMapping("/divisiondelete")
-	public String deleteDivision(@RequestParam("divisionId") UUID divisionId, Model model) {
+	public String deleteDivision(@RequestParam("divisionId") String divisionId, Model model) {
 		ds.deleteDivision(divisionId);
 		return "redirect:/division_list";
 	}

@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
@@ -60,7 +61,7 @@
 							<text class="alert-danger">${message}</text>
 						</div>
 					</div>
-					
+
 					<div class="form-group row">
 						<label for="dateOfBirth" class="col-6 col-form-label"><spring:message
 								code="lbl.dateOfBirth" /></label>
@@ -116,6 +117,17 @@
 								code="lbl.country" /></label>
 						<div class="col-6">
 							<form:input path="country" cssClass="form-control" />
+							<form:errors path="country" cssClass="alert-danger" />
+							<text class="alert-danger">${message}</text>
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label for="country" class="col-6 col-form-label"><spring:message
+								code="lbl.divisionName" /></label>
+						<div class="col-6">
+							<form:select path="divisionId" items="${divlist}"
+								itemValue="divisionId" itemLabel="divisionName" />
 							<form:errors path="country" cssClass="alert-danger" />
 							<text class="alert-danger">${message}</text>
 						</div>

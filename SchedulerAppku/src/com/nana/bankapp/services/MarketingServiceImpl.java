@@ -1,7 +1,6 @@
 package com.nana.bankapp.services;
 
 import java.util.List;
-import java.util.UUID;
 
 import javax.transaction.Transactional;
 
@@ -37,13 +36,13 @@ public class MarketingServiceImpl implements MarketingService {
 
 	@Override
 	@Transactional
-	public Marketing getMarketing(UUID marketingId) {
+	public Marketing getMarketing(String marketingId) {
 		return marketingDAO.getMarketing(marketingId);
 	}
 
 	@Override
 	@Transactional
-	public boolean deleteMarketing(UUID marketingId) {
+	public boolean deleteMarketing(String marketingId) {
 		return marketingDAO.deleteMarketing(marketingId);
 	}
 

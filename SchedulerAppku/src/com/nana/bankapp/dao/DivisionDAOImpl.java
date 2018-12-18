@@ -24,7 +24,7 @@ public class DivisionDAOImpl implements DivisionDAO {
 		boolean saveFlag = true;
 
 		DivisionEntity de = new DivisionEntity();
-		de.setDivisionId(UUID.randomUUID());
+		de.setDivisionId(UUID.randomUUID().toString());
 		de.setDivisionName(division.getDivisionName());
 
 		try {
@@ -76,7 +76,7 @@ public class DivisionDAOImpl implements DivisionDAO {
 	}
 
 	@Override
-	public Division getDivision(UUID divisionId) {
+	public Division getDivision(String divisionId) {
 		Division div = new Division();
 		try {
 			Session session = sessionFactory.getCurrentSession();
@@ -90,7 +90,7 @@ public class DivisionDAOImpl implements DivisionDAO {
 	}
 
 	@Override
-	public boolean deleteDivision(UUID divisionId) {
+	public boolean deleteDivision(String divisionId) {
 		boolean deleteFlag = true;
 		try {
 			Session session = sessionFactory.getCurrentSession();

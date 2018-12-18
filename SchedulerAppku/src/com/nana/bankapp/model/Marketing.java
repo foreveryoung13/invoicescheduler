@@ -1,11 +1,10 @@
 package com.nana.bankapp.model;
 
 import java.util.Date;
-import java.util.UUID;
 
 public class Marketing {
 
-	protected UUID marketingId;
+	protected String marketingId;
 	protected String firstName;
 	protected String lastName;
 	protected String placeOfBirth;
@@ -15,30 +14,16 @@ public class Marketing {
 	protected String city;
 	protected String province;
 	protected String country;
+	protected String divisionId;
 
 	public Marketing() {
 	}
 
-	public Marketing(UUID marketingId, String firstName, String lastName, String placeOfBirth, Date dateOfBirth,
-			Integer age, String address, String city, String province, String country) {
-		super();
-		this.marketingId = marketingId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.placeOfBirth = placeOfBirth;
-		this.dateOfBirth = dateOfBirth;
-		this.age = age;
-		this.address = address;
-		this.city = city;
-		this.province = province;
-		this.country = country;
-	}
-
-	public UUID getMarketingId() {
+	public String getMarketingId() {
 		return marketingId;
 	}
 
-	public void setMarketingId(UUID marketingId) {
+	public void setMarketingId(String marketingId) {
 		this.marketingId = marketingId;
 	}
 
@@ -112,6 +97,14 @@ public class Marketing {
 
 	public void setCountry(String country) {
 		this.country = country;
+	}
+
+	public String getDivisionId() {
+		return divisionId;
+	}
+
+	public void setDivisionId(String divisionId) {
+		this.divisionId = divisionId;
 	}
 
 }

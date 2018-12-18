@@ -1,7 +1,5 @@
 package com.nana.bankapp.entity;
 
-import java.util.UUID;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,7 +11,7 @@ public class DivisionEntity {
 
 	@Id
 	@Column(name = "division_id")
-	private UUID divisionId;
+	private String divisionId;
 
 	@Column(name = "division_name")
 	private String divisionName;
@@ -21,11 +19,11 @@ public class DivisionEntity {
 	public DivisionEntity() {
 	}
 
-	public UUID getDivisionId() {
+	public String getDivisionId() {
 		return divisionId;
 	}
 
-	public void setDivisionId(UUID divisionId) {
+	public void setDivisionId(String divisionId) {
 		this.divisionId = divisionId;
 	}
 

@@ -37,13 +37,13 @@ public class DivisionServiceImpl implements DivisionService {
 
 	@Override
 	@Transactional
-	public Division getDivision(UUID divisionId) {
+	public Division getDivision(String divisionId) {
 		return rdivisionDAO.getDivision(divisionId);
 	}
 
 	@Override
 	@Transactional
-	public boolean deleteDivision(UUID divisionId) {
+	public boolean deleteDivision(String divisionId) {
 		return rdivisionDAO.deleteDivision(divisionId);
 	}
 
