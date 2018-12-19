@@ -9,19 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.nana.bankapp.editor.CustomerEditor;
-import com.nana.bankapp.editor.MarketingEditor;
-import com.nana.bankapp.editor.ProjectEditor;
-import com.nana.bankapp.editor.RemarkEditor;
-import com.nana.bankapp.editor.TermEditor;
 import com.nana.bankapp.model.Customer;
 import com.nana.bankapp.model.Invoice;
 import com.nana.bankapp.model.Marketing;
@@ -56,15 +49,6 @@ public class InvoiceController {
 
 	@Autowired
 	TermService ts;
-
-	@InitBinder
-	public void initBinder(WebDataBinder binder) {
-		binder.registerCustomEditor(Customer.class, new CustomerEditor());
-		binder.registerCustomEditor(Project.class, new ProjectEditor());
-		binder.registerCustomEditor(Remarks.class, new RemarkEditor());
-		binder.registerCustomEditor(Term.class, new TermEditor());
-		binder.registerCustomEditor(Marketing.class, new MarketingEditor());
-	}
 
 	@ModelAttribute("customerlist")
 	public List<Customer> renderCustomerList() {

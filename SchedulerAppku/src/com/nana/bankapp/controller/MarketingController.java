@@ -9,15 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.nana.bankapp.editor.DivisionEditor;
 import com.nana.bankapp.model.Division;
 import com.nana.bankapp.model.Marketing;
 import com.nana.bankapp.services.DivisionService;
@@ -33,16 +30,11 @@ public class MarketingController {
 	@Autowired
 	DivisionService ds;
 
-	@InitBinder
-	public void initBinder(WebDataBinder binder) {
-		binder.registerCustomEditor(Division.class, new DivisionEditor());
-	}
-
 	@ModelAttribute("divlist")
 	public List<Division> renderDivisionList() {
 		List<Division> divlist = ds.getDivision();
 		ArrayList<Division> div = new ArrayList<Division>();
-		
+
 		if (divlist.size() > 0) {
 			for (Division d : divlist) {
 				div.add(new Division(d.getDivisionId(), d.getDivisionName()));
