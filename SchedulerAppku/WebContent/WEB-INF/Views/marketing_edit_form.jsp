@@ -129,6 +129,17 @@
 							<text class="alert-danger">${message}</text>
 						</div>
 					</div>
+					
+					<div class="form-group row">
+						<label for="divisionId" class="col-6 col-form-label"><spring:message
+								code="lbl.divisionName" /></label>
+						<div class="col-6">
+							<form:select path="divisionId" items="${divlist}"
+								itemValue="divisionId" itemLabel="divisionName" />
+							<form:errors path="country" cssClass="alert-danger" />
+							<text class="alert-danger">${message}</text>
+						</div>
+					</div>
 
 					<div class="form-group row">
 						<div class="offset-6 col-6">

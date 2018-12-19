@@ -69,9 +69,15 @@ public class AccountContoller {
 	@GetMapping("/list")
 	public String listAccounts(Model model) {
 		List<Account> accounts = accountService.getAccounts();
+		System.out.println(accounts.size());
+		
 		model.addAttribute("accounts", accounts);
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String name = auth.getName();
+		
+		System.out.println("---------------------------------");
+		System.out.println(name);
+		
 		model.addAttribute("username", name);
 		return "listAccounts";
 	}

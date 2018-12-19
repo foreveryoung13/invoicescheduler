@@ -123,7 +123,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="country" class="col-6 col-form-label"><spring:message
+						<label for="divisionId" class="col-6 col-form-label"><spring:message
 								code="lbl.divisionName" /></label>
 						<div class="col-6">
 							<form:select path="divisionId" items="${divlist}"

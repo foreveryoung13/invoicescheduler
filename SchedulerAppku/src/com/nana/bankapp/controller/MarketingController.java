@@ -1,5 +1,6 @@
 package com.nana.bankapp.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -37,10 +38,20 @@ public class MarketingController {
 		binder.registerCustomEditor(Division.class, new DivisionEditor());
 	}
 
+	@ModelAttribute("divlist")
+	public List<Division> renderDivisionList() {
+		List<Division> divlist = ds.getDivision();
+		ArrayList<Division> div = new ArrayList<Division>();
+		if (divlist.size() > 0) {
+			for (Division d : divlist) {
+				div.add(new Division(d.getDivisionId(), d.getDivisionName()));
+			}
+		}
+		return div;
+	}
+
 	@RequestMapping("/add")
 	public String newMarketing(Model model) {
-		List<Division> divlist = ds.getDivision();
-		model.addAttribute("divlist", divlist);
 		model.addAttribute("marketing", new Marketing());
 		return "marketing_add_form";
 	}
