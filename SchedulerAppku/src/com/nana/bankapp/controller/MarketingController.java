@@ -78,7 +78,7 @@ public class MarketingController {
 	}
 
 	@RequestMapping(value = "/savemarketing", method = RequestMethod.POST)
-	public String saveAccount(@Valid @ModelAttribute("marketing") Marketing marketing, BindingResult result) {
+	public String saveMarketing(@Valid @ModelAttribute("marketing") Marketing marketing, BindingResult result) {
 		if (result.hasErrors()) {
 			return "marketing_add_form";
 		} else {

@@ -3,13 +3,19 @@ package com.nana.bankapp.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.nana.bankapp.editor.CustomerEditor;
 import com.nana.bankapp.editor.MarketingEditor;
@@ -23,6 +29,7 @@ import com.nana.bankapp.model.Project;
 import com.nana.bankapp.model.Remarks;
 import com.nana.bankapp.model.Term;
 import com.nana.bankapp.services.CustomerService;
+import com.nana.bankapp.services.InvoiceService;
 import com.nana.bankapp.services.MarketingService;
 import com.nana.bankapp.services.ProjectService;
 import com.nana.bankapp.services.RemarksService;
@@ -31,6 +38,9 @@ import com.nana.bankapp.services.TermService;
 @Controller
 @RequestMapping("/invoice")
 public class InvoiceController {
+
+	@Autowired
+	InvoiceService is;
 
 	@Autowired
 	CustomerService cs;
@@ -126,4 +136,46 @@ public class InvoiceController {
 		model.addAttribute("invoice", new Invoice());
 		return "invoice_add_form";
 	}
+
+	@GetMapping("/list")
+	public String listInvoice(Model model) {
+		List<Invoice> invoice = is.getInvoices();
+		model.addAttribute("invoice", invoice);
+		return "invoice_list";
+	}
+	
+	@GetMapping("/edit")
+	public String updateInvoice(@RequestParam("invoiceId") String invoiceId, Model model) {
+		Invoice invoice = is.getInvoice(invoiceId);
+		model.addAttribute("invoice", invoice);
+		return "invoice_edit_form";
+	}
+	
+	@GetMapping("/delete")
+	public String deleteInvoice(@RequestParam("invoiceId") String invoiceId, Model model) {
+		is.deleteInvoice(invoiceId);
+		return "redirect:/invoice/list";
+	}
+
+	
+	@RequestMapping(value = "/saveinvoice", method = RequestMethod.POST)
+	public String saveInvoice(@Valid @ModelAttribute("invoice") Invoice invoice, BindingResult result) {
+		if (result.hasErrors()) {
+			return "invoice_add_form";
+		} else {
+			is.saveInvoice(invoice);
+			return "redirect:/invoice/list";
+		}
+	}
+	
+	@RequestMapping(value = "/editinvoice", method = RequestMethod.POST)
+	public String editInvoice(@Valid @ModelAttribute("invoice") Invoice invoice, BindingResult result) {
+		if (result.hasErrors()) {
+			return "invoice_edit_form";
+		} else {
+			is.editInvoice(invoice);
+			return "redirect:/invoice/list";
+		}
+	}
+
 }
