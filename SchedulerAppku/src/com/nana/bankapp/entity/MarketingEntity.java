@@ -7,8 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.nana.bankapp.model.Division;
-
 @Entity
 @Table(name = "mst_marketing")
 public class MarketingEntity {

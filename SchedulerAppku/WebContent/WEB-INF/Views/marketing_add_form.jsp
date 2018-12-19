@@ -29,7 +29,8 @@
 
 		<div class="row">
 			<div class="col-6">
-				<form:form modelAttribute="marketing" action="${pageContext.request.contextPath}/marketings/savemarketing"
+				<form:form modelAttribute="marketing"
+					action="${pageContext.request.contextPath}/marketings/savemarketing"
 					cssClass="form-horizontal" role="form" method="post">
 
 					<div class="form-group row">
@@ -127,7 +128,7 @@
 								code="lbl.divisionName" /></label>
 						<div class="col-6">
 							<form:select path="divisionId" items="${divlist}"
-								itemValue="divisionId" itemLabel="divisionName" />
+								itemValue="divisionId" itemLabel="divisionName"/>
 							<form:errors path="country" cssClass="alert-danger" />
 							<text class="alert-danger">${message}</text>
 						</div>
