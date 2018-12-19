@@ -15,6 +15,12 @@ public class Customer {
 	public Customer() {
 	}
 
+	public Customer(String customerId, String customerName) {
+		super();
+		this.customerId = customerId;
+		this.customerName = customerName;
+	}
+
 	public Customer(String customerId, String customerName, String address, String city, String province,
 			String country, String faxNumber, String phoneNumber, String postalCode) {
 		super();

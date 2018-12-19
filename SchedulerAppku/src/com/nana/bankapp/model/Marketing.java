@@ -19,6 +19,28 @@ public class Marketing {
 	public Marketing() {
 	}
 
+	public Marketing(String marketingId, String firstName) {
+		super();
+		this.marketingId = marketingId;
+		this.firstName = firstName;
+	}
+
+	public Marketing(String marketingId, String firstName, String lastName, String placeOfBirth, Date dateOfBirth,
+			Integer age, String address, String city, String province, String country, String divisionId) {
+		super();
+		this.marketingId = marketingId;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.placeOfBirth = placeOfBirth;
+		this.dateOfBirth = dateOfBirth;
+		this.age = age;
+		this.address = address;
+		this.city = city;
+		this.province = province;
+		this.country = country;
+		this.divisionId = divisionId;
+	}
+
 	public String getMarketingId() {
 		return marketingId;
 	}
