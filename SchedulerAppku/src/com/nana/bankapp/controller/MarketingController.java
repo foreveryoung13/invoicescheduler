@@ -42,6 +42,7 @@ public class MarketingController {
 	public List<Division> renderDivisionList() {
 		List<Division> divlist = ds.getDivision();
 		ArrayList<Division> div = new ArrayList<Division>();
+		
 		if (divlist.size() > 0) {
 			for (Division d : divlist) {
 				div.add(new Division(d.getDivisionId(), d.getDivisionName()));
