@@ -1,11 +1,13 @@
 package com.nana.bankapp.controller;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -160,6 +162,12 @@ public class InvoiceController {
 			is.editInvoice(invoice);
 			return "redirect:/invoice/list";
 		}
+	}
+	
+	@Scheduled(fixedDelay = 5000)
+	public void run() throws InterruptedException {
+		System.out.println("Fixed delay scheduler is running at " + new Date());
+		Thread.sleep(3000);
 	}
 
 }
