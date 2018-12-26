@@ -12,10 +12,11 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-						<h2 class="page-header" style="margin-left: -0.3em">Marketing List</h2>
+						<h2 class="page-header" style="margin-left: -0.3em">Marketing
+							List</h2>
 					</div>
 				</div>
-				
+
 				<div class="row">
 					<div class="col-12">
 						<table class="table table-hover">
@@ -45,6 +46,12 @@
 								</c:forEach>
 							</tbody>
 						</table>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<a href="<c:url value='/marketings/add'/>" class="btn btn-primary">Add
+							Marketing</a>
 					</div>
 				</div>
 			</div>

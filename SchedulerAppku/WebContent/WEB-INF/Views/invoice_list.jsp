@@ -47,6 +47,13 @@
 						</table>
 					</div>
 				</div>
+				
+				<div class="row">
+					<div class="col-12">
+						<a href="<c:url value='/invoice/add'/>" class="btn btn-primary">Add
+							Invoice</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</tiles:putAttribute>

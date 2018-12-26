@@ -45,6 +45,12 @@
 						</table>
 					</div>
 				</div>
+				<div class="row">
+					<div class="col-12">
+						<a href="<c:url value='/division/add'/>" class="btn btn-primary">Add
+							Division</a>
+					</div>
+				</div>
 			</div>
 		</div>
 
