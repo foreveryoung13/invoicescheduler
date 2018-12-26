@@ -86,7 +86,7 @@ body {
 	height: 100%;
 	margin-left: -250px;
 	overflow-y: auto;
-	background: #101010;
+	background: #F5F7FA;
 	-webkit-transition: all 0.5s ease;
 	-moz-transition: all 0.5s ease;
 	-o-transition: all 0.5s ease;
@@ -126,12 +126,12 @@ body {
 .sidebar-nav li a {
 	display: block;
 	text-decoration: none;
-	color: #999999;
+	color: #434a54;
 }
 
 .sidebar-nav li a:hover {
 	text-decoration: none;
-	color: #fff;
+	color: #AAB2BD;
 	background: rgba(255, 255, 255, 0.2);
 }
 
