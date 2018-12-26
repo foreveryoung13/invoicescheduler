@@ -20,11 +20,11 @@
 						<table class="table table-hover">
 							<thead>
 								<tr>
-									<th><spring:message code="lbl.sender" /></th>
-									<th><spring:message code="lbl.recipients" /></th>
-									<th><spring:message code="lbl.subject" /></th>
-									<th><spring:message code="lbl.header" /></th>
-									<th><spring:message code="lbl.footer" /></th>
+									<th style="font-size: 12px;"><spring:message code="lbl.sender" /></th>
+									<th style="font-size: 12px;"><spring:message code="lbl.recipients" /></th>
+									<th style="font-size: 12px;"><spring:message code="lbl.subject" /></th>
+									<th style="font-size: 12px;"><spring:message code="lbl.header" /></th>
+									<th style="font-size: 12px;"><spring:message code="lbl.footer" /></th>
 									<th>&nbsp;</th>
 									<th>&nbsp;</th>
 								</tr>
@@ -38,11 +38,11 @@
 										<c:param name="emailId" value="${email.emailId}" />
 									</c:url>
 									<tr>
-										<td>${email.sender}</td>
-										<td>${email.recipients}</td>
-										<td>${email.subject}</td>
-										<td>${email.header}</td>
-										<td>${email.footer}</td>
+										<td style="font-size: 12px;">${email.sender}</td>
+										<td style="font-size: 12px;">${email.recipients}</td>
+										<td style="font-size: 12px;">${email.subject}</td>
+										<td style="font-size: 12px;">${email.header}</td>
+										<td style="font-size: 12px;">${email.footer}</td>
 										<td><a href="${updateLink}" class="btn btn-warning">Edit</a></td>
 										<td><a href="${deleteLink}" class="btn btn-danger"
 											onclick="if(!(confirm('Are you sure to delete'))) return false">Delete</a></td>

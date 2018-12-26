@@ -21,7 +21,7 @@
 						<table class="table table-hover">
 							<thead>
 								<tr>
-									<th><spring:message code="lbl.projectName" /></th>
+									<th style="font-size: 12px;"><spring:message code="lbl.projectName" /></th>
 									<th>&nbsp;</th>
 									<th>&nbsp;</th>
 								</tr>
@@ -35,7 +35,7 @@
 										<c:param name="projectId" value="${pro.projectId}" />
 									</c:url>
 									<tr>
-										<td>${pro.projectName}</td>
+										<td style="font-size: 12px;">${pro.projectName}</td>
 										<td><a href="${updateLink}" class="btn btn-warning">Edit</a></td>
 										<td><a href="${deleteLink}" class="btn btn-danger"
 											onclick="if(!(confirm('Are you sure to delete'))) return false">Delete</a></td>

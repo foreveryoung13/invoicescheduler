@@ -22,8 +22,8 @@
 						<table class="table table-hover">
 							<thead>
 								<tr>
-									<th><spring:message code="lbl.customerName" /></th>
-									<th><spring:message code="lbl.phoneNumber" /></th>
+									<th style="font-size: 12px;"><spring:message code="lbl.customerName" /></th>
+									<th style="font-size: 12px;"><spring:message code="lbl.phoneNumber" /></th>
 									<th>&nbsp;</th>
 									<th>&nbsp;</th>
 								</tr>
@@ -37,8 +37,8 @@
 										<c:param name="customerId" value="${rcust.customerId}" />
 									</c:url>
 									<tr>
-										<td>${rcust.customerName}</td>
-										<td>${rcust.phoneNumber}</td>
+										<td style="font-size: 12px;">${rcust.customerName}</td>
+										<td style="font-size: 12px;">${rcust.phoneNumber}</td>
 										<td><a href="${updateLink}" class="btn btn-warning">Edit</a></td>
 										<td><a href="${deleteLink}" class="btn btn-danger"
 											onclick="if(!(confirm('Are you sure to delete'))) return false">Delete</a></td>

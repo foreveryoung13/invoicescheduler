@@ -22,8 +22,8 @@
 						<table class="table table-hover">
 							<thead>
 								<tr>
-									<th><spring:message code="lbl.firstName" /></th>
-									<th><spring:message code="lbl.lastName" /></th>
+									<th style="font-size: 12px;"><spring:message code="lbl.firstName" /></th>
+									<th style="font-size: 12px;"><spring:message code="lbl.lastName" /></th>
 									<th>&nbsp;</th>
 									<th>&nbsp;</th>
 								</tr>
@@ -37,8 +37,8 @@
 										<c:param name="marketingId" value="${mark.marketingId}" />
 									</c:url>
 									<tr>
-										<td>${mark.firstName}</td>
-										<td>${mark.lastName}</td>
+										<td style="font-size: 12px;">${mark.firstName}</td>
+										<td style="font-size: 12px;">${mark.lastName}</td>
 										<td><a href="${updateLink}" class="btn btn-warning">Edit</a></td>
 										<td><a href="${deleteLink}" class="btn btn-danger"
 											onclick="if(!(confirm('Are you sure to delete'))) return false">Delete</a></td>

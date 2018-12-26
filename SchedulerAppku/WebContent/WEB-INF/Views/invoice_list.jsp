@@ -19,9 +19,9 @@
 						<table class="table table-hover">
 							<thead>
 								<tr>
-									<th><spring:message code="lbl.noPo" /></th>
-									<th><spring:message code="lbl.noInvoice" /></th>
-									<th><spring:message code="lbl.noPajak" /></th>
+									<th style="font-size: 12px;"><spring:message code="lbl.noPo" /></th>
+									<th style="font-size: 12px;"><spring:message code="lbl.noInvoice" /></th>
+									<th style="font-size: 12px;"><spring:message code="lbl.noPajak" /></th>
 									<th>&nbsp;</th>
 									<th>&nbsp;</th>
 								</tr>
@@ -35,9 +35,9 @@
 										<c:param name="invoiceId" value="${inv.invoiceId}" />
 									</c:url>
 									<tr>
-										<td>${inv.noPo}</td>
-										<td>${inv.noInvoice}</td>
-										<td>${inv.noPajak}</td>
+										<td style="font-size: 12px;">${inv.noPo}</td>
+										<td style="font-size: 12px;">${inv.noInvoice}</td>
+										<td style="font-size: 12px;">${inv.noPajak}</td>
 										<td><a href="${updateLink}" class="btn btn-warning">Edit</a></td>
 										<td><a href="${deleteLink}" class="btn btn-danger"
 											onclick="if(!(confirm('Are you sure to delete'))) return false">Delete</a></td>

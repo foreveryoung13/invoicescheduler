@@ -21,8 +21,8 @@
 						<table class="table table-hover">
 							<thead>
 								<tr>
-									<th><spring:message code="lbl.divisionName" /></th>
-									<th>&nbsp;</th>
+									<th style="font-size: 12px;"><spring:message code="lbl.divisionName" /></th>
+									<th style="font-size: 12px;">&nbsp;</th>
 									<th>&nbsp;</th>
 								</tr>
 							</thead>
@@ -35,8 +35,8 @@
 										<c:param name="divisionId" value="${divs.divisionId}" />
 									</c:url>
 									<tr>
-										<td>${divs.divisionName}</td>
-										<td><a href="${updateLink}" class="btn btn-warning">Edit</a></td>
+										<td style="font-size: 12px;">${divs.divisionName}</td>
+										<td style="font-size: 12px;"><a href="${updateLink}" class="btn btn-warning">Edit</a></td>
 										<td><a href="${deleteLink}" class="btn btn-danger"
 											onclick="if(!(confirm('Are you sure to delete'))) return false">Delete</a></td>
 									</tr>
