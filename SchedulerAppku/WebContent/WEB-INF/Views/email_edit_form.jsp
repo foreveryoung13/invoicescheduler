@@ -77,6 +77,16 @@
 							<text class="alert-danger">${message}</text>
 						</div>
 					</div>
+					
+					<div class="form-group row">
+						<label for="content" class="col-sm-2 control-label labelname"><spring:message
+								code="lbl.content" /></label>
+						<div class="col-sm-4">
+							<form:textarea path="content" cssClass="form-control" />
+							<form:errors path="content" cssClass="alert-danger" />
+							<text class="alert-danger">${message}</text>
+						</div>
+					</div>
 
 					<div class="form-group row">
 						<div class="col-sm-offset-2 col-sm-10">

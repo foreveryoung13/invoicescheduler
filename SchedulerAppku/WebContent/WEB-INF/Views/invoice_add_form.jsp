@@ -25,9 +25,10 @@
 							<div class="form-group">
 								<label for="customerId" class="col-sm-4 control-label"><spring:message
 										code="lbl.customerName" /></label>
-								<div class="col-sm-4">
+								<div class="col-sm-6">
 									<form:select path="customerId" items="${customerlist}"
-										itemValue="customerId" itemLabel="customerName" />
+										itemValue="customerId" itemLabel="customerName"
+										cssClass="drop-custom" />
 									<form:errors path="customerId" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -38,7 +39,8 @@
 										code="lbl.remarksName" /></label>
 								<div class="col-sm-6">
 									<form:select path="remarksId" items="${remarklist}"
-										itemValue="remarksId" itemLabel="remarksName" />
+										itemValue="remarksId" itemLabel="remarksName"
+										cssClass="drop-custom" />
 									<form:errors path="remarksId" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -48,7 +50,8 @@
 								<label for="noPo" class="col-sm-4 control-label"><spring:message
 										code="lbl.noPo" /></label>
 								<div class="col-sm-6">
-									<form:input path="noPo" cssClass="form-control" autocomplete="off" />
+									<form:input path="noPo" cssClass="form-control"
+										autocomplete="off" />
 									<form:errors path="noPo" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -59,7 +62,8 @@
 										code="lbl.marketingName" /></label>
 								<div class="col-sm-6">
 									<form:select path="marketingId" items="${marketinglist}"
-										itemValue="marketingId" itemLabel="firstName" />
+										itemValue="marketingId" itemLabel="firstName"
+										cssClass="drop-custom" />
 									<form:errors path="marketingId" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -69,7 +73,8 @@
 								<label for="noInvoice" class="col-sm-4 control-label"><spring:message
 										code="lbl.noInvoice" /></label>
 								<div class="col-sm-6">
-									<form:input path="noInvoice" cssClass="form-control" autocomplete="off" />
+									<form:input path="noInvoice" cssClass="form-control"
+										autocomplete="off" />
 									<form:errors path="noInvoice" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -79,7 +84,8 @@
 								<label for="noPajak" class="col-sm-4 control-label"><spring:message
 										code="lbl.noPajak" /></label>
 								<div class="col-sm-6">
-									<form:input path="noPajak" cssClass="form-control" autocomplete="off" />
+									<form:input path="noPajak" cssClass="form-control"
+										autocomplete="off" />
 									<form:errors path="noPajak" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -89,7 +95,7 @@
 								<label for="tanggalInvoice" class="col-sm-4 control-label"><spring:message
 										code="lbl.tanggalInvoice" /></label>
 								<div class="col-sm-6">
-									<form:input path="tanggalInvoice" id="tanggalInvoice" 
+									<form:input path="tanggalInvoice" id="tanggalInvoice"
 										cssClass="form-control" autocomplete="off" />
 									<form:errors path="tanggalInvoice" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
@@ -100,7 +106,8 @@
 								<label for="tanggalTt" class="col-sm-4 control-label"><spring:message
 										code="lbl.tanggalTt" /></label>
 								<div class="col-sm-6">
-									<form:input path="tanggalTt" cssClass="form-control" id="tanggalTt" autocomplete="off" />
+									<form:input path="tanggalTt" cssClass="form-control"
+										id="tanggalTt" autocomplete="off" />
 									<form:errors path="tanggalTt" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -111,7 +118,7 @@
 										code="lbl.termId" /></label>
 								<div class="col-sm-6">
 									<form:select path="termId" items="${termlist}"
-										itemValue="termId" itemLabel="termName" />
+										itemValue="termId" itemLabel="termName" cssClass="drop-custom" />
 									<form:errors path="termId" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -121,7 +128,8 @@
 								<label for="tanggalTempo" class="col-sm-4 control-label"><spring:message
 										code="lbl.tanggalTempo" /></label>
 								<div class="col-sm-6">
-									<form:input path="tanggalTempo" cssClass="form-control" id="tanggalTempo" autocomplete="off" />
+									<form:input path="tanggalTempo" cssClass="form-control"
+										id="tanggalTempo" autocomplete="off" />
 									<form:errors path="tanggalTempo" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -131,7 +139,8 @@
 								<label for="piutangUsaha" class="col-sm-4 control-label"><spring:message
 										code="lbl.piutangUsaha" /></label>
 								<div class="col-sm-6">
-									<form:input path="piutangUsaha" cssClass="form-control" autocomplete="off" />
+									<form:input path="piutangUsaha" cssClass="form-control"
+										autocomplete="off" />
 									<form:errors path="piutangUsaha" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -146,7 +155,8 @@
 										code="lbl.projectName" /></label>
 								<div class="col-sm-6">
 									<form:select path="projectId" items="${projectlist}"
-										itemValue="projectId" itemLabel="projectName" />
+										itemValue="projectId" itemLabel="projectName"
+										cssClass="drop-custom" />
 									<form:errors path="projectId" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -156,7 +166,8 @@
 								<label for="dpp" class="col-sm-4 control-label"><spring:message
 										code="lbl.dpp" /></label>
 								<div class="col-sm-6">
-									<form:input path="dpp" cssClass="form-control" autocomplete="off" />
+									<form:input path="dpp" cssClass="form-control"
+										autocomplete="off" />
 									<form:errors path="dpp" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -166,7 +177,8 @@
 								<label for="ppn" class="col-sm-4 control-label"><spring:message
 										code="lbl.ppn" /></label>
 								<div class="col-sm-6">
-									<form:input path="ppn" cssClass="form-control" autocomplete="off" />
+									<form:input path="ppn" cssClass="form-control"
+										autocomplete="off" />
 									<form:errors path="ppn" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -176,7 +188,8 @@
 								<label for="pph" class="col-sm-4 control-label"><spring:message
 										code="lbl.pph" /></label>
 								<div class="col-sm-6">
-									<form:input path="pph" cssClass="form-control" autocomplete="off" />
+									<form:input path="pph" cssClass="form-control"
+										autocomplete="off" />
 									<form:errors path="pph" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -186,7 +199,8 @@
 								<label for="uangMasuk" class="col-sm-4 control-label"><spring:message
 										code="lbl.uangMasuk" /></label>
 								<div class="col-sm-6">
-									<form:input path="uangMasuk" cssClass="form-control" autocomplete="off" />
+									<form:input path="uangMasuk" cssClass="form-control"
+										autocomplete="off" />
 									<form:errors path="uangMasuk" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -196,7 +210,8 @@
 								<label for="tanggalLunas" class="col-sm-4 control-label"><spring:message
 										code="lbl.tanggalLunas" /></label>
 								<div class="col-sm-6">
-									<form:input path="tanggalLunas" cssClass="form-control" id="tanggalLunas" autocomplete="off" />
+									<form:input path="tanggalLunas" cssClass="form-control"
+										id="tanggalLunas" autocomplete="off" />
 									<form:errors path="tanggalLunas" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -206,7 +221,8 @@
 								<label for="createdBy" class="col-sm-4 control-label"><spring:message
 										code="lbl.createdBy" /></label>
 								<div class="col-sm-6">
-									<form:input path="createdBy" cssClass="form-control" autocomplete="off" />
+									<form:input path="createdBy" cssClass="form-control"
+										autocomplete="off" />
 									<form:errors path="createdBy" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -216,7 +232,8 @@
 								<label for="createdDate" class="col-sm-4 control-label"><spring:message
 										code="lbl.createdDate" /></label>
 								<div class="col-sm-6">
-									<form:input path="createdDate" cssClass="form-control" id="createdDate" autocomplete="off" />
+									<form:input path="createdDate" cssClass="form-control"
+										id="createdDate" autocomplete="off" />
 									<form:errors path="createdDate" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -226,7 +243,8 @@
 								<label for="updatedBy" class="col-sm-4 control-label"><spring:message
 										code="lbl.updatedBy" /></label>
 								<div class="col-sm-6">
-									<form:input path="updatedBy" cssClass="form-control" autocomplete="off" />
+									<form:input path="updatedBy" cssClass="form-control"
+										autocomplete="off" />
 									<form:errors path="updatedBy" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -236,7 +254,8 @@
 								<label for="updatedDate" class="col-sm-4 control-label"><spring:message
 										code="lbl.updatedDate" /></label>
 								<div class="col-sm-6">
-									<form:input path="updatedDate" cssClass="form-control" id="updatedDate" autocomplete="off" />
+									<form:input path="updatedDate" cssClass="form-control"
+										id="updatedDate" autocomplete="off" />
 									<form:errors path="updatedDate" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -264,7 +283,7 @@
 					});
 				});
 			});
-			
+
 			$(document).ready(function() {
 				$(function() {
 					$("#tanggalTt").datepicker({
@@ -272,7 +291,7 @@
 					});
 				});
 			});
-			
+
 			$(document).ready(function() {
 				$(function() {
 					$("#tanggalTempo").datepicker({
@@ -280,7 +299,7 @@
 					});
 				});
 			});
-			
+
 			$(document).ready(function() {
 				$(function() {
 					$("#tanggalLunas").datepicker({
@@ -288,7 +307,7 @@
 					});
 				});
 			});
-			
+
 			$(document).ready(function() {
 				$(function() {
 					$("#createdDate").datepicker({
@@ -296,7 +315,7 @@
 					});
 				});
 			});
-			
+
 			$(document).ready(function() {
 				$(function() {
 					$("#updatedDate").datepicker({
@@ -304,7 +323,6 @@
 					});
 				});
 			});
-			
 		</script>
 
 	</tiles:putAttribute>
