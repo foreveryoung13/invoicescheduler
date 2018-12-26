@@ -28,68 +28,74 @@
 						</div>
 					</div>
 
-					<div class="form-group row">
-						<label for="sender" class="col-sm-2 control-label labelname"><spring:message
-								code="lbl.sender" /></label>
-						<div class="col-sm-4">
-							<form:input path="sender" cssClass="form-control" />
-							<form:errors path="sender" cssClass="alert-danger" />
-							<text class="alert-danger">${message}</text>
+					<div class="form-group form-group-sm">
+						<div class="col-sm-6" style="margin-left: -8em">
+							<div class="form-group row">
+								<label for="sender" class="col-sm-4 control-label labelname"><spring:message
+										code="lbl.sender" /></label>
+								<div class="col-sm-6">
+									<form:input path="sender" cssClass="form-control" />
+									<form:errors path="sender" cssClass="alert-danger" />
+									<text class="alert-danger">${message}</text>
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label for="recipients" class="col-sm-4 control-label labelname"><spring:message
+										code="lbl.recipients" /></label>
+								<div class="col-sm-6">
+									<form:input path="recipients" cssClass="form-control" />
+									<form:errors path="recipients" cssClass="alert-danger" />
+									<text class="alert-danger">${message}</text>
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label for="content" class="col-sm-4 control-label labelname"><spring:message
+										code="lbl.content" /></label>
+								<div class="col-sm-6">
+									<form:textarea path="content" cssClass="form-control" />
+									<form:errors path="content" cssClass="alert-danger" />
+									<text class="alert-danger">${message}</text>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-6" style="margin-left: -8em">
+							<div class="form-group row">
+								<label for="header" class="col-sm-4 control-label labelname"><spring:message
+										code="lbl.header" /></label>
+								<div class="col-sm-6">
+									<form:input path="header" cssClass="form-control" />
+									<form:errors path="header" cssClass="alert-danger" />
+									<text class="alert-danger">${message}</text>
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label for="subject" class="col-sm-4 control-label labelname"><spring:message
+										code="lbl.subject" /></label>
+								<div class="col-sm-6">
+									<form:input path="subject" cssClass="form-control" />
+									<form:errors path="subject" cssClass="alert-danger" />
+									<text class="alert-danger">${message}</text>
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label for="footer" class="col-sm-4 control-label labelname"><spring:message
+										code="lbl.footer" /></label>
+								<div class="col-sm-6">
+									<form:input path="footer" cssClass="form-control" />
+									<form:errors path="footer" cssClass="alert-danger" />
+									<text class="alert-danger">${message}</text>
+								</div>
+							</div>
 						</div>
 					</div>
 
 					<div class="form-group row">
-						<label for="recipients" class="col-sm-2 control-label labelname"><spring:message
-								code="lbl.recipients" /></label>
-						<div class="col-sm-4">
-							<form:input path="recipients" cssClass="form-control" />
-							<form:errors path="recipients" cssClass="alert-danger" />
-							<text class="alert-danger">${message}</text>
-						</div>
-					</div>
-
-					<div class="form-group row">
-						<label for="subject" class="col-sm-2 control-label labelname"><spring:message
-								code="lbl.subject" /></label>
-						<div class="col-sm-4">
-							<form:input path="subject" cssClass="form-control" />
-							<form:errors path="subject" cssClass="alert-danger" />
-							<text class="alert-danger">${message}</text>
-						</div>
-					</div>
-
-					<div class="form-group row">
-						<label for="header" class="col-sm-2 control-label labelname"><spring:message
-								code="lbl.header" /></label>
-						<div class="col-sm-4">
-							<form:input path="header" cssClass="form-control" />
-							<form:errors path="header" cssClass="alert-danger" />
-							<text class="alert-danger">${message}</text>
-						</div>
-					</div>
-
-					<div class="form-group row">
-						<label for="footer" class="col-sm-2 control-label labelname"><spring:message
-								code="lbl.footer" /></label>
-						<div class="col-sm-4">
-							<form:input path="footer" cssClass="form-control" />
-							<form:errors path="footer" cssClass="alert-danger" />
-							<text class="alert-danger">${message}</text>
-						</div>
-					</div>
-					
-					<div class="form-group row">
-						<label for="content" class="col-sm-2 control-label labelname"><spring:message
-								code="lbl.content" /></label>
-						<div class="col-sm-4">
-							<form:textarea path="content" cssClass="form-control" />
-							<form:errors path="content" cssClass="alert-danger" />
-							<text class="alert-danger">${message}</text>
-						</div>
-					</div>
-
-					<div class="form-group row">
-						<div class="col-sm-offset-2 col-sm-10">
+						<div class="col-sm-12" style="margin-left: 6em">
 							<input type="submit" value="Save" class="btn btn-primary"
 								name="btnSubmit" />
 						</div>

@@ -29,7 +29,7 @@
 
 					<div class="form-group form-group-sm">
 						<!-- start left column -->
-						<div class="col-sm-6" style="margin-left: -5em">
+						<div class="col-sm-6" style="margin-left: -6em">
 							<div class="form-group">
 								<label for="firstName" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.firstName" /></label>
@@ -84,7 +84,7 @@
 						</div>
 
 						<!-- right column -->
-						<div class="col-sm-6" style="margin-left: -5em">
+						<div class="col-sm-6" style="margin-left: -6em">
 							<div class="form-group row">
 								<label for="address" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.address" /></label>
@@ -141,7 +141,7 @@
 					</div>
 
 					<div class="form-group row">
-						<div class="col-sm-12" style="margin-left: 9em">
+						<div class="col-sm-12" style="margin-left: 8em">
 							<input type="submit" value="Save" class="btn btn-primary"
 								name="btnSubmit" />
 						</div>
