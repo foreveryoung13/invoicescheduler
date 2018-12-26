@@ -21,7 +21,7 @@
 				<li><spring:url value="/remark/list" var="listRemarkUrl"
 						htmlEscape="true" /> <a href="${listRemarkUrl}">Remark</a></li>
 				<li><spring:url value="/term/list" var="listTermUrl"
-						htmlEscape="true" /> <a href="${listRemarkUrl}">Term</a></li>
+						htmlEscape="true" /> <a href="${listTermUrl}">Term</a></li>
 				<li><spring:url value="/invoice/list" var="listInvoiceUrl"
 						htmlEscape="true" /> <a href="${listInvoiceUrl}">Invoice</a></li>
 			</ul>

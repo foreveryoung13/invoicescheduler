@@ -10,6 +10,11 @@
 		<div class="body">
 			<div class="container">
 				<div class="row">
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+						<h2 class="page-header">Invoice List</h2>
+					</div>
+				</div>
+				<div class="row">
 					<div class="col-12">
 						<table class="table table-hover">
 							<thead>
