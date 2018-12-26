@@ -8,6 +8,14 @@
 <link
 	href="${pageContext.request.contextPath}/webjars/bootstrap/3.3.6/css/bootstrap.min.css"
 	rel="stylesheet">
+	
+<!-- JQuery -->
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript"
+	src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+<link rel="stylesheet"
+	href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
 
 <title><spring:message code="lbl.title" /></title>
 
@@ -193,5 +201,6 @@ body {
 		</div>
 		<tiles:insertAttribute name="footer" />
 	</div>
+		
 </body>
 </html>

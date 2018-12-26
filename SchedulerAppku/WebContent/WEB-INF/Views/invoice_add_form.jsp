@@ -48,7 +48,7 @@
 								<label for="noPo" class="col-sm-4 control-label"><spring:message
 										code="lbl.noPo" /></label>
 								<div class="col-sm-6">
-									<form:input path="noPo" cssClass="form-control" />
+									<form:input path="noPo" cssClass="form-control" autocomplete="off" />
 									<form:errors path="noPo" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -69,7 +69,7 @@
 								<label for="noInvoice" class="col-sm-4 control-label"><spring:message
 										code="lbl.noInvoice" /></label>
 								<div class="col-sm-6">
-									<form:input path="noInvoice" cssClass="form-control" />
+									<form:input path="noInvoice" cssClass="form-control" autocomplete="off" />
 									<form:errors path="noInvoice" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -79,7 +79,7 @@
 								<label for="noPajak" class="col-sm-4 control-label"><spring:message
 										code="lbl.noPajak" /></label>
 								<div class="col-sm-6">
-									<form:input path="noPajak" cssClass="form-control" />
+									<form:input path="noPajak" cssClass="form-control" autocomplete="off" />
 									<form:errors path="noPajak" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -89,7 +89,8 @@
 								<label for="tanggalInvoice" class="col-sm-4 control-label"><spring:message
 										code="lbl.tanggalInvoice" /></label>
 								<div class="col-sm-6">
-									<form:input path="tanggalInvoice" cssClass="form-control" />
+									<form:input path="tanggalInvoice" id="tanggalInvoice" 
+										cssClass="form-control" autocomplete="off" />
 									<form:errors path="tanggalInvoice" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -99,7 +100,7 @@
 								<label for="tanggalTt" class="col-sm-4 control-label"><spring:message
 										code="lbl.tanggalTt" /></label>
 								<div class="col-sm-6">
-									<form:input path="tanggalTt" cssClass="form-control" />
+									<form:input path="tanggalTt" cssClass="form-control" id="tanggalTt" autocomplete="off" />
 									<form:errors path="tanggalTt" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -120,7 +121,7 @@
 								<label for="tanggalTempo" class="col-sm-4 control-label"><spring:message
 										code="lbl.tanggalTempo" /></label>
 								<div class="col-sm-6">
-									<form:input path="tanggalTempo" cssClass="form-control" />
+									<form:input path="tanggalTempo" cssClass="form-control" id="tanggalTempo" autocomplete="off" />
 									<form:errors path="tanggalTempo" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -130,14 +131,13 @@
 								<label for="piutangUsaha" class="col-sm-4 control-label"><spring:message
 										code="lbl.piutangUsaha" /></label>
 								<div class="col-sm-6">
-									<form:input path="piutangUsaha" cssClass="form-control" />
+									<form:input path="piutangUsaha" cssClass="form-control" autocomplete="off" />
 									<form:errors path="piutangUsaha" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
 							</div>
 						</div>
 						<!-- end left column -->
-
 
 						<!-- right column -->
 						<div class="col-sm-6">
@@ -156,7 +156,7 @@
 								<label for="dpp" class="col-sm-4 control-label"><spring:message
 										code="lbl.dpp" /></label>
 								<div class="col-sm-6">
-									<form:input path="dpp" cssClass="form-control" />
+									<form:input path="dpp" cssClass="form-control" autocomplete="off" />
 									<form:errors path="dpp" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -166,7 +166,7 @@
 								<label for="ppn" class="col-sm-4 control-label"><spring:message
 										code="lbl.ppn" /></label>
 								<div class="col-sm-6">
-									<form:input path="ppn" cssClass="form-control" />
+									<form:input path="ppn" cssClass="form-control" autocomplete="off" />
 									<form:errors path="ppn" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -176,7 +176,7 @@
 								<label for="pph" class="col-sm-4 control-label"><spring:message
 										code="lbl.pph" /></label>
 								<div class="col-sm-6">
-									<form:input path="pph" cssClass="form-control" />
+									<form:input path="pph" cssClass="form-control" autocomplete="off" />
 									<form:errors path="pph" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -186,7 +186,7 @@
 								<label for="uangMasuk" class="col-sm-4 control-label"><spring:message
 										code="lbl.uangMasuk" /></label>
 								<div class="col-sm-6">
-									<form:input path="uangMasuk" cssClass="form-control" />
+									<form:input path="uangMasuk" cssClass="form-control" autocomplete="off" />
 									<form:errors path="uangMasuk" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -196,7 +196,7 @@
 								<label for="tanggalLunas" class="col-sm-4 control-label"><spring:message
 										code="lbl.tanggalLunas" /></label>
 								<div class="col-sm-6">
-									<form:input path="tanggalLunas" cssClass="form-control" />
+									<form:input path="tanggalLunas" cssClass="form-control" id="tanggalLunas" autocomplete="off" />
 									<form:errors path="tanggalLunas" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -206,7 +206,7 @@
 								<label for="createdBy" class="col-sm-4 control-label"><spring:message
 										code="lbl.createdBy" /></label>
 								<div class="col-sm-6">
-									<form:input path="createdBy" cssClass="form-control" />
+									<form:input path="createdBy" cssClass="form-control" autocomplete="off" />
 									<form:errors path="createdBy" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -216,7 +216,7 @@
 								<label for="createdDate" class="col-sm-4 control-label"><spring:message
 										code="lbl.createdDate" /></label>
 								<div class="col-sm-6">
-									<form:input path="createdDate" cssClass="form-control" />
+									<form:input path="createdDate" cssClass="form-control" id="createdDate" autocomplete="off" />
 									<form:errors path="createdDate" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -226,7 +226,7 @@
 								<label for="updatedBy" class="col-sm-4 control-label"><spring:message
 										code="lbl.updatedBy" /></label>
 								<div class="col-sm-6">
-									<form:input path="updatedBy" cssClass="form-control" />
+									<form:input path="updatedBy" cssClass="form-control" autocomplete="off" />
 									<form:errors path="updatedBy" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -236,7 +236,7 @@
 								<label for="updatedDate" class="col-sm-4 control-label"><spring:message
 										code="lbl.updatedDate" /></label>
 								<div class="col-sm-6">
-									<form:input path="updatedDate" cssClass="form-control" />
+									<form:input path="updatedDate" cssClass="form-control" id="updatedDate" autocomplete="off" />
 									<form:errors path="updatedDate" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -251,10 +251,61 @@
 								name="btnSubmit" />
 						</div>
 					</div>
-					
+
 				</form:form>
 			</div>
 		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(function() {
+					$("#tanggalInvoice").datepicker({
+						dateFormat : "dd/mm/yy"
+					});
+				});
+			});
+			
+			$(document).ready(function() {
+				$(function() {
+					$("#tanggalTt").datepicker({
+						dateFormat : "dd/mm/yy"
+					});
+				});
+			});
+			
+			$(document).ready(function() {
+				$(function() {
+					$("#tanggalTempo").datepicker({
+						dateFormat : "dd/mm/yy"
+					});
+				});
+			});
+			
+			$(document).ready(function() {
+				$(function() {
+					$("#tanggalLunas").datepicker({
+						dateFormat : "dd/mm/yy"
+					});
+				});
+			});
+			
+			$(document).ready(function() {
+				$(function() {
+					$("#createdDate").datepicker({
+						dateFormat : "dd/mm/yy"
+					});
+				});
+			});
+			
+			$(document).ready(function() {
+				$(function() {
+					$("#updatedDate").datepicker({
+						dateFormat : "dd/mm/yy"
+					});
+				});
+			});
+			
+		</script>
 
 	</tiles:putAttribute>
 </tiles:insertDefinition>
