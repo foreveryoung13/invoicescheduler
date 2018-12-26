@@ -21,7 +21,7 @@
 						<label for="remarksName" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.remarksName" /></label>
 						<div class="col-sm-4">
-							<form:input path="remarksName" cssClass="form-control" />
+							<form:input path="remarksName" cssClass="form-control" autocomplete="off" />
 							<form:errors path="remarksName" cssClass="alert-danger" />
 							<text class="alert-danger">${message}</text>
 						</div>

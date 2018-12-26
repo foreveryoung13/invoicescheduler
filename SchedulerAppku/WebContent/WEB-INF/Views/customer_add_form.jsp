@@ -25,7 +25,7 @@
 									class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.customerName" /></label>
 								<div class="col-sm-6">
-									<form:input path="customerName" cssClass="form-control" />
+									<form:input path="customerName" cssClass="form-control" autocomplete="off" />
 									<form:errors path="customerName" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -35,7 +35,7 @@
 								<label for="address" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.address" /></label>
 								<div class="col-sm-6">
-									<form:input path="address" cssClass="form-control" />
+									<form:input path="address" cssClass="form-control" autocomplete="off"/>
 									<form:errors path="address" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -45,7 +45,7 @@
 								<label for="city" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.city" /></label>
 								<div class="col-sm-6">
-									<form:input path="city" cssClass="form-control" />
+									<form:input path="city" cssClass="form-control" autocomplete="off" />
 									<form:errors path="city" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -55,7 +55,7 @@
 								<label for="province" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.province" /></label>
 								<div class="col-sm-6">
-									<form:input path="province" cssClass="form-control" />
+									<form:input path="province" cssClass="form-control" autocomplete="off" />
 									<form:errors path="province" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -67,7 +67,7 @@
 								<label for="country" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.country" /></label>
 								<div class="col-sm-6">
-									<form:input path="country" cssClass="form-control" />
+									<form:input path="country" cssClass="form-control" autocomplete="off" />
 									<form:errors path="country" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -77,7 +77,7 @@
 								<label for="faxNumber" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.faxNumber" /></label>
 								<div class="col-sm-6">
-									<form:input path="faxNumber" cssClass="form-control" />
+									<form:input path="faxNumber" cssClass="form-control" autocomplete="off" />
 									<form:errors path="faxNumber" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -88,7 +88,7 @@
 									class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.phoneNumber" /></label>
 								<div class="col-sm-6">
-									<form:input path="phoneNumber" cssClass="form-control" />
+									<form:input path="phoneNumber" cssClass="form-control" autocomplete="off" />
 									<form:errors path="phoneNumber" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -98,7 +98,7 @@
 								<label for="postalCode" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.postalCode" /></label>
 								<div class="col-sm-6">
-									<form:input path="postalCode" cssClass="form-control" />
+									<form:input path="postalCode" cssClass="form-control" autocomplete="off" />
 									<form:errors path="postalCode" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>

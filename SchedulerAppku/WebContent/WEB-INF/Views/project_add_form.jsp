@@ -22,7 +22,7 @@
 						<label for="projectName" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.projectName" /></label>
 						<div class="col-sm-4">
-							<form:input path="projectName" cssClass="form-control" />
+							<form:input path="projectName" cssClass="form-control" autocomplete="off"/>
 							<form:errors path="projectName" cssClass="alert-danger" />
 							<text class="alert-danger">${message}</text>
 						</div>

@@ -33,7 +33,7 @@
 						<label for="division_name" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.divisionName" /></label>
 						<div class="col-sm-4">
-							<form:input path="divisionName" cssClass="form-control" />
+							<form:input path="divisionName" cssClass="form-control" autocomplete="off" />
 							<form:errors path="divisionName" cssClass="alert-danger" />
 							<text class="alert-danger">${message}</text>
 						</div>

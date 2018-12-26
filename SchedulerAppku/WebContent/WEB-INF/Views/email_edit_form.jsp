@@ -34,7 +34,7 @@
 								<label for="sender" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.sender" /></label>
 								<div class="col-sm-6">
-									<form:input path="sender" cssClass="form-control" />
+									<form:input path="sender" cssClass="form-control" autocomplete="off" />
 									<form:errors path="sender" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -44,7 +44,7 @@
 								<label for="recipients" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.recipients" /></label>
 								<div class="col-sm-6">
-									<form:input path="recipients" cssClass="form-control" />
+									<form:input path="recipients" cssClass="form-control" autocomplete="off"/>
 									<form:errors path="recipients" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -54,7 +54,7 @@
 								<label for="content" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.content" /></label>
 								<div class="col-sm-6">
-									<form:textarea path="content" cssClass="form-control" />
+									<form:textarea path="content" cssClass="form-control" autocomplete="off" />
 									<form:errors path="content" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -66,7 +66,7 @@
 								<label for="header" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.header" /></label>
 								<div class="col-sm-6">
-									<form:input path="header" cssClass="form-control" />
+									<form:input path="header" cssClass="form-control" autocomplete="off" />
 									<form:errors path="header" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -76,7 +76,7 @@
 								<label for="subject" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.subject" /></label>
 								<div class="col-sm-6">
-									<form:input path="subject" cssClass="form-control" />
+									<form:input path="subject" cssClass="form-control" autocomplete="off" />
 									<form:errors path="subject" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -86,7 +86,7 @@
 								<label for="footer" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.footer" /></label>
 								<div class="col-sm-6">
-									<form:input path="footer" cssClass="form-control" />
+									<form:input path="footer" cssClass="form-control" autocomplete="off" />
 									<form:errors path="footer" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>

@@ -23,7 +23,7 @@
 								code="lbl.divisionName" /></label>
 						<div class="col-sm-4">
 							<form:input path="divisionName" cssClass="form-control input-sm"
-								autocomplete="false" />
+								autocomplete="off" />
 							<form:errors path="divisionName" cssClass="alert-danger" />
 							<text class="alert-danger">${message}</text>
 						</div>
