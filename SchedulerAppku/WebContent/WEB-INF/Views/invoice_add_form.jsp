@@ -21,7 +21,7 @@
 
 					<div class="form-group form-group-sm">
 						<!-- start left column -->
-						<div class="col-sm-6">
+						<div class="col-sm-6" style="margin-left: -5em">
 							<div class="form-group">
 								<label for="customerId" class="col-sm-4 control-label"><spring:message
 										code="lbl.customerName" /></label>
@@ -149,7 +149,7 @@
 						<!-- end left column -->
 
 						<!-- right column -->
-						<div class="col-sm-6">
+						<div class="col-sm-6" style="margin-left: -5em">
 							<div class="form-group">
 								<label for="projectId" class="col-sm-4 control-label"><spring:message
 										code="lbl.projectName" /></label>
@@ -265,7 +265,7 @@
 					</div>
 
 					<div class="form-group row">
-						<div class="col-sm-offset-2 col-sm-10">
+						<div class="col-sm-12" >
 							<input type="submit" value="Save" class="btn btn-primary"
 								name="btnSubmit" />
 						</div>
