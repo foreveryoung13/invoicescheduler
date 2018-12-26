@@ -27,104 +27,115 @@
 						</div>
 					</div>
 
-					<div class="form-group row">
-						<label for="firstName" class="col-sm-2 control-label labelname"><spring:message
-								code="lbl.firstName" /></label>
-						<div class="col-sm-4">
-							<form:input path="firstName" cssClass="form-control" />
-							<form:errors path="firstName" cssClass="alert-danger" />
-							<text class="alert-danger">${message}</text>
-						</div>
-					</div>
+					<div class="form-group form-group-sm">
+						<!-- start left column -->
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="firstName" class="col-sm-4 control-label labelname"><spring:message
+										code="lbl.firstName" /></label>
+								<div class="col-sm-6">
+									<form:input path="firstName" cssClass="form-control" />
+									<form:errors path="firstName" cssClass="alert-danger" />
+									<text class="alert-danger">${message}</text>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="lastName" class="col-sm-4 control-label labelname"><spring:message
+										code="lbl.lastName" /></label>
+								<div class="col-sm-6">
+									<form:input path="lastName" cssClass="form-control" />
+									<form:errors path="lastName" cssClass="alert-danger" />
+									<text class="alert-danger">${message}</text>
+								</div>
+							</div>
 
-					<div class="form-group row">
-						<label for="lastName" class="col-sm-2 control-label labelname"><spring:message
-								code="lbl.lastName" /></label>
-						<div class="col-sm-4">
-							<form:input path="lastName" cssClass="form-control" />
-							<form:errors path="lastName" cssClass="alert-danger" />
-							<text class="alert-danger">${message}</text>
-						</div>
-					</div>
+							<div class="form-group row">
+								<label for="placeOfBirth"
+									class="col-sm-4 control-label labelname"><spring:message
+										code="lbl.placeOfBirth" /></label>
+								<div class="col-sm-6">
+									<form:input path="placeOfBirth" cssClass="form-control" />
+									<form:errors path="placeOfBirth" cssClass="alert-danger" />
+									<text class="alert-danger">${message}</text>
+								</div>
+							</div>
 
-					<div class="form-group row">
-						<label for="placeOfBirth" class="col-sm-2 control-label labelname"><spring:message
-								code="lbl.placeOfBirth" /></label>
-						<div class="col-sm-4">
-							<form:input path="placeOfBirth" cssClass="form-control" />
-							<form:errors path="placeOfBirth" cssClass="alert-danger" />
-							<text class="alert-danger">${message}</text>
-						</div>
-					</div>
+							<div class="form-group row">
+								<label for="dateOfBirth"
+									class="col-sm-4 control-label labelname"><spring:message
+										code="lbl.dateOfBirth" /></label>
+								<div class="col-sm-6">
+									<form:input path="dateOfBirth" cssClass="form-control" id="dateOfBirth"/>
+									<form:errors path="dateOfBirth" cssClass="alert-danger" />
+									<text class="alert-danger">${message}</text>
+								</div>
+							</div>
 
-					<div class="form-group row">
-						<label for="dateOfBirth" class="col-sm-2 control-label labelname"><spring:message
-								code="lbl.dateOfBirth" /></label>
-						<div class="col-sm-4">
-							<form:input path="dateOfBirth" cssClass="form-control" />
-							<form:errors path="dateOfBirth" cssClass="alert-danger" />
-							<text class="alert-danger">${message}</text>
+							<div class="form-group row">
+								<label for="age" class="col-sm-4 control-label labelname"><spring:message
+										code="lbl.age" /></label>
+								<div class="col-sm-6">
+									<form:input path="age" cssClass="form-control" />
+									<form:errors path="age" cssClass="alert-danger" />
+									<text class="alert-danger">${message}</text>
+								</div>
+							</div>
 						</div>
-					</div>
 
-					<div class="form-group row">
-						<label for="age" class="col-sm-2 control-label labelname"><spring:message
-								code="lbl.age" /></label>
-						<div class="col-sm-4">
-							<form:input path="age" cssClass="form-control" />
-							<form:errors path="age" cssClass="alert-danger" />
-							<text class="alert-danger">${message}</text>
-						</div>
-					</div>
+						<!-- right column -->
+						<div class="col-sm-6">
+							<div class="form-group row">
+								<label for="address" class="col-sm-4 control-label labelname"><spring:message
+										code="lbl.address" /></label>
+								<div class="col-sm-6">
+									<form:input path="address" cssClass="form-control" />
+									<form:errors path="address" cssClass="alert-danger" />
+									<text class="alert-danger">${message}</text>
+								</div>
+							</div>
 
-					<div class="form-group row">
-						<label for="address" class="col-sm-2 control-label labelname"><spring:message
-								code="lbl.address" /></label>
-						<div class="col-sm-4">
-							<form:input path="address" cssClass="form-control" />
-							<form:errors path="address" cssClass="alert-danger" />
-							<text class="alert-danger">${message}</text>
-						</div>
-					</div>
+							<div class="form-group row">
+								<label for="city" class="col-sm-4 control-label labelname"><spring:message
+										code="lbl.city" /></label>
+								<div class="col-sm-6">
+									<form:input path="city" cssClass="form-control" />
+									<form:errors path="city" cssClass="alert-danger" />
+									<text class="alert-danger">${message}</text>
+								</div>
+							</div>
 
-					<div class="form-group row">
-						<label for="city" class="col-sm-2 control-label labelname"><spring:message
-								code="lbl.city" /></label>
-						<div class="col-sm-4">
-							<form:input path="city" cssClass="form-control" />
-							<form:errors path="city" cssClass="alert-danger" />
-							<text class="alert-danger">${message}</text>
-						</div>
-					</div>
+							<div class="form-group row">
+								<label for="province" class="col-sm-4 control-label labelname"><spring:message
+										code="lbl.province" /></label>
+								<div class="col-sm-6">
+									<form:input path="province" cssClass="form-control" />
+									<form:errors path="province" cssClass="alert-danger" />
+									<text class="alert-danger">${message}</text>
+								</div>
+							</div>
 
-					<div class="form-group row">
-						<label for="province" class="col-sm-2 control-label labelname"><spring:message
-								code="lbl.province" /></label>
-						<div class="col-sm-4">
-							<form:input path="province" cssClass="form-control" />
-							<form:errors path="province" cssClass="alert-danger" />
-							<text class="alert-danger">${message}</text>
-						</div>
-					</div>
+							<div class="form-group row">
+								<label for="country" class="col-sm-4 control-label labelname"><spring:message
+										code="lbl.country" /></label>
+								<div class="col-sm-6">
+									<form:input path="country" cssClass="form-control" />
+									<form:errors path="country" cssClass="alert-danger" />
+									<text class="alert-danger">${message}</text>
+								</div>
+							</div>
 
-					<div class="form-group row">
-						<label for="country" class="col-sm-2 control-label labelname"><spring:message
-								code="lbl.country" /></label>
-						<div class="col-sm-4">
-							<form:input path="country" cssClass="form-control" />
-							<form:errors path="country" cssClass="alert-danger" />
-							<text class="alert-danger">${message}</text>
-						</div>
-					</div>
+							<div class="form-group row">
+								<label for="divisionId" class="col-sm-4 control-label labelname"><spring:message
+										code="lbl.divisionName" /></label>
+								<div class="col-sm-6">
+									<form:select path="divisionId" items="${divlist}"
+										itemValue="divisionId" itemLabel="divisionName"
+										cssClass="drop-custom" />
+									<form:errors path="country" cssClass="alert-danger" />
+									<text class="alert-danger">${message}</text>
+								</div>
+							</div>
 
-					<div class="form-group row">
-						<label for="divisionId" class="col-sm-2 control-label labelname"><spring:message
-								code="lbl.divisionName" /></label>
-						<div class="col-sm-4">
-							<form:select path="divisionId" items="${divlist}"
-								itemValue="divisionId" itemLabel="divisionName" cssClass="drop-custom" />
-							<form:errors path="country" cssClass="alert-danger" />
-							<text class="alert-danger">${message}</text>
 						</div>
 					</div>
 
@@ -138,6 +149,16 @@
 				</form:form>
 			</div>
 		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(function() {
+					$("#dateOfBirth").datepicker({
+						dateFormat : "dd/mm/yy"
+					});
+				});
+			});
+		</script>
 
 	</tiles:putAttribute>
 </tiles:insertDefinition>
