@@ -1,3 +1,11 @@
+.labelname {
+	font-size: 12px;
+}
+
+.error {
+	color: red;
+}
+
 .drop-custom {
 	width: 100%;
 }

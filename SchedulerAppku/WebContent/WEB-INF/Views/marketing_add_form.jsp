@@ -20,7 +20,7 @@
 					cssClass="form-horizontal" role="form" method="post">
 
 					<div class="form-group row">
-						<label for="firstName" class="col-sm-2 control-label"><spring:message
+						<label for="firstName" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.firstName" /></label>
 						<div class="col-sm-4">
 							<form:input path="firstName" cssClass="form-control" />
@@ -114,7 +114,7 @@
 								code="lbl.divisionName" /></label>
 						<div class="col-sm-4">
 							<form:select path="divisionId" items="${divlist}"
-								itemValue="divisionId" itemLabel="divisionName" />
+								itemValue="divisionId" itemLabel="divisionName" cssClass="drop-custom" />
 							<form:errors path="country" cssClass="alert-danger" />
 							<text class="alert-danger">${message}</text>
 						</div>

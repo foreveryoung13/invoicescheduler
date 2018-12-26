@@ -122,7 +122,7 @@
 								code="lbl.divisionName" /></label>
 						<div class="col-sm-4">
 							<form:select path="divisionId" items="${divlist}"
-								itemValue="divisionId" itemLabel="divisionName" />
+								itemValue="divisionId" itemLabel="divisionName" cssClass="drop-custom" />
 							<form:errors path="country" cssClass="alert-danger" />
 							<text class="alert-danger">${message}</text>
 						</div>
