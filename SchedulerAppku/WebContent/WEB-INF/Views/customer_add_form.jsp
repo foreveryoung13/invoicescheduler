@@ -18,7 +18,7 @@
 					cssClass="form-horizontal" role="form" method="post">
 
 					<div class="form-group row">
-						<label for="customerName" class="col-sm-2 control-label"><spring:message
+						<label for="customerName" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.customerName" /></label>
 						<div class="col-sm-4">
 							<form:input path="customerName" cssClass="form-control" />
@@ -28,7 +28,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="address" class="col-sm-2 control-label"><spring:message
+						<label for="address" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.address" /></label>
 						<div class="col-sm-4">
 							<form:input path="address" cssClass="form-control" />
@@ -38,7 +38,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="city" class="col-sm-2 control-label"><spring:message
+						<label for="city" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.city" /></label>
 						<div class="col-sm-4">
 							<form:input path="city" cssClass="form-control" />
@@ -48,7 +48,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="province" class="col-sm-2 control-label"><spring:message
+						<label for="province" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.province" /></label>
 						<div class="col-sm-4">
 							<form:input path="province" cssClass="form-control" />
@@ -58,7 +58,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="country" class="col-sm-2 control-label"><spring:message
+						<label for="country" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.country" /></label>
 						<div class="col-sm-4">
 							<form:input path="country" cssClass="form-control" />
@@ -68,7 +68,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="faxNumber" class="col-sm-2 control-label"><spring:message
+						<label for="faxNumber" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.faxNumber" /></label>
 						<div class="col-sm-4">
 							<form:input path="faxNumber" cssClass="form-control" />
@@ -78,7 +78,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="phoneNumber" class="col-sm-2 control-label"><spring:message
+						<label for="phoneNumber" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.phoneNumber" /></label>
 						<div class="col-sm-4">
 							<form:input path="phoneNumber" cssClass="form-control" />
@@ -88,7 +88,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="postalCode" class="col-sm-2 control-label"><spring:message
+						<label for="postalCode" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.postalCode" /></label>
 						<div class="col-sm-4">
 							<form:input path="postalCode" cssClass="form-control" />

@@ -11,7 +11,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-						<h2 class="page-header">Edit Division</h2>
+						<h2 class="page-header">Edit Term</h2>
 					</div>
 				</div>
 				<form:form modelAttribute="term"
@@ -29,7 +29,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="termName" class="col-sm-2 control-label"><spring:message
+						<label for="termName" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.termName" /></label>
 						<div class="col-sm-4">
 							<form:input path="termName" cssClass="form-control" />

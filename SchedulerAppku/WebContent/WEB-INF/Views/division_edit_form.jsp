@@ -30,7 +30,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="division_name" class="col-sm-2 control-label"><spring:message
+						<label for="division_name" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.divisionName" /></label>
 						<div class="col-sm-4">
 							<form:input path="divisionName" cssClass="form-control" />

@@ -29,7 +29,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="sender" class="col-sm-2 control-label"><spring:message
+						<label for="sender" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.sender" /></label>
 						<div class="col-sm-4">
 							<form:input path="sender" cssClass="form-control" />
@@ -39,7 +39,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="recipients" class="col-sm-2 control-label"><spring:message
+						<label for="recipients" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.recipients" /></label>
 						<div class="col-sm-4">
 							<form:input path="recipients" cssClass="form-control" />
@@ -49,7 +49,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="subject" class="col-sm-2 control-label"><spring:message
+						<label for="subject" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.subject" /></label>
 						<div class="col-sm-4">
 							<form:input path="subject" cssClass="form-control" />
@@ -59,7 +59,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="header" class="col-sm-2 control-label"><spring:message
+						<label for="header" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.header" /></label>
 						<div class="col-sm-4">
 							<form:input path="header" cssClass="form-control" />
@@ -69,7 +69,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="footer" class="col-sm-2 control-label"><spring:message
+						<label for="footer" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.footer" /></label>
 						<div class="col-sm-4">
 							<form:input path="footer" cssClass="form-control" />

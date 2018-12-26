@@ -19,7 +19,7 @@
 					cssClass="form-horizontal" role="form" method="post">
 
 					<div class="form-group row">
-						<label for="termName" class="col-sm-2 control-label"><spring:message
+						<label for="termName" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.termName" /></label>
 						<div class="col-sm-4">
 							<form:input path="termName" cssClass="form-control" />

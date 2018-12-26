@@ -13,6 +13,10 @@
 
 <style type="text/css">
 
+.labelname {
+	font-size: 12px;
+}
+
 .error {
 	color: red;
 }

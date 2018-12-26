@@ -28,7 +28,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="firstName" class="col-sm-2 control-label"><spring:message
+						<label for="firstName" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.firstName" /></label>
 						<div class="col-sm-4">
 							<form:input path="firstName" cssClass="form-control" />
@@ -38,7 +38,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="lastName" class="col-sm-2 control-label"><spring:message
+						<label for="lastName" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.lastName" /></label>
 						<div class="col-sm-4">
 							<form:input path="lastName" cssClass="form-control" />
@@ -48,7 +48,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="placeOfBirth" class="col-sm-2 control-label"><spring:message
+						<label for="placeOfBirth" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.placeOfBirth" /></label>
 						<div class="col-sm-4">
 							<form:input path="placeOfBirth" cssClass="form-control" />
@@ -58,7 +58,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="dateOfBirth" class="col-sm-2 control-label"><spring:message
+						<label for="dateOfBirth" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.dateOfBirth" /></label>
 						<div class="col-sm-4">
 							<form:input path="dateOfBirth" cssClass="form-control" />
@@ -68,7 +68,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="age" class="col-sm-2 control-label"><spring:message
+						<label for="age" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.age" /></label>
 						<div class="col-sm-4">
 							<form:input path="age" cssClass="form-control" />
@@ -78,7 +78,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="address" class="col-sm-2 control-label"><spring:message
+						<label for="address" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.address" /></label>
 						<div class="col-sm-4">
 							<form:input path="address" cssClass="form-control" />
@@ -88,7 +88,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="city" class="col-sm-2 control-label"><spring:message
+						<label for="city" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.city" /></label>
 						<div class="col-sm-4">
 							<form:input path="city" cssClass="form-control" />
@@ -98,7 +98,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="province" class="col-sm-2 control-label"><spring:message
+						<label for="province" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.province" /></label>
 						<div class="col-sm-4">
 							<form:input path="province" cssClass="form-control" />
@@ -108,7 +108,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="country" class="col-sm-2 control-label"><spring:message
+						<label for="country" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.country" /></label>
 						<div class="col-sm-4">
 							<form:input path="country" cssClass="form-control" />
@@ -118,7 +118,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="divisionId" class="col-sm-2 control-label"><spring:message
+						<label for="divisionId" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.divisionName" /></label>
 						<div class="col-sm-4">
 							<form:select path="divisionId" items="${divlist}"

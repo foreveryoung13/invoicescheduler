@@ -18,7 +18,7 @@
 					cssClass="form-horizontal" role="form" method="post">
 
 					<div class="form-group row">
-						<label for="remarksName" class="col-sm-2 control-label"><spring:message
+						<label for="remarksName" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.remarksName" /></label>
 						<div class="col-sm-4">
 							<form:input path="remarksName" cssClass="form-control" />
