@@ -18,7 +18,7 @@
 					action="${pageContext.request.contextPath}/division/savedivision"
 					cssClass="form-horizontal" role="form" method="post">
 
-					<div class="form-group">
+					<div class="form-group" style="margin-left: -8em">
 						<label for="divisionName" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.divisionName" /></label>
 						<div class="col-sm-4">
@@ -30,7 +30,7 @@
 					</div>
 
 					<div class="form-group">
-						<div class="col-sm-offset-2 col-sm-10">
+						<div class="col-sm-12" style="margin-left: 8em">
 							<input type="submit" value="Save Division"
 								class="btn btn-primary" name="btnSubmit" />
 						</div>

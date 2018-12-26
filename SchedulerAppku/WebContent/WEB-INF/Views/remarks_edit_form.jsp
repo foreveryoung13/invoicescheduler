@@ -27,7 +27,7 @@
 						</div>
 					</div>
 
-					<div class="form-group row">
+					<div class="form-group row" style="margin-left: -8em">
 						<label for="remarksName" class="col-sm-2 control-label labelname"><spring:message
 								code="lbl.remarksName" /></label>
 						<div class="col-sm-4">
@@ -38,7 +38,7 @@
 					</div>
 
 					<div class="form-group row">
-						<div class="col-sm-offset-2 col-sm-10">
+						<div class="col-sm-12" style="margin-left: 8em">
 							<input type="submit" value="Save" class="btn btn-primary"
 								name="btnSubmit" />
 						</div>
