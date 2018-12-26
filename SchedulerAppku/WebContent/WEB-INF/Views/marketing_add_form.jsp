@@ -21,12 +21,13 @@
 
 					<div class="form-group form-group-sm">
 						<!-- start left column -->
-						<div class="col-sm-6">
+						<div class="col-sm-6" style="margin-left: -5em">
 							<div class="form-group">
 								<label for="firstName" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.firstName" /></label>
 								<div class="col-sm-6">
-									<form:input path="firstName" cssClass="form-control" autocomplete="off" />
+									<form:input path="firstName" cssClass="form-control"
+										autocomplete="off" />
 									<form:errors path="firstName" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -35,7 +36,8 @@
 								<label for="lastName" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.lastName" /></label>
 								<div class="col-sm-6">
-									<form:input path="lastName" cssClass="form-control" autocomplete="off" />
+									<form:input path="lastName" cssClass="form-control"
+										autocomplete="off" />
 									<form:errors path="lastName" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -46,7 +48,8 @@
 									class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.placeOfBirth" /></label>
 								<div class="col-sm-6">
-									<form:input path="placeOfBirth" cssClass="form-control" autocomplete="off" />
+									<form:input path="placeOfBirth" cssClass="form-control"
+										autocomplete="off" />
 									<form:errors path="placeOfBirth" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -57,7 +60,8 @@
 									class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.dateOfBirth" /></label>
 								<div class="col-sm-6">
-									<form:input path="dateOfBirth" cssClass="form-control" id="dateOfBirth" autocomplete="off"/>
+									<form:input path="dateOfBirth" cssClass="form-control"
+										id="dateOfBirth" autocomplete="off" />
 									<form:errors path="dateOfBirth" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -67,7 +71,8 @@
 								<label for="age" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.age" /></label>
 								<div class="col-sm-6">
-									<form:input path="age" cssClass="form-control" autocomplete="off" />
+									<form:input path="age" cssClass="form-control"
+										autocomplete="off" />
 									<form:errors path="age" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -75,12 +80,13 @@
 						</div>
 
 						<!-- right column -->
-						<div class="col-sm-6">
+						<div class="col-sm-6" style="margin-left: -5em">
 							<div class="form-group row">
 								<label for="address" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.address" /></label>
 								<div class="col-sm-6">
-									<form:input path="address" cssClass="form-control" autocomplete="off" />
+									<form:input path="address" cssClass="form-control"
+										autocomplete="off" />
 									<form:errors path="address" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -90,7 +96,8 @@
 								<label for="city" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.city" /></label>
 								<div class="col-sm-6">
-									<form:input path="city" cssClass="form-control" autocomplete="off" />
+									<form:input path="city" cssClass="form-control"
+										autocomplete="off" />
 									<form:errors path="city" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -100,7 +107,8 @@
 								<label for="province" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.province" /></label>
 								<div class="col-sm-6">
-									<form:input path="province" cssClass="form-control" autocomplete="off" />
+									<form:input path="province" cssClass="form-control"
+										autocomplete="off" />
 									<form:errors path="province" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -110,7 +118,8 @@
 								<label for="country" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.country" /></label>
 								<div class="col-sm-6">
-									<form:input path="country" cssClass="form-control" autocomplete="off" />
+									<form:input path="country" cssClass="form-control"
+										autocomplete="off" />
 									<form:errors path="country" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -132,7 +141,7 @@
 					</div>
 
 					<div class="form-group row">
-						<div class="col-sm-offset-2 col-sm-10">
+						<div class="col-sm-12" style="margin-left: 9em">
 							<input type="submit" value="Save" class="btn btn-primary"
 								name="btnSubmit" />
 						</div>
@@ -140,7 +149,7 @@
 				</form:form>
 			</div>
 		</div>
-		
+
 		<script type="text/javascript">
 			$(document).ready(function() {
 				$(function() {
@@ -150,6 +159,6 @@
 				});
 			});
 		</script>
-		
+
 	</tiles:putAttribute>
 </tiles:insertDefinition>

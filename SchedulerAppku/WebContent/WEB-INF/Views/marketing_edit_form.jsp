@@ -29,7 +29,7 @@
 
 					<div class="form-group form-group-sm">
 						<!-- start left column -->
-						<div class="col-sm-6">
+						<div class="col-sm-6" style="margin-left: -5em">
 							<div class="form-group">
 								<label for="firstName" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.firstName" /></label>
@@ -65,7 +65,8 @@
 									class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.dateOfBirth" /></label>
 								<div class="col-sm-6">
-									<form:input path="dateOfBirth" cssClass="form-control" id="dateOfBirth"/>
+									<form:input path="dateOfBirth" cssClass="form-control"
+										id="dateOfBirth" />
 									<form:errors path="dateOfBirth" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -83,7 +84,7 @@
 						</div>
 
 						<!-- right column -->
-						<div class="col-sm-6">
+						<div class="col-sm-6" style="margin-left: -5em">
 							<div class="form-group row">
 								<label for="address" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.address" /></label>
@@ -140,7 +141,7 @@
 					</div>
 
 					<div class="form-group row">
-						<div class="col-sm-offset-2 col-sm-10">
+						<div class="col-sm-12" style="margin-left: 9em">
 							<input type="submit" value="Save" class="btn btn-primary"
 								name="btnSubmit" />
 						</div>
