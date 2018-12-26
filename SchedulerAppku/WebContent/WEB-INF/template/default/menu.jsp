@@ -16,6 +16,14 @@
 						htmlEscape="true" /> <a href="${listEmailUrl}">Email</a></li>
 				<li><spring:url value="/marketings/list" var="listMarketingUrl"
 						htmlEscape="true" /> <a href="${listMarketingUrl}">Marketing</a></li>
+				<li><spring:url value="/project/list" var="listProjectUrl"
+						htmlEscape="true" /> <a href="${listProjectUrl}">Project</a></li>
+				<li><spring:url value="/remark/list" var="listRemarkUrl"
+						htmlEscape="true" /> <a href="${listRemarkUrl}">Remark</a></li>
+				<li><spring:url value="/term/list" var="listTermUrl"
+						htmlEscape="true" /> <a href="${listRemarkUrl}">Term</a></li>
+				<li><spring:url value="/invoice/list" var="listInvoiceUrl"
+						htmlEscape="true" /> <a href="${listInvoiceUrl}">Invoice</a></li>
 			</ul>
 		</div>
 	</div>

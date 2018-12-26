@@ -2,49 +2,36 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title><spring:message code="lbl.title" /></title>
+<tiles:insertDefinition name="defaultTemplate">
+	<tiles:putAttribute name="body">
 
-<style>
-.error {
-	color: red;
-}
-</style>
-
-</head>
-<body>
-	<div class="container">
-		<%@ include file="header.jsp"%>
-
-		<div class="row">
-			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-				<h2 class="page-header">Please Fill Up the form details</h2>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-6">
-				<form:form modelAttribute="project" action="${pageContext.request.contextPath}/project/editproject"
+		<div class="body">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+						<h2 class="page-header">Edit Project</h2>
+					</div>
+				</div>
+				<form:form modelAttribute="project"
+					action="${pageContext.request.contextPath}/project/editproject"
 					cssClass="form-horizontal" role="form" method="post">
 
 					<div class="form-group row" hidden="true">
-						<label for="projectId" class="col-6 col-form-label"><spring:message
+						<label for="projectId" class="col-sm-2 control-label"><spring:message
 								code="lbl.projectId" /></label>
-						<div class="col-6">
+						<div class="col-sm-4">
 							<form:input path="projectId" cssClass="form-control" />
 							<form:errors path="projectId" cssClass="alert-danger" />
 							<text class="alert-danger">${message}</text>
 						</div>
 					</div>
-					
+
 					<div class="form-group row">
-						<label for="projectName" class="col-6 col-form-label"><spring:message
+						<label for="projectName" class="col-sm-2 control-label"><spring:message
 								code="lbl.projectName" /></label>
-						<div class="col-6">
+						<div class="col-sm-4">
 							<form:input path="projectName" cssClass="form-control" />
 							<form:errors path="projectName" cssClass="alert-danger" />
 							<text class="alert-danger">${message}</text>
@@ -52,18 +39,14 @@
 					</div>
 
 					<div class="form-group row">
-						<div class="offset-6 col-6">
-							<input type="submit" value="Save"
-								class="btn btn-primary" name="btnSubmit" />
+						<div class="col-sm-offset-2 col-sm-10">
+							<input type="submit" value="Save" class="btn btn-primary"
+								name="btnSubmit" />
 						</div>
 					</div>
-
 				</form:form>
 			</div>
 		</div>
 
-		<%@ include file="footer.jsp"%>
-	</div>
-
-</body>
-</html>
+	</tiles:putAttribute>
+</tiles:insertDefinition>
