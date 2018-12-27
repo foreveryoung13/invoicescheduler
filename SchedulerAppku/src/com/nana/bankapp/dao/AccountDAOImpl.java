@@ -20,9 +20,7 @@ public class AccountDAOImpl implements AccountDAO {
 
 	@Override
 	public boolean saveAccount(Account account) {
-		// TODO Auto-generated method stub
 		boolean saveFlag = true;
-
 		AccountEntity accountEntity = new AccountEntity();
 		accountEntity.setAccNo(account.getAccountNo());
 		accountEntity.setAccHolderName(account.getAccountHolderName());
@@ -30,13 +28,10 @@ public class AccountDAOImpl implements AccountDAO {
 		accountEntity.setAccountType(account.getAccountType());
 		accountEntity.setDateOfBirth(account.getDateOfBirth());
 		accountEntity.setPsCode(account.getPsCode());
-
 		try {
 			Session currentSession = sessionFactory.getCurrentSession();
 			currentSession.saveOrUpdate(accountEntity);
-//			currentSession.save(accountEntity);
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 			saveFlag = false;
 		}
