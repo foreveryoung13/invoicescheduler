@@ -34,14 +34,13 @@ public class AccountContoller {
 		dataBinder.registerCustomEditor(String.class, ste);
 	}
 	
-	@RequestMapping("/")
-	public String showHomePage() {
+	/* @RequestMapping("/")
+		public String showHomePage() {
 		return "index";
-	}
+	} */
 	
 	@RequestMapping(value="/find",method=RequestMethod.GET)
 	public String viewAccount(Model model) {
-		System.out.println("masuk ke findout pak eko.");
 		return "findAccount";
 	}
 
@@ -69,15 +68,9 @@ public class AccountContoller {
 	@GetMapping("/list")
 	public String listAccounts(Model model) {
 		List<Account> accounts = accountService.getAccounts();
-		System.out.println(accounts.size());
-		
 		model.addAttribute("accounts", accounts);
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication(); /* show for login name in navbar */
 		String name = auth.getName();
-		
-		System.out.println("---------------------------------");
-		System.out.println(name);
-		
 		model.addAttribute("username", name);
 		return "listAccounts";
 	}

@@ -15,7 +15,12 @@
 		<form-login login-page="/user/login"
 			authentication-failure-url="/user/login?error=true"
 			username-parameter="username" password-parameter="password"
-			default-target-url="/list" />
+			default-target-url="/home" />
+		
+		<!--<form-login login-page="/user/login"
+			authentication-failure-url="/user/login?error=true"
+			username-parameter="username" password-parameter="password"
+			default-target-url="/list" /> -->	
 			
 			<csrf disabled="true"/>
 	</http>
