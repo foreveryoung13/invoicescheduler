@@ -20,10 +20,8 @@ public class AboutController {
 
 	@RequestMapping(value = "/about", method = RequestMethod.GET)
 	public String home(Model model) {
-
 		String name = authName.getLoginName();
 		model.addAttribute("username", name);
-
 		return "about";
 	}
 
