@@ -7,51 +7,60 @@
 
 <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="body">
-
 		<div class="body">
 			<div class="container">
-				<!-- <div class="row">
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-						<h3 class="page-header" style="margin-left: -0.3em">Remarks List</h3>
-					</div>
-				</div> -->
-				
 				<div class="row">
-					<div class="col-12">
-						<table class="table table-hover">
-							<thead>
-								<tr>
-									<th style="font-size: 12px;"><spring:message code="lbl.remarksName" /></th>
-									<th style="font-size: 12px;"><spring:message code="lbl.edit" /></th>
-									<th style="font-size: 12px;"><spring:message code="lbl.delete" /></th>
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach var="pro" items="${remarks}">
-									<c:url var="updateLink" value="/remark/edit">
-										<c:param name="remarksId" value="${pro.remarksId}" />
-									</c:url>
-									<c:url var="deleteLink" value="/remark/delete">
-										<c:param name="remarksId" value="${pro.remarksId}" />
-									</c:url>
-									<tr>
-										<td style="font-size: 12px;">${pro.remarksName}</td>
-										<td><a href="${updateLink}" class="btn-custom btn-warning"><span class="glyphicon glyphicon-pencil"></span></a></td>
-										<td><a href="${deleteLink}" class="btn-custom btn-danger"
-											onclick="if(!(confirm('Are you sure to delete'))) return false"><span class="glyphicon glyphicon-trash"></span></a></td>
-									</tr>
-								</c:forEach>
-							</tbody>
-						</table>
+					<div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-11"
+						style="margin-top: 0.9em;">
+						<div class="panel panel-info">
+							<div class="panel-heading">
+								<h2 class="panel-title">Remarks List</h2>
+							</div>
+							<div class="panel-body">
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th style="font-size: 12px;"><spring:message
+													code="lbl.remarksName" /></th>
+											<th style="font-size: 12px;"><spring:message
+													code="lbl.edit" /></th>
+											<th style="font-size: 12px;"><spring:message
+													code="lbl.delete" /></th>
+										</tr>
+									</thead>
+									<tbody>
+										<c:forEach var="pro" items="${remarks}">
+											<c:url var="updateLink" value="/remark/edit">
+												<c:param name="remarksId" value="${pro.remarksId}" />
+											</c:url>
+											<c:url var="deleteLink" value="/remark/delete">
+												<c:param name="remarksId" value="${pro.remarksId}" />
+											</c:url>
+											<tr>
+												<td style="font-size: 12px;">${pro.remarksName}</td>
+												<td><a href="${updateLink}"
+													class="btn-custom btn-warning"><span
+														class="glyphicon glyphicon-pencil"></span></a></td>
+												<td><a href="${deleteLink}"
+													class="btn-custom btn-danger"
+													onclick="if(!(confirm('Are you sure to delete'))) return false"><span
+														class="glyphicon glyphicon-trash"></span></a></td>
+											</tr>
+										</c:forEach>
+									</tbody>
+								</table>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-12">
-						<a href="<c:url value='/remark/add'/>" class="btn-custom btn-primary"><span class="glyphicon glyphicon-plus"></span></a>
+					<div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-11">
+						<a href="<c:url value='/remark/add'/>"
+							class="btn-custom btn-primary"><span
+							class="glyphicon glyphicon-plus"></span></a>
 					</div>
 				</div>
 			</div>
 		</div>
-
 	</tiles:putAttribute>
 </tiles:insertDefinition>
