@@ -10,11 +10,11 @@
 
 		<div class="body">
 			<div class="container">
-				<div class="row">
+			   <!--<div class="row">
 					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 						<h3 class="page-header" style="margin-left: -0.3em">Division List</h3>
-					</div>
-				</div>
+					</div> 
+				</div> -->
 				
 				<div class="row">
 					<div class="col-12">
@@ -22,8 +22,8 @@
 							<thead>
 								<tr>
 									<th style="font-size: 12px;"><spring:message code="lbl.divisionName" /></th>
-									<th style="font-size: 12px;">&nbsp;</th>
-									<th>&nbsp;</th>
+									<th style="font-size: 12px;"><spring:message code="lbl.edit" /></th>
+									<th style="font-size: 12px;"><spring:message code="lbl.delete" /></th>
 								</tr>
 							</thead>
 							<tbody>
@@ -35,20 +35,22 @@
 										<c:param name="divisionId" value="${divs.divisionId}" />
 									</c:url>
 									<tr>
-										<td style="font-size: 12px;">${divs.divisionName}</td>
-										<td style="font-size: 12px;"><a href="${updateLink}" class="btn btn-warning">Edit</a></td>
-										<td><a href="${deleteLink}" class="btn btn-danger"
-											onclick="if(!(confirm('Are you sure to delete'))) return false">Delete</a></td>
+										<td style="font-size: 12px;">${divs.divisionName}</td> 	
+										<td style="font-size: 12px;"><a href="${updateLink}" class="btn-custom btn-warning"><span class="glyphicon glyphicon-pencil"></span></a></td>
+										<td><a href="${deleteLink}" class="btn-custom btn-danger"
+											onclick="if(!(confirm('Are you sure to delete'))) return false"><span class="glyphicon glyphicon-trash"></span></a></td>
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
+					<!--<a href="${pageContext.request.contextPath}/division/list/1">1</a>     
+   						<a href="${pageContext.request.contextPath}/division/list/2">2</a>     
+   						<a href="${pageContext.request.contextPath}/division/list/3">3</a> -->   
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-12">
-						<a href="<c:url value='/division/add'/>" class="btn btn-primary">Add
-							Division</a>
+					<div class="col-12"> 
+						<a href="<c:url value='/division/add'/>" class="btn-custom btn-primary"><span class="glyphicon glyphicon-plus"></span></a>
 					</div>
 				</div>
 			</div>

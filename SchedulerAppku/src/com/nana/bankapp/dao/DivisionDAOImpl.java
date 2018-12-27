@@ -40,7 +40,7 @@ public class DivisionDAOImpl implements DivisionDAO {
 	@Override
 	public boolean editDivision(Division division) {
 		boolean saveFlag = true;
-		
+
 		DivisionEntity de = new DivisionEntity();
 		de.setDivisionId(division.getDivisionId());
 		de.setDivisionName(division.getDivisionName());
@@ -69,6 +69,33 @@ public class DivisionDAOImpl implements DivisionDAO {
 				div.setDivisionName(de.getDivisionName());
 				list.add(div);
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	@Override
+	public List<Division> pageDivisionList(int start, int maxrows) {
+		List<Division> list = new ArrayList<Division>();
+		try {
+			Session session = sessionFactory.getCurrentSession();
+			Query<DivisionEntity> query = session.createQuery("FROM DivisionEntity", DivisionEntity.class);
+			query.setFirstResult(start);
+			query.setMaxResults(maxrows);
+
+			List<DivisionEntity> rdivision = query.getResultList();
+
+			if (rdivision != null) {
+				for (int i = 0; i < rdivision.size(); i++) {
+					DivisionEntity de = (DivisionEntity) rdivision.get(i);
+					Division div = new Division();
+					div.setDivisionId(de.getDivisionId());
+					div.setDivisionName(de.getDivisionName());
+					list.add(div);
+				}
+			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -34,6 +34,12 @@ public class DivisionServiceImpl implements DivisionService {
 	public List<Division> getDivision() {
 		return rdivisionDAO.getDivision();
 	}
+	
+	@Override
+	@Transactional
+	public List<Division> pageDivisionList(int start, int maxrows){
+		return rdivisionDAO.pageDivisionList(start, maxrows);
+	}
 
 	@Override
 	@Transactional

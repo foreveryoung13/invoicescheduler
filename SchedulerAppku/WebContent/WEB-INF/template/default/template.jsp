@@ -10,6 +10,7 @@
 <link href="${pageContext.request.contextPath}/resources/css/main.css" rel="stylesheet" />
 <link href="${pageContext.request.contextPath}/resources/css/custom.css" rel="stylesheet" />
 <link href="${pageContext.request.contextPath}/resources/css/sidebar.css" rel="stylesheet" />
+<link href="${pageContext.request.contextPath}/resources/css/btncustom.css" rel="stylesheet" />
 	
 <!-- JQuery -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>
