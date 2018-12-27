@@ -19,6 +19,7 @@ import com.nana.bankapp.model.Division;
 import com.nana.bankapp.model.Marketing;
 import com.nana.bankapp.services.DivisionService;
 import com.nana.bankapp.services.MarketingService;
+import com.nana.bankapp.util.AuthenticationName;
 
 @Controller
 @RequestMapping("/marketings")
@@ -29,6 +30,9 @@ public class MarketingController {
 
 	@Autowired
 	DivisionService ds;
+	
+	@Autowired
+	AuthenticationName authName;
 
 	@ModelAttribute("divlist")
 	public List<Division> renderDivisionList() {
@@ -45,6 +49,9 @@ public class MarketingController {
 
 	@RequestMapping("/add")
 	public String newMarketing(Model model) {
+		String name = authName.getLoginName();
+		
+		model.addAttribute("username", name);
 		model.addAttribute("marketing", new Marketing());
 		return "marketing_add_form";
 	}
@@ -52,6 +59,9 @@ public class MarketingController {
 	@GetMapping("/list")
 	public String listMarketings(Model model) {
 		List<Marketing> marketing = ms.getMarketings();
+		String name = authName.getLoginName();
+		
+		model.addAttribute("username", name);
 		model.addAttribute("marketing", marketing);
 		return "marketing_list";
 	}
@@ -59,31 +69,45 @@ public class MarketingController {
 	@GetMapping("/edit")
 	public String updateMarketing(@RequestParam("marketingId") String marketingId, Model model) {
 		Marketing marketing = ms.getMarketing(marketingId);
+		String name = authName.getLoginName();
+		
+		model.addAttribute("username", name);
 		model.addAttribute("marketing", marketing);
 		return "marketing_edit_form";
 	}
 
 	@GetMapping("/delete")
 	public String deleteMarketing(@RequestParam("marketingId") String marketingId, Model model) {
+		String name = authName.getLoginName();
+		
+		model.addAttribute("username", name);
 		ms.deleteMarketing(marketingId);
 		return "redirect:/marketings/list";
 	}
 
 	@RequestMapping(value = "/savemarketing", method = RequestMethod.POST)
-	public String saveMarketing(@Valid @ModelAttribute("marketing") Marketing marketing, BindingResult result) {
+	public String saveMarketing(@Valid @ModelAttribute("marketing") Marketing marketing, BindingResult result, Model model) {
+		String name = authName.getLoginName();
+				
 		if (result.hasErrors()) {
+			model.addAttribute("username", name);
 			return "marketing_add_form";
 		} else {
+			model.addAttribute("username", name);
 			ms.saveMarketing(marketing);
 			return "redirect:/marketings/list";
 		}
 	}
 
 	@RequestMapping(value = "/editmarketing", method = RequestMethod.POST)
-	public String editMarketing(@Valid @ModelAttribute("marketing") Marketing marketing, BindingResult result) {
+	public String editMarketing(@Valid @ModelAttribute("marketing") Marketing marketing, BindingResult result, Model model) {
+		String name = authName.getLoginName();
+		
 		if (result.hasErrors()) {
+			model.addAttribute("username", name);
 			return "marketing_edit_form";
 		} else {
+			model.addAttribute("username", name);
 			ms.editMarketing(marketing);
 			return "redirect:/marketings/list";
 		}

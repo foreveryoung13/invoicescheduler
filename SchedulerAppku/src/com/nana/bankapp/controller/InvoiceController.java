@@ -29,6 +29,7 @@ import com.nana.bankapp.services.MarketingService;
 import com.nana.bankapp.services.ProjectService;
 import com.nana.bankapp.services.RemarksService;
 import com.nana.bankapp.services.TermService;
+import com.nana.bankapp.util.AuthenticationName;
 
 @Controller
 @RequestMapping("/invoice")
@@ -51,6 +52,9 @@ public class InvoiceController {
 
 	@Autowired
 	TermService ts;
+	
+	@Autowired
+	AuthenticationName authName;
 
 	@ModelAttribute("customerlist")
 	public List<Customer> renderCustomerList() {
@@ -119,6 +123,9 @@ public class InvoiceController {
 
 	@RequestMapping("/add")
 	public String newInvoice(Model model) {
+		String name = authName.getLoginName();
+		
+		model.addAttribute("username", name);
 		model.addAttribute("invoice", new Invoice());
 		return "invoice_add_form";
 	}
@@ -126,39 +133,56 @@ public class InvoiceController {
 	@GetMapping("/list")
 	public String listInvoice(Model model) {
 		List<Invoice> invoice = is.getInvoices();
+		String name = authName.getLoginName();
+		
+		model.addAttribute("username", name);
 		model.addAttribute("invoice", invoice);
 		return "invoice_list";
 	}
 	
 	@GetMapping("/edit")
 	public String updateInvoice(@RequestParam("invoiceId") String invoiceId, Model model) {
+		String name = authName.getLoginName();
 		Invoice invoice = is.getInvoice(invoiceId);
+		
+		model.addAttribute("username", name);
 		model.addAttribute("invoice", invoice);
 		return "invoice_edit_form";
 	}
 	
 	@GetMapping("/delete")
 	public String deleteInvoice(@RequestParam("invoiceId") String invoiceId, Model model) {
+		String name = authName.getLoginName();
+		
+		model.addAttribute("username", name);
 		is.deleteInvoice(invoiceId);
 		return "redirect:/invoice/list";
 	}
 
 	
 	@RequestMapping(value = "/saveinvoice", method = RequestMethod.POST)
-	public String saveInvoice(@Valid @ModelAttribute("invoice") Invoice invoice, BindingResult result) {
+	public String saveInvoice(@Valid @ModelAttribute("invoice") Invoice invoice, BindingResult result, Model model) {
+		String name = authName.getLoginName();
+		
 		if (result.hasErrors()) {
+			model.addAttribute("username", name);
 			return "invoice_add_form";
 		} else {
+			model.addAttribute("username", name);
 			is.saveInvoice(invoice);
 			return "redirect:/invoice/list";
 		}
 	}
 	
 	@RequestMapping(value = "/editinvoice", method = RequestMethod.POST)
-	public String editInvoice(@Valid @ModelAttribute("invoice") Invoice invoice, BindingResult result) {
+	public String editInvoice(@Valid @ModelAttribute("invoice") Invoice invoice, BindingResult result, Model model) {
+		String name = authName.getLoginName();
+		
 		if (result.hasErrors()) {
+			model.addAttribute("username", name);
 			return "invoice_edit_form";
 		} else {
+			model.addAttribute("username", name);
 			is.editInvoice(invoice);
 			return "redirect:/invoice/list";
 		}
