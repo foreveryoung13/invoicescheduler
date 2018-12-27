@@ -28,7 +28,7 @@
 								<div class="col-sm-6">
 									<form:select path="customerId" items="${customerlist}"
 										itemValue="customerId" itemLabel="customerName"
-										cssClass="drop-custom" />
+										cssClass="form-control" />
 									<form:errors path="customerId" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -40,7 +40,7 @@
 								<div class="col-sm-6">
 									<form:select path="remarksId" items="${remarklist}"
 										itemValue="remarksId" itemLabel="remarksName"
-										cssClass="drop-custom" />
+										cssClass="form-control" />
 									<form:errors path="remarksId" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -63,7 +63,7 @@
 								<div class="col-sm-6">
 									<form:select path="marketingId" items="${marketinglist}"
 										itemValue="marketingId" itemLabel="firstName"
-										cssClass="drop-custom" />
+										cssClass="form-control" />
 									<form:errors path="marketingId" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -118,7 +118,7 @@
 										code="lbl.termId" /></label>
 								<div class="col-sm-6">
 									<form:select path="termId" items="${termlist}"
-										itemValue="termId" itemLabel="termName" cssClass="drop-custom" />
+										itemValue="termId" itemLabel="termName" cssClass="form-control" />
 									<form:errors path="termId" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
@@ -156,7 +156,7 @@
 								<div class="col-sm-6">
 									<form:select path="projectId" items="${projectlist}"
 										itemValue="projectId" itemLabel="projectName"
-										cssClass="drop-custom" />
+										cssClass="form-control" />
 									<form:errors path="projectId" cssClass="alert-danger" />
 									<text class="alert-danger">${message}</text>
 								</div>
