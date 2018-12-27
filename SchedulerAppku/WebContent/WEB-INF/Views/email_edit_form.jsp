@@ -30,7 +30,7 @@
 
 					<div class="form-group form-group-sm">
 						<div class="col-sm-6" style="margin-left: -8em">
-							<div class="form-group row">
+							<div class="form-group row" id="form-group-custom">
 								<label for="sender" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.sender" /></label>
 								<div class="col-sm-6">
@@ -40,7 +40,7 @@
 								</div>
 							</div>
 
-							<div class="form-group row">
+							<div class="form-group row" id="form-group-custom">
 								<label for="recipients" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.recipients" /></label>
 								<div class="col-sm-6">
@@ -50,7 +50,7 @@
 								</div>
 							</div>
 
-							<div class="form-group row">
+							<div class="form-group row" id="form-group-custom">
 								<label for="content" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.content" /></label>
 								<div class="col-sm-6">
@@ -62,7 +62,7 @@
 						</div>
 
 						<div class="col-sm-6" style="margin-left: -8em">
-							<div class="form-group row">
+							<div class="form-group row" id="form-group-custom">
 								<label for="header" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.header" /></label>
 								<div class="col-sm-6">
@@ -72,7 +72,7 @@
 								</div>
 							</div>
 
-							<div class="form-group row">
+							<div class="form-group row" id="form-group-custom">
 								<label for="subject" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.subject" /></label>
 								<div class="col-sm-6">
@@ -82,7 +82,7 @@
 								</div>
 							</div>
 
-							<div class="form-group row">
+							<div class="form-group row" id="form-group-custom">
 								<label for="footer" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.footer" /></label>
 								<div class="col-sm-6">

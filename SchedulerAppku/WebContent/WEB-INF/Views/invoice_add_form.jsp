@@ -22,7 +22,7 @@
 					<div class="form-group form-group-sm">
 						<!-- start left column -->
 						<div class="col-sm-6" style="margin-left: -5em">
-							<div class="form-group">
+							<div class="form-group" id="form-group-custom">
 								<label for="customerId" class="col-sm-4 control-label"><spring:message
 										code="lbl.customerName" /></label>
 								<div class="col-sm-6">
@@ -34,7 +34,7 @@
 								</div>
 							</div>
 
-							<div class="form-group">
+							<div class="form-group" id="form-group-custom">
 								<label for="remarksId" class="col-sm-4 control-label"><spring:message
 										code="lbl.remarksName" /></label>
 								<div class="col-sm-6">
@@ -46,7 +46,7 @@
 								</div>
 							</div>
 
-							<div class="form-group">
+							<div class="form-group" id="form-group-custom">
 								<label for="noPo" class="col-sm-4 control-label"><spring:message
 										code="lbl.noPo" /></label>
 								<div class="col-sm-6">
@@ -57,7 +57,7 @@
 								</div>
 							</div>
 
-							<div class="form-group">
+							<div class="form-group" id="form-group-custom">
 								<label for="marketingId" class="col-sm-4 control-label"><spring:message
 										code="lbl.marketingName" /></label>
 								<div class="col-sm-6">
@@ -69,7 +69,7 @@
 								</div>
 							</div>
 
-							<div class="form-group">
+							<div class="form-group" id="form-group-custom">
 								<label for="noInvoice" class="col-sm-4 control-label"><spring:message
 										code="lbl.noInvoice" /></label>
 								<div class="col-sm-6">
@@ -80,7 +80,7 @@
 								</div>
 							</div>
 
-							<div class="form-group">
+							<div class="form-group" id="form-group-custom">
 								<label for="noPajak" class="col-sm-4 control-label"><spring:message
 										code="lbl.noPajak" /></label>
 								<div class="col-sm-6">
@@ -91,7 +91,7 @@
 								</div>
 							</div>
 
-							<div class="form-group">
+							<div class="form-group" id="form-group-custom">
 								<label for="tanggalInvoice" class="col-sm-4 control-label"><spring:message
 										code="lbl.tanggalInvoice" /></label>
 								<div class="col-sm-6">
@@ -102,7 +102,7 @@
 								</div>
 							</div>
 
-							<div class="form-group">
+							<div class="form-group" id="form-group-custom">
 								<label for="tanggalTt" class="col-sm-4 control-label"><spring:message
 										code="lbl.tanggalTt" /></label>
 								<div class="col-sm-6">
@@ -113,7 +113,7 @@
 								</div>
 							</div>
 
-							<div class="form-group">
+							<div class="form-group" id="form-group-custom">
 								<label for="termId" class="col-sm-4 control-label"><spring:message
 										code="lbl.termId" /></label>
 								<div class="col-sm-6">
@@ -124,7 +124,7 @@
 								</div>
 							</div>
 
-							<div class="form-group">
+							<div class="form-group" id="form-group-custom">
 								<label for="tanggalTempo" class="col-sm-4 control-label"><spring:message
 										code="lbl.tanggalTempo" /></label>
 								<div class="col-sm-6">
@@ -135,7 +135,7 @@
 								</div>
 							</div>
 
-							<div class="form-group">
+							<div class="form-group" id="form-group-custom">
 								<label for="piutangUsaha" class="col-sm-4 control-label"><spring:message
 										code="lbl.piutangUsaha" /></label>
 								<div class="col-sm-6">
@@ -150,7 +150,7 @@
 
 						<!-- right column -->
 						<div class="col-sm-6" style="margin-left: -5em">
-							<div class="form-group">
+							<div class="form-group" id="form-group-custom">
 								<label for="projectId" class="col-sm-4 control-label"><spring:message
 										code="lbl.projectName" /></label>
 								<div class="col-sm-6">
@@ -162,7 +162,7 @@
 								</div>
 							</div>
 
-							<div class="form-group">
+							<div class="form-group" id="form-group-custom">
 								<label for="dpp" class="col-sm-4 control-label"><spring:message
 										code="lbl.dpp" /></label>
 								<div class="col-sm-6">
@@ -173,7 +173,7 @@
 								</div>
 							</div>
 
-							<div class="form-group">
+							<div class="form-group" id="form-group-custom">
 								<label for="ppn" class="col-sm-4 control-label"><spring:message
 										code="lbl.ppn" /></label>
 								<div class="col-sm-6">
@@ -184,7 +184,7 @@
 								</div>
 							</div>
 
-							<div class="form-group row">
+							<div class="form-group row" id="form-group-custom">
 								<label for="pph" class="col-sm-4 control-label"><spring:message
 										code="lbl.pph" /></label>
 								<div class="col-sm-6">
@@ -195,7 +195,7 @@
 								</div>
 							</div>
 
-							<div class="form-group row">
+							<div class="form-group row" id="form-group-custom">
 								<label for="uangMasuk" class="col-sm-4 control-label"><spring:message
 										code="lbl.uangMasuk" /></label>
 								<div class="col-sm-6">
@@ -206,7 +206,7 @@
 								</div>
 							</div>
 
-							<div class="form-group row">
+							<div class="form-group row" id="form-group-custom">
 								<label for="tanggalLunas" class="col-sm-4 control-label"><spring:message
 										code="lbl.tanggalLunas" /></label>
 								<div class="col-sm-6">
@@ -217,7 +217,7 @@
 								</div>
 							</div>
 
-							<div class="form-group row">
+							<div class="form-group row" id="form-group-custom">
 								<label for="createdBy" class="col-sm-4 control-label"><spring:message
 										code="lbl.createdBy" /></label>
 								<div class="col-sm-6">
@@ -228,7 +228,7 @@
 								</div>
 							</div>
 
-							<div class="form-group row">
+							<div class="form-group row" id="form-group-custom">
 								<label for="createdDate" class="col-sm-4 control-label"><spring:message
 										code="lbl.createdDate" /></label>
 								<div class="col-sm-6">
@@ -239,7 +239,7 @@
 								</div>
 							</div>
 
-							<div class="form-group row">
+							<div class="form-group row" id="form-group-custom">
 								<label for="updatedBy" class="col-sm-4 control-label"><spring:message
 										code="lbl.updatedBy" /></label>
 								<div class="col-sm-6">
@@ -250,7 +250,7 @@
 								</div>
 							</div>
 
-							<div class="form-group row">
+							<div class="form-group row" id="form-group-custom">
 								<label for="updatedDate" class="col-sm-4 control-label"><spring:message
 										code="lbl.updatedDate" /></label>
 								<div class="col-sm-6">

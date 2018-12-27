@@ -10,3 +10,6 @@
 	width: 100%;
 }
 
+#form-group-custom {
+    margin-bottom: 0.5em !important;
+}

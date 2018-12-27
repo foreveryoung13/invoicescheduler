@@ -30,7 +30,7 @@
 					<div class="form-group form-group-sm">
 						<!-- start left column -->
 						<div class="col-sm-6" style="margin-left: -5em">
-							<div class="form-group row">
+							<div class="form-group row" id="form-group-custom">
 								<label for="customerName"
 									class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.customerName" /></label>
@@ -42,7 +42,7 @@
 								</div>
 							</div>
 
-							<div class="form-group row">
+							<div class="form-group row" id="form-group-custom">
 								<label for="address" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.address" /></label>
 								<div class="col-sm-6">
@@ -53,7 +53,7 @@
 								</div>
 							</div>
 
-							<div class="form-group row">
+							<div class="form-group row" id="form-group-custom">
 								<label for="city" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.city" /></label>
 								<div class="col-sm-6">
@@ -64,7 +64,7 @@
 								</div>
 							</div>
 
-							<div class="form-group row">
+							<div class="form-group row" id="form-group-custom">
 								<label for="province" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.province" /></label>
 								<div class="col-sm-6">
@@ -77,7 +77,7 @@
 						</div>
 
 						<div class="col-sm-6" style="margin-left: -5em">
-							<div class="form-group row">
+							<div class="form-group row" id="form-group-custom">
 								<label for="country" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.country" /></label>
 								<div class="col-sm-6">
@@ -88,7 +88,7 @@
 								</div>
 							</div>
 
-							<div class="form-group row">
+							<div class="form-group row" id="form-group-custom">
 								<label for="faxNumber" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.faxNumber" /></label>
 								<div class="col-sm-6">
@@ -99,7 +99,7 @@
 								</div>
 							</div>
 
-							<div class="form-group row">
+							<div class="form-group row" id="form-group-custom">
 								<label for="phoneNumber"
 									class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.phoneNumber" /></label>
@@ -111,7 +111,7 @@
 								</div>
 							</div>
 
-							<div class="form-group row">
+							<div class="form-group row" id="form-group-custom">
 								<label for="postalCode" class="col-sm-4 control-label labelname"><spring:message
 										code="lbl.postalCode" /></label>
 								<div class="col-sm-6">
