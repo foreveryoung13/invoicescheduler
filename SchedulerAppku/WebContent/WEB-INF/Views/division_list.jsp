@@ -4,6 +4,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@ taglib prefix="tag" uri="/WEB-INF/taglibs/customTaglib.tld"%>
 
 <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="body">
@@ -53,15 +54,13 @@
 										</c:forEach>
 									</tbody>
 								</table>
+								<tag:paginate max="15" offset="${offset}" count="${count}"
+									uri="${pageContext.request.contextPath}/division/list"
+									next="&raquo;" previous="&laquo;" />
 							</div>
 						</div>
 					</div>
 				</div>
-
-				<!--<a href="${pageContext.request.contextPath}/division/list/1">1</a>     
-   						<a href="${pageContext.request.contextPath}/division/list/2">2</a>     
-   						<a href="${pageContext.request.contextPath}/division/list/3">3</a> -->
-
 				<div class="row">
 					<div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-11">
 						<a href="<c:url value='/division/add'/>"

@@ -1,7 +1,6 @@
 package com.nana.bankapp.services;
 
 import java.util.List;
-import java.util.UUID;
 
 import javax.transaction.Transactional;
 
@@ -34,11 +33,11 @@ public class DivisionServiceImpl implements DivisionService {
 	public List<Division> getDivision() {
 		return rdivisionDAO.getDivision();
 	}
-	
+
 	@Override
 	@Transactional
-	public List<Division> pageDivisionList(int start, int maxrows){
-		return rdivisionDAO.pageDivisionList(start, maxrows);
+	public List<Division> pageDivisionList(Integer offset, Integer maxResults) {
+		return rdivisionDAO.pageDivisionList(offset, maxResults);
 	}
 
 	@Override
@@ -51,6 +50,12 @@ public class DivisionServiceImpl implements DivisionService {
 	@Transactional
 	public boolean deleteDivision(String divisionId) {
 		return rdivisionDAO.deleteDivision(divisionId);
+	}
+
+	@Override
+	@Transactional
+	public Long count() {
+		return rdivisionDAO.count();
 	}
 
 }

@@ -10,7 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -38,6 +37,7 @@ public class DivisionController {
 		return "division_add_form";
 	}
 
+	/*
 	@GetMapping("/list")
 	public String listDivision(Model model) {
 		String name = authName.getLoginName();
@@ -46,7 +46,7 @@ public class DivisionController {
 		model.addAttribute("username", name);
 		model.addAttribute("division", division);
 		return "division_list";
-	}
+	} */
 
 	@GetMapping("/edit")
 	public String updateDivision(@RequestParam("divisionId") String divisionId, Model model) {
@@ -97,28 +97,41 @@ public class DivisionController {
 		}
 	}
 
-	@RequestMapping(value = "/list/{pageId}", method = RequestMethod.GET)
-	public String paginationDivisionList(@PathVariable int pageId, Model model) {
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	public String list(Model model, Integer offset, Integer maxResults) {
+		System.out.println("------------------------------------------------------------");
+		System.out.println("inlist");
 		
-		System.out.println(pageId);
-
-		int total = 5;
-		if (pageId == 1) {
-
-		} else {
-			pageId = (pageId - 1) * total + 1;
-		}
-
-		List<Division> divlist = ds.pageDivisionList(pageId, total);
+		System.out.println("offset : " + offset);
+		System.out.println("maxResult : " + maxResults);
 		
-		if (divlist != null) {
-			System.out.println(divlist.size());
-		} else {
-			System.out.println("null");
-		}
+		System.out.println("ds.count ==> " + ds.count());
+		System.out.println("ds.pageDivisionList ==> " + ds.pageDivisionList(offset, maxResults));
 
-		model.addAttribute("division", divlist);
+		model.addAttribute("division", ds.pageDivisionList(offset, maxResults));
+		model.addAttribute("count", ds.count());
+		model.addAttribute("offset", offset);
+		
 		return "division_list";
 	}
+
+	/*
+	 * 
+	 * @RequestMapping(value = "/list/{pageId}", method = RequestMethod.GET) public
+	 * String paginationDivisionList(@PathVariable int pageId, Model model) {
+	 * 
+	 * System.out.println(pageId);
+	 * 
+	 * int total = 5; if (pageId == 1) {
+	 * 
+	 * } else { pageId = (pageId - 1) * total + 1; }
+	 * 
+	 * List<Division> divlist = ds.pageDivisionList(pageId, total);
+	 * 
+	 * if (divlist != null) { System.out.println(divlist.size()); } else {
+	 * System.out.println("null"); }
+	 * 
+	 * model.addAttribute("division", divlist); return "division_list"; }
+	 */
 
 }

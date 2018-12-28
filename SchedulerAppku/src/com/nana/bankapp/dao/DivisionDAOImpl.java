@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Projections;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -76,13 +78,13 @@ public class DivisionDAOImpl implements DivisionDAO {
 	}
 
 	@Override
-	public List<Division> pageDivisionList(int start, int maxrows) {
+	public List<Division> pageDivisionList(Integer offset, Integer maxResults) {
 		List<Division> list = new ArrayList<Division>();
 		try {
 			Session session = sessionFactory.getCurrentSession();
 			Query<DivisionEntity> query = session.createQuery("FROM DivisionEntity", DivisionEntity.class);
-			query.setFirstResult(start);
-			query.setMaxResults(maxrows);
+			query.setFirstResult(offset != null ? offset : 0);
+			query.setMaxResults(maxResults != null ? maxResults : 10);
 
 			List<DivisionEntity> rdivision = query.getResultList();
 
@@ -95,7 +97,6 @@ public class DivisionDAOImpl implements DivisionDAO {
 					list.add(div);
 				}
 			}
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -128,6 +129,24 @@ public class DivisionDAOImpl implements DivisionDAO {
 			deleteFlag = false;
 		}
 		return deleteFlag;
+	}
+
+	@Override
+	public Long count() {
+		Session session = sessionFactory.getCurrentSession();
+		Long rowCount = null;
+		try {
+			Criteria criteria = session.createCriteria(DivisionEntity.class).setProjection(Projections.rowCount());
+			List result = criteria.list();
+			
+			if (!result.isEmpty()) {
+				rowCount = (Long) result.get(0);
+				System.out.println("rowcount ==> " + rowCount.longValue());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return rowCount;
 	}
 
 }
