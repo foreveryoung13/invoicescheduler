@@ -36,6 +36,12 @@ public class EmailServiceImpl implements EmailService {
 
 	@Override
 	@Transactional
+	public List<Email> pageEmailList(Integer offset, Integer maxResults) {
+		return dao.pageEmailList(offset, maxResults);
+	}
+
+	@Override
+	@Transactional
 	public Email getEmail(String emailId) {
 		return dao.getEmail(emailId);
 	}
@@ -46,4 +52,9 @@ public class EmailServiceImpl implements EmailService {
 		return dao.deleteEmail(emailId);
 	}
 
+	@Override
+	@Transactional
+	public Long count() {
+		return dao.count();
+	}
 }

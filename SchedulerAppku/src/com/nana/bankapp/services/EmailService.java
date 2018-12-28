@@ -9,7 +9,8 @@ public interface EmailService {
 	public boolean saveEmail(Email email);
 	public boolean editEmail(Email email);
 	public List<Email> getEmail();
+	public List<Email> pageEmailList(Integer offset, Integer maxResults);
 	public Email getEmail(String emaiId);
 	public boolean deleteEmail(String emaiId);
-
+	public Long count();
 }

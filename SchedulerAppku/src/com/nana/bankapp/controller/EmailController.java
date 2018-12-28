@@ -1,7 +1,5 @@
 package com.nana.bankapp.controller;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +35,7 @@ public class EmailController {
 		return "email_add_form";
 	}
 	
+	/*
 	@GetMapping("/list")
 	public String listEmail(Model model) {
 		String name = authName.getLoginName();
@@ -45,7 +44,7 @@ public class EmailController {
 		model.addAttribute("username", name);
 		model.addAttribute("email", email);
 		return "email_list";
-	}
+	}*/
 
 	@GetMapping("/edit")
 	public String updateEmail(@RequestParam("emailId") String emailId, Model model) {
@@ -93,6 +92,17 @@ public class EmailController {
 			es.editEmail(email);
 			return "redirect:/email/list";
 		}
+	}
+	
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	public String list(Model model, Integer offset, Integer maxResults) {
+		String name = authName.getLoginName();
+		
+		model.addAttribute("username", name);
+		model.addAttribute("email", es.pageEmailList(offset, maxResults));
+		model.addAttribute("count", es.count());
+		model.addAttribute("offset", offset);
+		return "email_list";
 	}
 
 	

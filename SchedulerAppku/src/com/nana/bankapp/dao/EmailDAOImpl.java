@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Projections;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -82,7 +84,37 @@ public class EmailDAOImpl implements EmailDAO {
 				list.add(email);
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	@Override
+	public List<Email> pageEmailList(Integer offset, Integer maxResults) {
+		List<Email> list = new ArrayList<Email>();
+		try {
+			Session session = sessionFactory.getCurrentSession();
+			Query<EmailEntity> query = session.createQuery("FROM EmailEntity", EmailEntity.class);
+			query.setFirstResult(offset != null ? offset : 0);
+			query.setMaxResults(maxResults != null ? maxResults : 10);
+
+			List<EmailEntity> rEmail = query.getResultList();
+
+			if (rEmail != null) {
+				for (int i = 0; i < rEmail.size(); i++) {
+					EmailEntity ee = (EmailEntity) rEmail.get(i);
+					Email email = new Email();
+					email.setEmailId(ee.getEmailId());
+					email.setSender(ee.getSender());
+					email.setRecipients(ee.getRecipients());
+					email.setSubject(ee.getSubject());
+					email.setHeader(ee.getHeader());
+					email.setFooter(ee.getFooter());
+					email.setContent(ee.getContent());
+					list.add(email);
+				}
+			}
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return list;
@@ -120,6 +152,23 @@ public class EmailDAOImpl implements EmailDAO {
 			deleteFlag = false;
 		}
 		return deleteFlag;
+	}
+
+	@Override
+	public Long count() {
+		Session session = sessionFactory.getCurrentSession();
+		Long rowCount = null;
+		try {
+			Criteria criteria = session.createCriteria(EmailEntity.class).setProjection(Projections.rowCount());
+			List result = criteria.list();
+
+			if (!result.isEmpty()) {
+				rowCount = (Long) result.get(0);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return rowCount;
 	}
 
 }
