@@ -56,6 +56,7 @@ public class MarketingController {
 		return "marketing_add_form";
 	}
 
+	/*
 	@GetMapping("/list")
 	public String listMarketings(Model model) {
 		List<Marketing> marketing = ms.getMarketings();
@@ -64,7 +65,7 @@ public class MarketingController {
 		model.addAttribute("username", name);
 		model.addAttribute("marketing", marketing);
 		return "marketing_list";
-	}
+	}*/
 
 	@GetMapping("/edit")
 	public String updateMarketing(@RequestParam("marketingId") String marketingId, Model model) {
@@ -111,6 +112,17 @@ public class MarketingController {
 			ms.editMarketing(marketing);
 			return "redirect:/marketings/list";
 		}
+	}
+	
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	public String list(Model model, Integer offset, Integer maxResults) {
+		String name = authName.getLoginName();
+		
+		model.addAttribute("username", name);
+		model.addAttribute("marketing", ms.pageMarketingList(offset, maxResults));
+		model.addAttribute("count", ms.count());
+		model.addAttribute("offset", offset);
+		return "marketing_list";
 	}
 
 }

@@ -70,7 +70,6 @@
 									uri="${pageContext.request.contextPath}/email/list"
 									next="&raquo;" previous="&laquo;" />
 
-
 							</div>
 						</div>
 					</div>

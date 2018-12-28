@@ -36,6 +36,12 @@ public class MarketingServiceImpl implements MarketingService {
 
 	@Override
 	@Transactional
+	public List<Marketing> pageMarketingList(Integer offset, Integer maxResults) {
+		return marketingDAO.pageMarketingList(offset, maxResults);
+	}
+
+	@Override
+	@Transactional
 	public Marketing getMarketing(String marketingId) {
 		return marketingDAO.getMarketing(marketingId);
 	}
@@ -44,6 +50,12 @@ public class MarketingServiceImpl implements MarketingService {
 	@Transactional
 	public boolean deleteMarketing(String marketingId) {
 		return marketingDAO.deleteMarketing(marketingId);
+	}
+
+	@Override
+	@Transactional
+	public Long count() {
+		return marketingDAO.count();
 	}
 
 }

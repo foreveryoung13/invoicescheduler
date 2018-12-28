@@ -9,7 +9,9 @@ public interface MarketingService {
 	public boolean saveMarketing(Marketing marketing);
 	public boolean editMarketing(Marketing marketing);
 	public List<Marketing> getMarketings();
+	public List<Marketing> pageMarketingList(Integer offset, Integer maxResults);
 	public Marketing getMarketing(String marketingId);
 	public boolean deleteMarketing(String marketingId);
+	public Long count();
 	
 }
