@@ -91,16 +91,21 @@ public class DivisionController {
 		} else {
 			model.addAttribute("username", name);
 			ds.editDivision(division);
-			return "redirect:/division/list";
+			return "redirect:/division/list?edit=true";
 		}
 	}
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public String list(Model model, Integer offset, Integer maxResults) {
+	public String list(Model model, Integer offset, Integer maxResults, @RequestParam(required=false) boolean edit) {
 		String name = authName.getLoginName();
 		
+		if (edit) {
+			model.addAttribute("division", ds.pageDivisionList(offset, maxResults, true));
+		} else {
+			model.addAttribute("division", ds.pageDivisionList(offset, maxResults, false));
+		}
+		
 		model.addAttribute("username", name);
-		model.addAttribute("division", ds.pageDivisionList(offset, maxResults));
 		model.addAttribute("count", ds.count());
 		model.addAttribute("offset", offset);
 		return "division_list";

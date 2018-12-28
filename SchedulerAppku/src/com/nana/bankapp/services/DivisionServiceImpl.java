@@ -36,8 +36,8 @@ public class DivisionServiceImpl implements DivisionService {
 
 	@Override
 	@Transactional
-	public List<Division> pageDivisionList(Integer offset, Integer maxResults) {
-		return rdivisionDAO.pageDivisionList(offset, maxResults);
+	public List<Division> pageDivisionList(Integer offset, Integer maxResults, boolean condition) {
+		return rdivisionDAO.pageDivisionList(offset, maxResults, condition);
 	}
 
 	@Override

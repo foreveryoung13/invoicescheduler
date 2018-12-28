@@ -1,6 +1,7 @@
 package com.nana.bankapp.dao;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -28,6 +29,10 @@ public class DivisionDAOImpl implements DivisionDAO {
 		DivisionEntity de = new DivisionEntity();
 		de.setDivisionId(UUID.randomUUID().toString());
 		de.setDivisionName(division.getDivisionName());
+		de.setCreatedBy("User");
+		de.setCreatedDate(new Date());
+		de.setUpdatedBy(null);
+		de.setUpdatedDate(null);
 
 		try {
 			Session currentSession = sessionFactory.getCurrentSession();
@@ -46,6 +51,11 @@ public class DivisionDAOImpl implements DivisionDAO {
 		DivisionEntity de = new DivisionEntity();
 		de.setDivisionId(division.getDivisionId());
 		de.setDivisionName(division.getDivisionName());
+		de.setCreatedBy(division.getCreatedBy());
+		de.setCreatedDate(division.getCreatedDate());
+		de.setUpdatedBy("User");
+		de.setUpdatedDate(new Date());
+
 		try {
 			Session currentSession = sessionFactory.getCurrentSession();
 			currentSession.update(de);
@@ -69,6 +79,10 @@ public class DivisionDAOImpl implements DivisionDAO {
 				Division div = new Division();
 				div.setDivisionId(de.getDivisionId());
 				div.setDivisionName(de.getDivisionName());
+				div.setCreatedBy(de.getCreatedBy());
+				div.setCreatedDate(de.getCreatedDate());
+				div.setUpdatedBy(de.getUpdatedBy());
+				div.setUpdatedDate(de.getUpdatedDate());
 				list.add(div);
 			}
 		} catch (Exception e) {
@@ -78,11 +92,17 @@ public class DivisionDAOImpl implements DivisionDAO {
 	}
 
 	@Override
-	public List<Division> pageDivisionList(Integer offset, Integer maxResults) {
+	public List<Division> pageDivisionList(Integer offset, Integer maxResults, boolean condition) {
 		List<Division> list = new ArrayList<Division>();
+		String querySql = "FROM DivisionEntity ORDER BY createdDate DESC";
+		if (condition) {
+			querySql = "FROM DivisionEntity ORDER BY updatedDate DESC";
+		}
 		try {
 			Session session = sessionFactory.getCurrentSession();
-			Query<DivisionEntity> query = session.createQuery("FROM DivisionEntity", DivisionEntity.class);
+			
+			System.out.println(querySql);
+			Query<DivisionEntity> query = session.createQuery(querySql, DivisionEntity.class);
 			query.setFirstResult(offset != null ? offset : 0);
 			query.setMaxResults(maxResults != null ? maxResults : 10);
 
@@ -94,6 +114,10 @@ public class DivisionDAOImpl implements DivisionDAO {
 					Division div = new Division();
 					div.setDivisionId(de.getDivisionId());
 					div.setDivisionName(de.getDivisionName());
+					div.setCreatedBy(de.getCreatedBy());
+					div.setCreatedDate(de.getCreatedDate());
+					div.setUpdatedBy(de.getUpdatedBy());
+					div.setUpdatedDate(de.getUpdatedDate());
 					list.add(div);
 				}
 			}
@@ -111,6 +135,10 @@ public class DivisionDAOImpl implements DivisionDAO {
 			DivisionEntity de = (DivisionEntity) session.load(DivisionEntity.class, divisionId);
 			div.setDivisionId(de.getDivisionId());
 			div.setDivisionName(de.getDivisionName());
+			div.setCreatedBy(de.getCreatedBy());
+			div.setCreatedDate(de.getCreatedDate());
+			div.setUpdatedBy(de.getUpdatedBy());
+			div.setUpdatedDate(de.getUpdatedDate());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -138,7 +166,7 @@ public class DivisionDAOImpl implements DivisionDAO {
 		try {
 			Criteria criteria = session.createCriteria(DivisionEntity.class).setProjection(Projections.rowCount());
 			List result = criteria.list();
-			
+
 			if (!result.isEmpty()) {
 				rowCount = (Long) result.get(0);
 			}
