@@ -1,8 +1,6 @@
 package com.nana.bankapp.services;
 
 import java.util.List;
-import java.util.UUID;
-
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +35,12 @@ public class ProjectServiceImpl implements ProjectService {
 
 	@Override
 	@Transactional
+	public List<Project> pageProjectList(Integer offset, Integer maxResults) {
+		return projectDAO.pageProjectList(offset, maxResults);
+	}
+
+	@Override
+	@Transactional
 	public Project getProject(String projectId) {
 		return projectDAO.getProject(projectId);
 	}
@@ -45,6 +49,12 @@ public class ProjectServiceImpl implements ProjectService {
 	@Transactional
 	public boolean deleteProject(String projectId) {
 		return projectDAO.deleteProject(projectId);
+	}
+
+	@Override
+	@Transactional
+	public Long count() {
+		return projectDAO.count();
 	}
 
 }

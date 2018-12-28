@@ -9,7 +9,9 @@ public interface ProjectDAO {
 	public boolean saveProject(Project project);
 	public boolean editProject(Project project);
 	public List<Project> getProjects();
+	public List<Project> pageProjectList(Integer offset, Integer maxResults);
 	public Project getProject(String projectId);
 	public boolean deleteProject(String projectId);
+	public Long count();
 
 }

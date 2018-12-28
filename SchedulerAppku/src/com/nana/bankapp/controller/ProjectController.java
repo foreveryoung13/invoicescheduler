@@ -1,7 +1,5 @@
 package com.nana.bankapp.controller;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +35,7 @@ public class ProjectController {
 		return "project_add_form";
 	}
 
+	/*
 	@GetMapping("/list")
 	public String listProjects(Model model) {
 		List<Project> project = ps.getProjects();
@@ -45,7 +44,7 @@ public class ProjectController {
 		model.addAttribute("username", name);
 		model.addAttribute("project", project);
 		return "project_list";
-	}
+	}*/
 
 	@GetMapping("/edit")
 	public String updateProject(@RequestParam("projectId") String projectId, Model model) {
@@ -92,6 +91,17 @@ public class ProjectController {
 			ps.editProject(project);
 			return "redirect:/project/list";
 		}
+	}
+	
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	public String list(Model model, Integer offset, Integer maxResults) {
+		String name = authName.getLoginName();
+		
+		model.addAttribute("username", name);
+		model.addAttribute("project", ps.pageProjectList(offset, maxResults));
+		model.addAttribute("count", ps.count());
+		model.addAttribute("offset", offset);
+		return "project_list";
 	}
 
 }

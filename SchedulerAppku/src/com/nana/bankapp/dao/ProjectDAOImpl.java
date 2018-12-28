@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Projections;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -74,6 +76,32 @@ public class ProjectDAOImpl implements ProjectDAO {
 	}
 
 	@Override
+	public List<Project> pageProjectList(Integer offset, Integer maxResults) {
+		List<Project> list = new ArrayList<Project>();
+		try {
+			Session session = sessionFactory.getCurrentSession();
+			Query<ProjectEntity> query = session.createQuery("FROM ProjectEntity", ProjectEntity.class);
+			query.setFirstResult(offset != null ? offset : 0);
+			query.setMaxResults(maxResults != null ? maxResults : 10);
+
+			List<ProjectEntity> rProject = query.getResultList();
+
+			if (rProject != null) {
+				for (int i = 0; i < rProject.size(); i++) {
+					ProjectEntity pe = (ProjectEntity) rProject.get(i);
+					Project pro = new Project();
+					pro.setProjectId(pe.getProjectId());
+					pro.setProjectName(pe.getProjectName());
+					list.add(pro);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	@Override
 	public Project getProject(String projectId) {
 		Project pr = new Project();
 		try {
@@ -101,4 +129,20 @@ public class ProjectDAOImpl implements ProjectDAO {
 		return deleteFlag;
 	}
 
+	@Override
+	public Long count() {
+		Session session = sessionFactory.getCurrentSession();
+		Long rowCount = null;
+		try {
+			Criteria criteria = session.createCriteria(ProjectEntity.class).setProjection(Projections.rowCount());
+			List result = criteria.list();
+
+			if (!result.isEmpty()) {
+				rowCount = (Long) result.get(0);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return rowCount;
+	}
 }
