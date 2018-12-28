@@ -35,8 +35,8 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	@Transactional
-	public List<Customer> pageCustomerList(Integer offset, Integer maxResults) {
-		return customerDAO.pageCustomerList(offset, maxResults);
+	public List<Customer> pageCustomerList(Integer offset, Integer maxResults, boolean condition) {
+		return customerDAO.pageCustomerList(offset, maxResults, condition);
 	}
 
 	@Override

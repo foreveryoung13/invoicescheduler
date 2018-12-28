@@ -85,16 +85,21 @@ public class CustomerController {
 		} else {
 			model.addAttribute("username", name);
 			cs.editCustomer(customer);
-			return "redirect:/customer/list";
+			return "redirect:/customer/list?edit=true";
 		}
 	}
 	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public String list(Model model, Integer offset, Integer maxResults) {
+	public String list(Model model, Integer offset, Integer maxResults, @RequestParam(required=false) boolean edit) {
 		String name = authName.getLoginName();
 		
+		if (edit) {
+			model.addAttribute("customer", cs.pageCustomerList(offset, maxResults, true));
+		} else {
+			model.addAttribute("customer", cs.pageCustomerList(offset, maxResults, false));
+		}
+		
 		model.addAttribute("username", name);
-		model.addAttribute("customer", cs.pageCustomerList(offset, maxResults));
 		model.addAttribute("count", cs.count());
 		model.addAttribute("offset", offset);
 		return "customer_list";

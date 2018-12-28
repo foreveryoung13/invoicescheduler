@@ -1,6 +1,7 @@
 package com.nana.bankapp.dao;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -13,9 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.nana.bankapp.entity.CustomerEntity;
-import com.nana.bankapp.entity.DivisionEntity;
 import com.nana.bankapp.model.Customer;
-import com.nana.bankapp.model.Division;
 
 @Repository
 public class CustomerDAOImpl implements CustomerDAO {
@@ -36,6 +35,10 @@ public class CustomerDAOImpl implements CustomerDAO {
 		ce.setFaxNumber(customer.getFaxNumber());
 		ce.setPhoneNumber(customer.getPhoneNumber());
 		ce.setPostalCode(customer.getPostalCode());
+		ce.setCreatedBy("User");
+		ce.setCreatedDate(new Date());
+		ce.setUpdatedBy(null);
+		ce.setUpdatedDate(null);
 		try {
 			Session currentSession = sessionFactory.getCurrentSession();
 			currentSession.save(ce);
@@ -59,6 +62,11 @@ public class CustomerDAOImpl implements CustomerDAO {
 		ce.setFaxNumber(customer.getFaxNumber());
 		ce.setPhoneNumber(customer.getPhoneNumber());
 		ce.setPostalCode(customer.getPostalCode());
+		ce.setCreatedBy(customer.getCreatedBy());
+		ce.setCreatedDate(customer.getCreatedDate());
+		ce.setUpdatedBy("User");
+		ce.setUpdatedDate(new Date());
+		
 		try {
 			Session currentSession = sessionFactory.getCurrentSession();
 			currentSession.update(ce);
@@ -89,6 +97,10 @@ public class CustomerDAOImpl implements CustomerDAO {
 				ce.setFaxNumber(customerEntity.getFaxNumber());
 				ce.setPhoneNumber(customerEntity.getPhoneNumber());
 				ce.setPostalCode(customerEntity.getPostalCode());
+				ce.setCreatedBy(customerEntity.getCreatedBy());
+				ce.setCreatedDate(customerEntity.getCreatedDate());
+				ce.setUpdatedBy(customerEntity.getUpdatedBy());
+				ce.setUpdatedDate(customerEntity.getUpdatedDate());
 				list.add(ce);
 			}
 
@@ -99,11 +111,16 @@ public class CustomerDAOImpl implements CustomerDAO {
 	}
 
 	@Override
-	public List<Customer> pageCustomerList(Integer offset, Integer maxResults) {
+	public List<Customer> pageCustomerList(Integer offset, Integer maxResults, boolean condition) {
 		List<Customer> list = new ArrayList<Customer>();
+		String querySql = "FROM CustomerEntity ORDER BY createdDate DESC";
+		if (condition) {
+			querySql = "FROM CustomerEntity ORDER BY updatedDate DESC";
+		}
+		
 		try {
 			Session session = sessionFactory.getCurrentSession();
-			Query<CustomerEntity> query = session.createQuery("FROM CustomerEntity", CustomerEntity.class);
+			Query<CustomerEntity> query = session.createQuery(querySql, CustomerEntity.class);
 			query.setFirstResult(offset != null ? offset : 0);
 			query.setMaxResults(maxResults != null ? maxResults : 10);
 
@@ -122,6 +139,10 @@ public class CustomerDAOImpl implements CustomerDAO {
 					ce.setFaxNumber(customerEntity.getFaxNumber());
 					ce.setPhoneNumber(customerEntity.getPhoneNumber());
 					ce.setPostalCode(customerEntity.getPostalCode());
+					ce.setCreatedBy(customerEntity.getCreatedBy());
+					ce.setCreatedDate(customerEntity.getCreatedDate());
+					ce.setUpdatedBy(customerEntity.getUpdatedBy());
+					ce.setUpdatedDate(customerEntity.getUpdatedDate());
 					list.add(ce);
 				}
 			}
@@ -146,6 +167,10 @@ public class CustomerDAOImpl implements CustomerDAO {
 			cu.setFaxNumber(ce.getFaxNumber());
 			cu.setPhoneNumber(ce.getPhoneNumber());
 			cu.setPostalCode(ce.getPostalCode());
+			cu.setCreatedBy(ce.getCreatedBy());
+			cu.setCreatedDate(ce.getCreatedDate());
+			cu.setUpdatedBy(ce.getUpdatedBy());
+			cu.setUpdatedDate(ce.getUpdatedDate());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -1,5 +1,7 @@
 package com.nana.bankapp.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -36,6 +38,18 @@ public class CustomerEntity {
 
 	@Column(name = "POSTAL_CODE")
 	protected String postalCode;
+
+	@Column(name = "CREATED_BY")
+	protected String createdBy;
+
+	@Column(name = "CREATED_DATE")
+	protected Date createdDate;
+
+	@Column(name = "UPDATED_BY")
+	protected String updatedBy;
+
+	@Column(name = "UPDATED_DATE")
+	protected Date updatedDate;
 
 	public String getCustomerId() {
 		return customerId;
@@ -107,6 +121,38 @@ public class CustomerEntity {
 
 	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
+	}
+
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public String getUpdatedBy() {
+		return updatedBy;
+	}
+
+	public void setUpdatedBy(String updatedBy) {
+		this.updatedBy = updatedBy;
+	}
+
+	public Date getUpdatedDate() {
+		return updatedDate;
+	}
+
+	public void setUpdatedDate(Date updatedDate) {
+		this.updatedDate = updatedDate;
 	}
 
 }
