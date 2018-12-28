@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Projections;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -74,6 +76,32 @@ public class RemarksDAOImpl implements RemarksDAO {
 	}
 
 	@Override
+	public List<Remarks> pageRemarksList(Integer offset, Integer maxResults) {
+		List<Remarks> list = new ArrayList<Remarks>();
+		try {
+			Session session = sessionFactory.getCurrentSession();
+			Query<RemarksEntity> query = session.createQuery("FROM RemarksEntity", RemarksEntity.class);
+			query.setFirstResult(offset != null ? offset : 0);
+			query.setMaxResults(maxResults != null ? maxResults : 10);
+
+			List<RemarksEntity> rRemarks = query.getResultList();
+
+			if (rRemarks != null) {
+				for (int i = 0; i < rRemarks.size(); i++) {
+					RemarksEntity pe = (RemarksEntity) rRemarks.get(i);
+					Remarks pro = new Remarks();
+					pro.setRemarksId(pe.getRemarksId());
+					pro.setRemarksName(pe.getRemarksName());
+					list.add(pro);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	@Override
 	public Remarks getRemarks(String remarksId) {
 		Remarks rem = new Remarks();
 		try {
@@ -99,6 +127,23 @@ public class RemarksDAOImpl implements RemarksDAO {
 			deleteFlag = false;
 		}
 		return deleteFlag;
+	}
+
+	@Override
+	public Long count() {
+		Session session = sessionFactory.getCurrentSession();
+		Long rowCount = null;
+		try {
+			Criteria criteria = session.createCriteria(RemarksEntity.class).setProjection(Projections.rowCount());
+			List result = criteria.list();
+
+			if (!result.isEmpty()) {
+				rowCount = (Long) result.get(0);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return rowCount;
 	}
 
 }

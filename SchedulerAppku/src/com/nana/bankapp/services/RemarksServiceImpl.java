@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.nana.bankapp.dao.RemarksDAO;
 import com.nana.bankapp.model.Remarks;
+import com.nana.bankapp.model.Remarks;
 
 @Service
 public class RemarksServiceImpl implements RemarksService {
@@ -36,6 +37,12 @@ public class RemarksServiceImpl implements RemarksService {
 
 	@Override
 	@Transactional
+	public List<Remarks> pageRemarksList(Integer offset, Integer maxResults) {
+		return remarksDAO.pageRemarksList(offset, maxResults);
+	}
+
+	@Override
+	@Transactional
 	public Remarks getRemarks(String remarksId) {
 		return remarksDAO.getRemarks(remarksId);
 	}
@@ -44,6 +51,12 @@ public class RemarksServiceImpl implements RemarksService {
 	@Transactional
 	public boolean deleteRemarks(String remarksId) {
 		return remarksDAO.deleteRemarks(remarksId);
+	}
+
+	@Override
+	@Transactional
+	public Long count() {
+		return remarksDAO.count();
 	}
 
 }

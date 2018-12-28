@@ -1,7 +1,5 @@
 package com.nana.bankapp.controller;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +35,7 @@ public class RemarksController {
 		return "remarks_add_form";
 	}
 
+	/*
 	@GetMapping("/list")
 	public String listRemarks(Model model) {
 		List<Remarks> remarks = ps.getRemarks();
@@ -45,7 +44,7 @@ public class RemarksController {
 		model.addAttribute("username", name);
 		model.addAttribute("remarks", remarks);
 		return "remarks_list";
-	}
+	} */
 
 	@GetMapping("/edit")
 	public String updateRemarks(@RequestParam("remarksId") String remarksId, Model model) {
@@ -92,6 +91,17 @@ public class RemarksController {
 			ps.editRemarks(remarks);
 			return "redirect:/remark/list";
 		}
+	}
+	
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	public String list(Model model, Integer offset, Integer maxResults) {
+		String name = authName.getLoginName();
+		
+		model.addAttribute("username", name);
+		model.addAttribute("remarks", ps.pageRemarksList(offset, maxResults));
+		model.addAttribute("count", ps.count());
+		model.addAttribute("offset", offset);
+		return "remarks_list";
 	}
 
 }

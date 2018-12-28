@@ -9,7 +9,9 @@ public interface RemarksDAO {
 	public boolean saveRemarks(Remarks remarks);
 	public boolean editRemarks(Remarks remarks);
 	public List<Remarks> getRemarks();
+	public List<Remarks> pageRemarksList(Integer offset, Integer maxResults);
 	public Remarks getRemarks(String remarksId);
 	public boolean deleteRemarks(String remarksId);
+	public Long count();
 
 }

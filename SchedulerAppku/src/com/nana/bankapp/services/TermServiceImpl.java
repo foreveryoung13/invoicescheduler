@@ -36,6 +36,12 @@ public class TermServiceImpl implements TermService {
 
 	@Override
 	@Transactional
+	public List<Term> pageTermList(Integer offset, Integer maxResults) {
+		return termDAO.pageTermList(offset, maxResults);
+	}
+
+	@Override
+	@Transactional
 	public Term getTerm(String termId) {
 		return termDAO.getTerm(termId);
 	}
@@ -44,6 +50,12 @@ public class TermServiceImpl implements TermService {
 	@Transactional
 	public boolean deleteTerm(String termId) {
 		return termDAO.deleteTerm(termId);
+	}
+
+	@Override
+	@Transactional
+	public Long count() {
+		return termDAO.count();
 	}
 
 }

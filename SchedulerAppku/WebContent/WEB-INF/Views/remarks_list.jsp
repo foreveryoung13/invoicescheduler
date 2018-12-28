@@ -4,6 +4,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@ taglib prefix="tag" uri="/WEB-INF/taglibs/customTaglib.tld"%>
 
 <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="body">
@@ -49,6 +50,11 @@
 										</c:forEach>
 									</tbody>
 								</table>
+
+								<tag:paginate max="15" offset="${offset}" count="${count}"
+									uri="${pageContext.request.contextPath}/remark/list"
+									next="&raquo;" previous="&laquo;" />
+
 							</div>
 						</div>
 					</div>

@@ -37,6 +37,7 @@ public class TermController {
 		return "term_add_form";
 	}
 
+	/*
 	@GetMapping("/list")
 	public String listTerm(Model model) {
 		List<Term> term = ps.getTerm();
@@ -45,7 +46,7 @@ public class TermController {
 		model.addAttribute("username", name);
 		model.addAttribute("term", term);
 		return "term_list";
-	}
+	} */
 
 	@GetMapping("/edit")
 	public String updateTerm(@RequestParam("termId") String termId, Model model) {
@@ -92,6 +93,17 @@ public class TermController {
 			ps.editTerm(term);
 			return "redirect:/term/list";
 		}
+	}
+	
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	public String list(Model model, Integer offset, Integer maxResults) {
+		String name = authName.getLoginName();
+		
+		model.addAttribute("username", name);
+		model.addAttribute("term", ps.pageTermList(offset, maxResults));
+		model.addAttribute("count", ps.count());
+		model.addAttribute("offset", offset);
+		return "term_list";
 	}
 
 }
