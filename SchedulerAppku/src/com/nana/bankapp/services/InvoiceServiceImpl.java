@@ -36,6 +36,12 @@ public class InvoiceServiceImpl implements InvoiceService {
 
 	@Override
 	@Transactional
+	public List<Invoice> pageInvoiceList(Integer offset, Integer maxResults) {
+		return invoiceDAO.pageInvoiceList(offset, maxResults);
+	}
+
+	@Override
+	@Transactional
 	public Invoice getInvoice(String invoice) {
 		return invoiceDAO.getInvoice(invoice);
 	}
@@ -44,6 +50,12 @@ public class InvoiceServiceImpl implements InvoiceService {
 	@Transactional
 	public boolean deleteInvoice(String invoice) {
 		return invoiceDAO.deleteInvoice(invoice);
+	}
+
+	@Override
+	@Transactional
+	public Long count() {
+		return invoiceDAO.count();
 	}
 
 }

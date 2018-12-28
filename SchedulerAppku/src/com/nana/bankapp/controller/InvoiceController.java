@@ -130,6 +130,7 @@ public class InvoiceController {
 		return "invoice_add_form";
 	}
 
+	/*
 	@GetMapping("/list")
 	public String listInvoice(Model model) {
 		List<Invoice> invoice = is.getInvoices();
@@ -138,7 +139,7 @@ public class InvoiceController {
 		model.addAttribute("username", name);
 		model.addAttribute("invoice", invoice);
 		return "invoice_list";
-	}
+	} */
 	
 	@GetMapping("/edit")
 	public String updateInvoice(@RequestParam("invoiceId") String invoiceId, Model model) {
@@ -186,6 +187,17 @@ public class InvoiceController {
 			is.editInvoice(invoice);
 			return "redirect:/invoice/list";
 		}
+	}
+	
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	public String list(Model model, Integer offset, Integer maxResults) {
+		String name = authName.getLoginName();
+		
+		model.addAttribute("username", name);
+		model.addAttribute("invoice", is.pageInvoiceList(offset, maxResults));
+		model.addAttribute("count", is.count());
+		model.addAttribute("offset", offset);
+		return "invoice_list";
 	}
 	
 	@Scheduled(fixedDelay = 5000)

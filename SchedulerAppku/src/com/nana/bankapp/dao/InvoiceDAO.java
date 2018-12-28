@@ -9,7 +9,9 @@ public interface InvoiceDAO {
 	public boolean saveInvoice(Invoice invoice);
 	public boolean editInvoice(Invoice invoice);
 	public List<Invoice> getInvoices();
+	public List<Invoice> pageInvoiceList(Integer offset, Integer maxResults);
 	public Invoice getInvoice(String invoiceId);
 	public boolean deleteInvoice(String invoiceId);
-
+	public Long count();
+	
 }
