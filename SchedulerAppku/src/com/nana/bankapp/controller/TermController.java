@@ -91,16 +91,21 @@ public class TermController {
 		} else {
 			model.addAttribute("username", name);
 			ps.editTerm(term);
-			return "redirect:/term/list";
+			return "redirect:/term/list?edit=true";
 		}
 	}
 	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public String list(Model model, Integer offset, Integer maxResults) {
+	public String list(Model model, Integer offset, Integer maxResults, @RequestParam(required=false) boolean edit) {
 		String name = authName.getLoginName();
 		
-		model.addAttribute("username", name);
-		model.addAttribute("term", ps.pageTermList(offset, maxResults));
+		if (edit) {
+			model.addAttribute("term", ps.pageTermList(offset, maxResults, true));
+		} else {
+			model.addAttribute("term", ps.pageTermList(offset, maxResults, false));
+		}
+		
+		model.addAttribute("username", name);		
 		model.addAttribute("count", ps.count());
 		model.addAttribute("offset", offset);
 		return "term_list";

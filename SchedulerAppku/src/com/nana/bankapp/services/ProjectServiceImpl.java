@@ -35,8 +35,8 @@ public class ProjectServiceImpl implements ProjectService {
 
 	@Override
 	@Transactional
-	public List<Project> pageProjectList(Integer offset, Integer maxResults) {
-		return projectDAO.pageProjectList(offset, maxResults);
+	public List<Project> pageProjectList(Integer offset, Integer maxResults, boolean condition) {
+		return projectDAO.pageProjectList(offset, maxResults, condition);
 	}
 
 	@Override

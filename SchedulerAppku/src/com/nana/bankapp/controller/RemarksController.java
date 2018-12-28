@@ -89,16 +89,21 @@ public class RemarksController {
 		} else {
 			model.addAttribute("username", name);
 			ps.editRemarks(remarks);
-			return "redirect:/remark/list";
+			return "redirect:/remark/list?edit=true";
 		}
 	}
 	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public String list(Model model, Integer offset, Integer maxResults) {
+	public String list(Model model, Integer offset, Integer maxResults, @RequestParam(required=false) boolean edit) {
 		String name = authName.getLoginName();
 		
+		if (edit) {
+			model.addAttribute("remarks", ps.pageRemarksList(offset, maxResults, true));
+		} else {
+			model.addAttribute("remarks", ps.pageRemarksList(offset, maxResults, false));
+		}
+		
 		model.addAttribute("username", name);
-		model.addAttribute("remarks", ps.pageRemarksList(offset, maxResults));
 		model.addAttribute("count", ps.count());
 		model.addAttribute("offset", offset);
 		return "remarks_list";

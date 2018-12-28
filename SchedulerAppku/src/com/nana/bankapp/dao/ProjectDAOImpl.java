@@ -1,6 +1,7 @@
 package com.nana.bankapp.dao;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -27,6 +28,11 @@ public class ProjectDAOImpl implements ProjectDAO {
 		ProjectEntity pe = new ProjectEntity();
 		pe.setProjectId(UUID.randomUUID().toString());
 		pe.setProjectName(project.getProjectName());
+		pe.setCreatedBy("User");
+		pe.setCreatedDate(new Date());
+		pe.setUpdatedBy(null);
+		pe.setUpdatedDate(null);
+		
 		try {
 			Session currentSession = sessionFactory.getCurrentSession();
 			currentSession.save(pe);
@@ -43,6 +49,11 @@ public class ProjectDAOImpl implements ProjectDAO {
 		ProjectEntity pe = new ProjectEntity();
 		pe.setProjectId(project.getProjectId());
 		pe.setProjectName(project.getProjectName());
+		pe.setCreatedBy(project.getCreatedBy());
+		pe.setCreatedDate(project.getCreatedDate());
+		pe.setUpdatedBy("User");
+		pe.setUpdatedDate(new Date());
+		
 		try {
 			Session currentSession = sessionFactory.getCurrentSession();
 			currentSession.update(pe);
@@ -66,6 +77,10 @@ public class ProjectDAOImpl implements ProjectDAO {
 				Project pe = new Project();
 				pe.setProjectId(projectEntity.getProjectId());
 				pe.setProjectName(projectEntity.getProjectName());
+				pe.setCreatedBy(projectEntity.getCreatedBy());
+				pe.setCreatedDate(projectEntity.getCreatedDate());
+				pe.setUpdatedBy(projectEntity.getUpdatedBy());
+				pe.setUpdatedDate(projectEntity.getUpdatedDate());
 				list.add(pe);
 			}
 
@@ -76,11 +91,16 @@ public class ProjectDAOImpl implements ProjectDAO {
 	}
 
 	@Override
-	public List<Project> pageProjectList(Integer offset, Integer maxResults) {
+	public List<Project> pageProjectList(Integer offset, Integer maxResults, boolean condition) {
 		List<Project> list = new ArrayList<Project>();
+		String querySql = "FROM ProjectEntity ORDER BY createdDate DESC";
+		
+		if (condition) {
+			querySql = "FROM ProjectEntity ORDER BY updatedDate DESC";
+		}
 		try {
 			Session session = sessionFactory.getCurrentSession();
-			Query<ProjectEntity> query = session.createQuery("FROM ProjectEntity", ProjectEntity.class);
+			Query<ProjectEntity> query = session.createQuery(querySql, ProjectEntity.class);
 			query.setFirstResult(offset != null ? offset : 0);
 			query.setMaxResults(maxResults != null ? maxResults : 10);
 
@@ -92,6 +112,10 @@ public class ProjectDAOImpl implements ProjectDAO {
 					Project pro = new Project();
 					pro.setProjectId(pe.getProjectId());
 					pro.setProjectName(pe.getProjectName());
+					pro.setCreatedBy(pe.getCreatedBy());
+					pro.setCreatedDate(pe.getCreatedDate());
+					pro.setUpdatedBy(pe.getUpdatedBy());
+					pro.setUpdatedDate(pe.getUpdatedDate());
 					list.add(pro);
 				}
 			}
@@ -109,6 +133,10 @@ public class ProjectDAOImpl implements ProjectDAO {
 			ProjectEntity pe = (ProjectEntity) session.load(ProjectEntity.class, projectId);
 			pr.setProjectId(pe.getProjectId());
 			pr.setProjectName(pe.getProjectName());
+			pr.setCreatedBy(pe.getCreatedBy());
+			pr.setCreatedDate(pe.getCreatedDate());
+			pr.setUpdatedBy(pe.getUpdatedBy());
+			pr.setUpdatedDate(pe.getUpdatedDate());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

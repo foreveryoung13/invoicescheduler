@@ -37,8 +37,8 @@ public class RemarksServiceImpl implements RemarksService {
 
 	@Override
 	@Transactional
-	public List<Remarks> pageRemarksList(Integer offset, Integer maxResults) {
-		return remarksDAO.pageRemarksList(offset, maxResults);
+	public List<Remarks> pageRemarksList(Integer offset, Integer maxResults, boolean condition) {
+		return remarksDAO.pageRemarksList(offset, maxResults, condition);
 	}
 
 	@Override

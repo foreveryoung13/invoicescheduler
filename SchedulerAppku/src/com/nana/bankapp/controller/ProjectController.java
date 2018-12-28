@@ -89,16 +89,21 @@ public class ProjectController {
 		} else {
 			model.addAttribute("username", name);
 			ps.editProject(project);
-			return "redirect:/project/list";
+			return "redirect:/project/list?edit=true";
 		}
 	}
 	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public String list(Model model, Integer offset, Integer maxResults) {
+	public String list(Model model, Integer offset, Integer maxResults, @RequestParam(required=false) boolean edit) {
 		String name = authName.getLoginName();
 		
+		if (edit) {
+			model.addAttribute("project", ps.pageProjectList(offset, maxResults, true));
+		} else {
+			model.addAttribute("project", ps.pageProjectList(offset, maxResults, false));
+		}
+		
 		model.addAttribute("username", name);
-		model.addAttribute("project", ps.pageProjectList(offset, maxResults));
 		model.addAttribute("count", ps.count());
 		model.addAttribute("offset", offset);
 		return "project_list";

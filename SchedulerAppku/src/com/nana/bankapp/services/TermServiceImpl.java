@@ -36,8 +36,8 @@ public class TermServiceImpl implements TermService {
 
 	@Override
 	@Transactional
-	public List<Term> pageTermList(Integer offset, Integer maxResults) {
-		return termDAO.pageTermList(offset, maxResults);
+	public List<Term> pageTermList(Integer offset, Integer maxResults, boolean condition) {
+		return termDAO.pageTermList(offset, maxResults, condition);
 	}
 
 	@Override
