@@ -54,9 +54,11 @@
 										</c:forEach>
 									</tbody>
 								</table>
+
 								<tag:paginate max="15" offset="${offset}" count="${count}"
 									uri="${pageContext.request.contextPath}/division/list"
 									next="&raquo;" previous="&laquo;" />
+
 							</div>
 						</div>
 					</div>

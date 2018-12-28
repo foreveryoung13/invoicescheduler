@@ -97,6 +97,9 @@ public class DivisionController {
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String list(Model model, Integer offset, Integer maxResults) {
+		String name = authName.getLoginName();
+		
+		model.addAttribute("username", name);
 		model.addAttribute("division", ds.pageDivisionList(offset, maxResults));
 		model.addAttribute("count", ds.count());
 		model.addAttribute("offset", offset);

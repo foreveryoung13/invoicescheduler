@@ -141,7 +141,6 @@ public class DivisionDAOImpl implements DivisionDAO {
 			
 			if (!result.isEmpty()) {
 				rowCount = (Long) result.get(0);
-				System.out.println("rowcount ==> " + rowCount.longValue());
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

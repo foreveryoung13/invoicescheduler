@@ -1,7 +1,5 @@
 package com.nana.bankapp.controller;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +35,7 @@ public class CustomerController {
 		return "customer_add_form";
 	}
 
+	/*
 	@GetMapping("/list")
 	public String listCustomers(Model model) {
 		List<Customer> customer = cs.getCustomers();
@@ -45,7 +44,7 @@ public class CustomerController {
 		model.addAttribute("username", name);
 		model.addAttribute("customer", customer);
 		return "customer_list";
-	}
+	} */
 
 	@GetMapping("/edit")
 	public String updateCustomer(@RequestParam("customerId") String customerId, Model model) {
@@ -88,6 +87,17 @@ public class CustomerController {
 			cs.editCustomer(customer);
 			return "redirect:/customer/list";
 		}
+	}
+	
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	public String list(Model model, Integer offset, Integer maxResults) {
+		String name = authName.getLoginName();
+		
+		model.addAttribute("username", name);
+		model.addAttribute("customer", cs.pageCustomerList(offset, maxResults));
+		model.addAttribute("count", cs.count());
+		model.addAttribute("offset", offset);
+		return "customer_list";
 	}
 
 }

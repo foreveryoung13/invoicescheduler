@@ -4,14 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Projections;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.nana.bankapp.entity.CustomerEntity;
+import com.nana.bankapp.entity.DivisionEntity;
 import com.nana.bankapp.model.Customer;
+import com.nana.bankapp.model.Division;
 
 @Repository
 public class CustomerDAOImpl implements CustomerDAO {
@@ -95,6 +99,39 @@ public class CustomerDAOImpl implements CustomerDAO {
 	}
 
 	@Override
+	public List<Customer> pageCustomerList(Integer offset, Integer maxResults) {
+		List<Customer> list = new ArrayList<Customer>();
+		try {
+			Session session = sessionFactory.getCurrentSession();
+			Query<CustomerEntity> query = session.createQuery("FROM CustomerEntity", CustomerEntity.class);
+			query.setFirstResult(offset != null ? offset : 0);
+			query.setMaxResults(maxResults != null ? maxResults : 10);
+
+			List<CustomerEntity> customers = query.getResultList();
+
+			if (customers != null) {
+				for (int i = 0; i < customers.size(); i++) {
+					CustomerEntity customerEntity = (CustomerEntity) customers.get(i);
+					Customer ce = new Customer();
+					ce.setCustomerId(customerEntity.getCustomerId());
+					ce.setCustomerName(customerEntity.getCustomerName());
+					ce.setAddress(customerEntity.getAddress());
+					ce.setCity(customerEntity.getCity());
+					ce.setProvince(customerEntity.getProvince());
+					ce.setCountry(customerEntity.getCountry());
+					ce.setFaxNumber(customerEntity.getFaxNumber());
+					ce.setPhoneNumber(customerEntity.getPhoneNumber());
+					ce.setPostalCode(customerEntity.getPostalCode());
+					list.add(ce);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	@Override
 	public Customer getCustomer(String customerId) {
 		Customer cu = new Customer();
 		try {
@@ -127,6 +164,23 @@ public class CustomerDAOImpl implements CustomerDAO {
 			deleteFlag = false;
 		}
 		return deleteFlag;
+	}
+
+	@Override
+	public Long count() {
+		Session session = sessionFactory.getCurrentSession();
+		Long rowCount = null;
+		try {
+			Criteria criteria = session.createCriteria(CustomerEntity.class).setProjection(Projections.rowCount());
+			List result = criteria.list();
+
+			if (!result.isEmpty()) {
+				rowCount = (Long) result.get(0);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return rowCount;
 	}
 
 }

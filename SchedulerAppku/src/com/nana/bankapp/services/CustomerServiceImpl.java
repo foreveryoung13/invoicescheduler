@@ -35,6 +35,12 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	@Transactional
+	public List<Customer> pageCustomerList(Integer offset, Integer maxResults) {
+		return customerDAO.pageCustomerList(offset, maxResults);
+	}
+
+	@Override
+	@Transactional
 	public Customer getCustomer(String customerId) {
 		return customerDAO.getCustomer(customerId);
 	}
@@ -43,6 +49,12 @@ public class CustomerServiceImpl implements CustomerService {
 	@Transactional
 	public boolean deleteCustomer(String customerId) {
 		return customerDAO.deleteCustomer(customerId);
+	}
+
+	@Override
+	@Transactional
+	public Long count() {
+		return customerDAO.count();
 	}
 
 }
