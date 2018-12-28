@@ -1,7 +1,5 @@
 package com.nana.bankapp.controller;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -99,39 +97,10 @@ public class DivisionController {
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String list(Model model, Integer offset, Integer maxResults) {
-		System.out.println("------------------------------------------------------------");
-		System.out.println("inlist");
-		
-		System.out.println("offset : " + offset);
-		System.out.println("maxResult : " + maxResults);
-		
-		System.out.println("ds.count ==> " + ds.count());
-		System.out.println("ds.pageDivisionList ==> " + ds.pageDivisionList(offset, maxResults));
-
 		model.addAttribute("division", ds.pageDivisionList(offset, maxResults));
 		model.addAttribute("count", ds.count());
 		model.addAttribute("offset", offset);
-		
 		return "division_list";
 	}
-
-	/*
-	 * 
-	 * @RequestMapping(value = "/list/{pageId}", method = RequestMethod.GET) public
-	 * String paginationDivisionList(@PathVariable int pageId, Model model) {
-	 * 
-	 * System.out.println(pageId);
-	 * 
-	 * int total = 5; if (pageId == 1) {
-	 * 
-	 * } else { pageId = (pageId - 1) * total + 1; }
-	 * 
-	 * List<Division> divlist = ds.pageDivisionList(pageId, total);
-	 * 
-	 * if (divlist != null) { System.out.println(divlist.size()); } else {
-	 * System.out.println("null"); }
-	 * 
-	 * model.addAttribute("division", divlist); return "division_list"; }
-	 */
 
 }
