@@ -36,8 +36,8 @@ public class EmailServiceImpl implements EmailService {
 
 	@Override
 	@Transactional
-	public List<Email> pageEmailList(Integer offset, Integer maxResults) {
-		return dao.pageEmailList(offset, maxResults);
+	public List<Email> pageEmailList(Integer offset, Integer maxResults, boolean condition) {
+		return dao.pageEmailList(offset, maxResults, condition);
 	}
 
 	@Override

@@ -1,6 +1,7 @@
 package com.nana.bankapp.dao;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -32,6 +33,10 @@ public class EmailDAOImpl implements EmailDAO {
 		ee.setHeader(email.getHeader());
 		ee.setFooter(email.getFooter());
 		ee.setContent(email.getContent());
+		ee.setCreatedBy("User");
+		ee.setCreatedDate(new Date());
+		ee.setUpdatedBy(null);
+		ee.setUpdatedDate(null);
 		try {
 			Session currentSession = sessionFactory.getCurrentSession();
 			currentSession.save(ee);
@@ -53,6 +58,10 @@ public class EmailDAOImpl implements EmailDAO {
 		ee.setHeader(email.getHeader());
 		ee.setFooter(email.getFooter());
 		ee.setContent(email.getContent());
+		ee.setCreatedBy(email.getCreatedBy());
+		ee.setCreatedDate(email.getCreatedDate());
+		ee.setUpdatedBy("User");
+		ee.setUpdatedDate(new Date());
 		try {
 			Session currentSession = sessionFactory.getCurrentSession();
 			currentSession.update(ee);
@@ -81,6 +90,10 @@ public class EmailDAOImpl implements EmailDAO {
 				email.setHeader(ee.getHeader());
 				email.setFooter(ee.getFooter());
 				email.setContent(ee.getContent());
+				email.setCreatedBy(ee.getCreatedBy());
+				email.setCreatedDate(ee.getCreatedDate());
+				email.setUpdatedBy(ee.getUpdatedBy());
+				email.setUpdatedDate(ee.getUpdatedDate());
 				list.add(email);
 			}
 		} catch (Exception e) {
@@ -90,11 +103,17 @@ public class EmailDAOImpl implements EmailDAO {
 	}
 
 	@Override
-	public List<Email> pageEmailList(Integer offset, Integer maxResults) {
+	public List<Email> pageEmailList(Integer offset, Integer maxResults, boolean condition) {
 		List<Email> list = new ArrayList<Email>();
+		String querySql = "FROM EmailEntity ORDER BY createdDate DESC";
+		
+		if (condition) {
+			querySql = "FROM EmailEntity ORDER BY updatedDate DESC";
+		}
+		
 		try {
 			Session session = sessionFactory.getCurrentSession();
-			Query<EmailEntity> query = session.createQuery("FROM EmailEntity", EmailEntity.class);
+			Query<EmailEntity> query = session.createQuery(querySql, EmailEntity.class);
 			query.setFirstResult(offset != null ? offset : 0);
 			query.setMaxResults(maxResults != null ? maxResults : 10);
 
@@ -111,6 +130,10 @@ public class EmailDAOImpl implements EmailDAO {
 					email.setHeader(ee.getHeader());
 					email.setFooter(ee.getFooter());
 					email.setContent(ee.getContent());
+					email.setCreatedBy(ee.getCreatedBy());
+					email.setCreatedDate(ee.getCreatedDate());
+					email.setUpdatedBy(ee.getUpdatedBy());
+					email.setUpdatedDate(ee.getUpdatedDate());
 					list.add(email);
 				}
 			}

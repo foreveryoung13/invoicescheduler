@@ -36,8 +36,8 @@ public class MarketingServiceImpl implements MarketingService {
 
 	@Override
 	@Transactional
-	public List<Marketing> pageMarketingList(Integer offset, Integer maxResults) {
-		return marketingDAO.pageMarketingList(offset, maxResults);
+	public List<Marketing> pageMarketingList(Integer offset, Integer maxResults, boolean condition) {
+		return marketingDAO.pageMarketingList(offset, maxResults, condition);
 	}
 
 	@Override

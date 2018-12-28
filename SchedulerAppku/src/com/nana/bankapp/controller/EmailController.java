@@ -90,16 +90,21 @@ public class EmailController {
 		} else {
 			model.addAttribute("username", name);
 			es.editEmail(email);
-			return "redirect:/email/list";
+			return "redirect:/email/list?edit=true";
 		}
 	}
 	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public String list(Model model, Integer offset, Integer maxResults) {
+	public String list(Model model, Integer offset, Integer maxResults,  @RequestParam(required=false) boolean edit) {
 		String name = authName.getLoginName();
 		
+		if (edit) {
+			model.addAttribute("email", es.pageEmailList(offset, maxResults, true));
+		} else {
+			model.addAttribute("email", es.pageEmailList(offset, maxResults,false));
+		}
+		
 		model.addAttribute("username", name);
-		model.addAttribute("email", es.pageEmailList(offset, maxResults));
 		model.addAttribute("count", es.count());
 		model.addAttribute("offset", offset);
 		return "email_list";

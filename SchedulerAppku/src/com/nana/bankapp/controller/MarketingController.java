@@ -110,16 +110,21 @@ public class MarketingController {
 		} else {
 			model.addAttribute("username", name);
 			ms.editMarketing(marketing);
-			return "redirect:/marketings/list";
+			return "redirect:/marketings/list?edit=true";
 		}
 	}
 	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public String list(Model model, Integer offset, Integer maxResults) {
+	public String list(Model model, Integer offset, Integer maxResults, @RequestParam(required=false) boolean edit) {
 		String name = authName.getLoginName();
 		
+		if (edit) {
+			model.addAttribute("marketing", ms.pageMarketingList(offset, maxResults, true));
+		} else {
+			model.addAttribute("marketing", ms.pageMarketingList(offset, maxResults, false));
+		}
+		
 		model.addAttribute("username", name);
-		model.addAttribute("marketing", ms.pageMarketingList(offset, maxResults));
 		model.addAttribute("count", ms.count());
 		model.addAttribute("offset", offset);
 		return "marketing_list";

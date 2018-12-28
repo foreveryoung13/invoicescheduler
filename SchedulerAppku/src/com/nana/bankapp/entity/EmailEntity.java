@@ -1,5 +1,7 @@
 package com.nana.bankapp.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -11,25 +13,37 @@ public class EmailEntity {
 
 	@Id
 	@Column(name = "EMAIL_ID")
-	private String emailId;
+	protected String emailId;
 
 	@Column(name = "SENDER")
-	private String sender;
+	protected String sender;
 
 	@Column(name = "RECIPIENTS")
-	private String recipients;
+	protected String recipients;
 
 	@Column(name = "SUBJECT")
-	private String subject;
+	protected String subject;
 
 	@Column(name = "HEADER")
-	private String header;
+	protected String header;
 
 	@Column(name = "FOOTER")
-	private String footer;
+	protected String footer;
 
 	@Column(name = "CONTENT")
-	private String content;
+	protected String content;
+
+	@Column(name = "CREATED_BY")
+	protected String createdBy;
+
+	@Column(name = "CREATED_DATE")
+	protected Date createdDate;
+
+	@Column(name = "UPDATED_BY")
+	protected String updatedBy;
+
+	@Column(name = "UPDATED_DATE")
+	protected Date updatedDate;
 
 	public String getEmailId() {
 		return emailId;
@@ -85,6 +99,38 @@ public class EmailEntity {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public String getUpdatedBy() {
+		return updatedBy;
+	}
+
+	public void setUpdatedBy(String updatedBy) {
+		this.updatedBy = updatedBy;
+	}
+
+	public Date getUpdatedDate() {
+		return updatedDate;
+	}
+
+	public void setUpdatedDate(Date updatedDate) {
+		this.updatedDate = updatedDate;
 	}
 
 }

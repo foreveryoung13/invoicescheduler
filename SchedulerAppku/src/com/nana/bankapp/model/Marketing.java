@@ -15,6 +15,10 @@ public class Marketing {
 	protected String province;
 	protected String country;
 	protected String divisionId;
+	protected String createdBy;
+	protected Date createdDate;
+	protected String updatedBy;
+	protected Date updatedDate;
 
 	public Marketing() {
 	}
@@ -26,7 +30,8 @@ public class Marketing {
 	}
 
 	public Marketing(String marketingId, String firstName, String lastName, String placeOfBirth, Date dateOfBirth,
-			Integer age, String address, String city, String province, String country, String divisionId) {
+			Integer age, String address, String city, String province, String country, String divisionId,
+			String createdBy, Date createdDate, String updatedBy, Date updatedDate) {
 		super();
 		this.marketingId = marketingId;
 		this.firstName = firstName;
@@ -39,6 +44,10 @@ public class Marketing {
 		this.province = province;
 		this.country = country;
 		this.divisionId = divisionId;
+		this.createdBy = createdBy;
+		this.createdDate = createdDate;
+		this.updatedBy = updatedBy;
+		this.updatedDate = updatedDate;
 	}
 
 	public String getMarketingId() {
@@ -127,6 +136,38 @@ public class Marketing {
 
 	public void setDivisionId(String divisionId) {
 		this.divisionId = divisionId;
+	}
+
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public String getUpdatedBy() {
+		return updatedBy;
+	}
+
+	public void setUpdatedBy(String updatedBy) {
+		this.updatedBy = updatedBy;
+	}
+
+	public Date getUpdatedDate() {
+		return updatedDate;
+	}
+
+	public void setUpdatedDate(Date updatedDate) {
+		this.updatedDate = updatedDate;
 	}
 
 }

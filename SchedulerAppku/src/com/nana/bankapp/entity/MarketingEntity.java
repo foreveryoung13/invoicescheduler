@@ -45,12 +45,24 @@ public class MarketingEntity {
 	@Column(name = "DIVISION_ID")
 	protected String divisionId;
 
-	public MarketingEntity() {
+	@Column(name = "CREATED_BY")
+	protected String createdBy;
 
+	@Column(name = "CREATED_DATE")
+	protected Date createdDate;
+
+	@Column(name = "UPDATED_BY")
+	protected String updatedBy;
+
+	@Column(name = "UPDATED_DATE")
+	protected Date updatedDate;
+
+	public MarketingEntity() {
 	}
 
 	public MarketingEntity(String marketingId, String firstName, String lastName, String placeOfBirth, Date dateOfBirth,
-			Integer age, String address, String city, String province, String country, String divisionId) {
+			Integer age, String address, String city, String province, String country, String divisionId,
+			String createdBy, Date createdDate, String updatedBy, Date updatedDate) {
 		super();
 		this.marketingId = marketingId;
 		this.firstName = firstName;
@@ -63,6 +75,10 @@ public class MarketingEntity {
 		this.province = province;
 		this.country = country;
 		this.divisionId = divisionId;
+		this.createdBy = createdBy;
+		this.createdDate = createdDate;
+		this.updatedBy = updatedBy;
+		this.updatedDate = updatedDate;
 	}
 
 	public String getMarketingId() {
@@ -151,6 +167,38 @@ public class MarketingEntity {
 
 	public void setDivisionId(String divisionId) {
 		this.divisionId = divisionId;
+	}
+
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public String getUpdatedBy() {
+		return updatedBy;
+	}
+
+	public void setUpdatedBy(String updatedBy) {
+		this.updatedBy = updatedBy;
+	}
+
+	public Date getUpdatedDate() {
+		return updatedDate;
+	}
+
+	public void setUpdatedDate(Date updatedDate) {
+		this.updatedDate = updatedDate;
 	}
 
 }

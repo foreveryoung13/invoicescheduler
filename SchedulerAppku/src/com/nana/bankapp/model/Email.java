@@ -1,20 +1,26 @@
 package com.nana.bankapp.model;
 
+import java.util.Date;
+
 public class Email {
 
-	private String emailId;
-	private String sender;
-	private String recipients;
-	private String subject;
-	private String header;
-	private String footer;
-	private String content;
+	protected String emailId;
+	protected String sender;
+	protected String recipients;
+	protected String subject;
+	protected String header;
+	protected String footer;
+	protected String content;
+	protected String createdBy;
+	protected Date createdDate;
+	protected String updatedBy;
+	protected Date updatedDate;
 
 	public Email() {
 	}
 
 	public Email(String emailId, String sender, String recipients, String subject, String header, String footer,
-			String content) {
+			String content, String createdBy, Date createdDate, String updatedBy, Date updatedDate) {
 		super();
 		this.emailId = emailId;
 		this.sender = sender;
@@ -23,6 +29,10 @@ public class Email {
 		this.header = header;
 		this.footer = footer;
 		this.content = content;
+		this.createdBy = createdBy;
+		this.createdDate = createdDate;
+		this.updatedBy = updatedBy;
+		this.updatedDate = updatedDate;
 	}
 
 	public String getEmailId() {
@@ -79,6 +89,38 @@ public class Email {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public String getUpdatedBy() {
+		return updatedBy;
+	}
+
+	public void setUpdatedBy(String updatedBy) {
+		this.updatedBy = updatedBy;
+	}
+
+	public Date getUpdatedDate() {
+		return updatedDate;
+	}
+
+	public void setUpdatedDate(Date updatedDate) {
+		this.updatedDate = updatedDate;
 	}
 
 }

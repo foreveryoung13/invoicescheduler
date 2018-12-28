@@ -1,6 +1,7 @@
 package com.nana.bankapp.dao;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -12,7 +13,6 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.nana.bankapp.entity.EmailEntity;
 import com.nana.bankapp.entity.MarketingEntity;
 import com.nana.bankapp.model.Marketing;
 
@@ -37,6 +37,10 @@ public class MarketingDAOImpl implements MarketingDAO {
 		me.setProvince(marketing.getProvince());
 		me.setCountry(marketing.getCountry());
 		me.setDivisionId(marketing.getDivisionId());
+		me.setCreatedBy("User");
+		me.setCreatedDate(new Date());
+		me.setUpdatedBy(null);
+		me.setUpdatedDate(null);
 		try {
 			Session currentSession = sessionFactory.getCurrentSession();
 			currentSession.save(me);
@@ -62,6 +66,11 @@ public class MarketingDAOImpl implements MarketingDAO {
 		me.setProvince(marketing.getProvince());
 		me.setCountry(marketing.getCountry());
 		me.setDivisionId(marketing.getDivisionId());
+		me.setCreatedBy(marketing.getCreatedBy());
+		me.setCreatedDate(marketing.getCreatedDate());
+		me.setUpdatedBy("User");
+		me.setUpdatedDate(new Date());
+		
 		try {
 			Session currentSession = sessionFactory.getCurrentSession();
 			currentSession.update(me);
@@ -93,6 +102,10 @@ public class MarketingDAOImpl implements MarketingDAO {
 				me.setProvince(marketing.getProvince());
 				me.setCountry(marketing.getCountry());
 				me.setDivisionId(marketing.getDivisionId());
+				me.setCreatedBy(marketing.getCreatedBy());
+				me.setCreatedDate(marketing.getCreatedDate());
+				me.setUpdatedBy(marketing.getUpdatedBy());
+				me.setUpdatedDate(marketing.getUpdatedDate());
 				list.add(me);
 			}
 
@@ -103,11 +116,17 @@ public class MarketingDAOImpl implements MarketingDAO {
 	}
 
 	@Override
-	public List<Marketing> pageMarketingList(Integer offset, Integer maxResults) {
+	public List<Marketing> pageMarketingList(Integer offset, Integer maxResults, boolean condition) {
 		List<Marketing> list = new ArrayList<Marketing>();
+		String querySql = "FROM MarketingEntity ORDER BY createdDate DESC";
+		
+		if (condition) {
+			querySql = "FROM MarketingEntity ORDER BY updatedDate DESC";
+		}
+		
 		try {
 			Session session = sessionFactory.getCurrentSession();
-			Query<MarketingEntity> query = session.createQuery("FROM MarketingEntity", MarketingEntity.class);
+			Query<MarketingEntity> query = session.createQuery(querySql, MarketingEntity.class);
 			query.setFirstResult(offset != null ? offset : 0);
 			query.setMaxResults(maxResults != null ? maxResults : 10);
 
@@ -128,6 +147,10 @@ public class MarketingDAOImpl implements MarketingDAO {
 					me.setProvince(marketing.getProvince());
 					me.setCountry(marketing.getCountry());
 					me.setDivisionId(marketing.getDivisionId());
+					me.setCreatedBy(marketing.getCreatedBy());
+					me.setCreatedDate(marketing.getCreatedDate());
+					me.setUpdatedBy(marketing.getUpdatedBy());
+					me.setUpdatedDate(marketing.getUpdatedDate());
 					list.add(me);
 				}
 			}
@@ -154,6 +177,10 @@ public class MarketingDAOImpl implements MarketingDAO {
 			me.setProvince(marketing.getProvince());
 			me.setCountry(marketing.getCountry());
 			me.setDivisionId(marketing.getDivisionId());
+			me.setCreatedBy(marketing.getCreatedBy());
+			me.setCreatedDate(marketing.getCreatedDate());
+			me.setUpdatedBy(marketing.getUpdatedBy());
+			me.setUpdatedDate(marketing.getUpdatedDate());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
