@@ -43,6 +43,26 @@
 											<text class="alert-danger">${message}</text>
 										</div>
 									</div>
+									
+									<div class="form-group" >
+										<label></label>
+										<div class="col-sm-4">
+											<form:input path="createdBy"
+												cssClass="form-control input-sm" />
+											<form:errors path="createdBy" cssClass="alert-danger" />
+											<text class="alert-danger">${message}</text>
+										</div>
+									</div>
+									
+									<div class="form-group" >
+										<label></label>
+										<div class="col-sm-4">
+											<form:input path="createdDate"
+												cssClass="form-control input-sm" />
+											<form:errors path="createdDate" cssClass="alert-danger" />
+											<text class="alert-danger">${message}</text>
+										</div>
+									</div>
 
 									<div class="form-group">
 										<div class="col-sm-12" style="margin-left: 12.4em">

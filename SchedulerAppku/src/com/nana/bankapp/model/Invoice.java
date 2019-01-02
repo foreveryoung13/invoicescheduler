@@ -3,25 +3,46 @@ package com.nana.bankapp.model;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Invoice {
 
 	protected String invoiceId;
 	protected String customerId;
 	protected String projectId;
 	protected String remarksId;
+	
+	@NotNull(message = "No Po can't be null")
 	protected String noPo;
 	protected String marketingId;
 	protected String noInvoice;
+	
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@NotNull(message = "No Pajak can't be null")
 	protected String noPajak;
+	
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@NotNull(message = "Tanggal Invoice can't be null")
 	protected Date tanggalInvoice;
+	
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@NotNull(message = "Tanggal TT can't be null")
 	protected Date tanggalTt;
 	protected String termId;
+	
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@NotNull(message = "Tanggal Tempo can't be null")
 	protected Date tanggalTempo;
 	protected BigDecimal piutangUsaha;
 	protected BigDecimal dpp;
 	protected BigDecimal ppn;
 	protected BigDecimal pph;
 	protected BigDecimal uangMasuk;
+	
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@NotNull(message = "Tanggal lunas can't be null")
 	protected Date tanggalLunas;
 	protected String createdBy;
 	protected Date createdDate;

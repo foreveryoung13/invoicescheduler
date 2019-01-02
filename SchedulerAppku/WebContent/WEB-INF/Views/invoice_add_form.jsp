@@ -126,8 +126,12 @@
 													<form:errors path="termId" cssClass="alert-danger" />
 													<text class="alert-danger">${message}</text>
 												</div>
-											</div>
+											</div>										
+										</div>
+										<!-- end left column -->
 
+										<!-- right column -->
+										<div class="col-sm-6" style="margin-left: -5em">
 											<div class="form-group" id="form-group-custom">
 												<label for="tanggalTempo" class="col-sm-4 control-label"><spring:message
 														code="lbl.tanggalTempo" /></label>
@@ -149,11 +153,6 @@
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
-										</div>
-										<!-- end left column -->
-
-										<!-- right column -->
-										<div class="col-sm-6" style="margin-left: -5em">
 											<div class="form-group" id="form-group-custom">
 												<label for="projectId" class="col-sm-4 control-label"><spring:message
 														code="lbl.projectName" /></label>
@@ -217,50 +216,6 @@
 													<form:input path="tanggalLunas" cssClass="form-control"
 														id="tanggalLunas" autocomplete="off" />
 													<form:errors path="tanggalLunas" cssClass="alert-danger" />
-													<text class="alert-danger">${message}</text>
-												</div>
-											</div>
-
-											<div class="form-group row" id="form-group-custom">
-												<label for="createdBy" class="col-sm-4 control-label"><spring:message
-														code="lbl.createdBy" /></label>
-												<div class="col-sm-6">
-													<form:input path="createdBy" cssClass="form-control"
-														autocomplete="off" />
-													<form:errors path="createdBy" cssClass="alert-danger" />
-													<text class="alert-danger">${message}</text>
-												</div>
-											</div>
-
-											<div class="form-group row" id="form-group-custom">
-												<label for="createdDate" class="col-sm-4 control-label"><spring:message
-														code="lbl.createdDate" /></label>
-												<div class="col-sm-6">
-													<form:input path="createdDate" cssClass="form-control"
-														id="createdDate" autocomplete="off" />
-													<form:errors path="createdDate" cssClass="alert-danger" />
-													<text class="alert-danger">${message}</text>
-												</div>
-											</div>
-
-											<div class="form-group row" id="form-group-custom">
-												<label for="updatedBy" class="col-sm-4 control-label"><spring:message
-														code="lbl.updatedBy" /></label>
-												<div class="col-sm-6">
-													<form:input path="updatedBy" cssClass="form-control"
-														autocomplete="off" />
-													<form:errors path="updatedBy" cssClass="alert-danger" />
-													<text class="alert-danger">${message}</text>
-												</div>
-											</div>
-
-											<div class="form-group row" id="form-group-custom">
-												<label for="updatedDate" class="col-sm-4 control-label"><spring:message
-														code="lbl.updatedDate" /></label>
-												<div class="col-sm-6">
-													<form:input path="updatedDate" cssClass="form-control"
-														id="updatedDate" autocomplete="off" />
-													<form:errors path="updatedDate" cssClass="alert-danger" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>

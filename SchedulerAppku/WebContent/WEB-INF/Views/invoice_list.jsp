@@ -61,7 +61,7 @@ pageEncoding="ISO-8859-1"%>
 								</table>
 
 								<tag:paginate max="15" offset="${offset}" count="${count}"
-									uri="${pageContext.request.contextPath}/term/list"
+									uri="${pageContext.request.contextPath}/invoice/list"
 									next="&raquo;" previous="&laquo;" />
 
 							</div>

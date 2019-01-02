@@ -1,5 +1,6 @@
 package com.nana.bankapp.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -7,16 +8,20 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.nana.bankapp.customeditor.NoPoEditor;
 import com.nana.bankapp.model.Customer;
 import com.nana.bankapp.model.Invoice;
 import com.nana.bankapp.model.Marketing;
@@ -55,6 +60,19 @@ public class InvoiceController {
 	
 	@Autowired
 	AuthenticationName authName;
+	
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy"); 
+		binder.registerCustomEditor(Date.class, "tanggalInvoice", new CustomDateEditor(dateFormat, false));
+		binder.registerCustomEditor(Date.class, "tanggalTt", new CustomDateEditor(dateFormat, false));
+		binder.registerCustomEditor(Date.class, "tanggalTempo", new CustomDateEditor(dateFormat, false));
+		binder.registerCustomEditor(Date.class, "tanggalLunas", new CustomDateEditor(dateFormat, false));
+		binder.registerCustomEditor(Date.class, "createdDate", new CustomDateEditor(dateFormat, false));
+		binder.registerCustomEditor(Date.class, "updatedDate", new CustomDateEditor(dateFormat, false));
+		
+		binder.registerCustomEditor(String.class, "noPo", new NoPoEditor());
+	}
 
 	@ModelAttribute("customerlist")
 	public List<Customer> renderCustomerList() {
