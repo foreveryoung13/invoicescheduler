@@ -30,8 +30,8 @@
 										<div class="col-sm-4">
 											<form:input path="divisionName"
 												cssClass="form-control input-sm" autocomplete="off" />
-											<form:errors path="divisionName" cssClass="alert-danger" />
-											<text class="alert-danger">${message}</text>
+											<form:errors path="divisionName" cssClass="alert-danger-custom" />
+											<text class="alert-danger-custom">${message}</text>
 										</div>
 									</div>
 

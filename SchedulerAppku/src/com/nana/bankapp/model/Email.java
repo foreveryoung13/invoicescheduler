@@ -2,15 +2,30 @@ package com.nana.bankapp.model;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotEmpty;
+
 public class Email {
 
 	protected String emailId;
+	
+	@NotEmpty(message = "Sender Name No can't be blank")
 	protected String sender;
+	
+	@NotEmpty(message = "Recipients Name No can't be blank")
 	protected String recipients;
+	
+	@NotEmpty(message = "Subject Name No can't be blank")
 	protected String subject;
+	
+	@NotEmpty(message = "Header Name No can't be blank")
 	protected String header;
+	
+	@NotEmpty(message = "Footer Name No can't be blank")
 	protected String footer;
+	
+	@NotEmpty(message = "Content Name No can't be blank")
 	protected String content;
+	
 	protected String createdBy;
 	protected Date createdDate;
 	protected String updatedBy;

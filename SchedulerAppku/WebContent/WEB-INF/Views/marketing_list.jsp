@@ -17,7 +17,7 @@
 						style="margin-top: 0.9em;">
 						<div class="panel panel-info">
 							<div class="panel-heading">
-								<h2 class="panel-title">Customer List</h2>
+								<h2 class="panel-title">Marketing List</h2>
 							</div>
 
 							<div class="panel-body">

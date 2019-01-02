@@ -39,7 +39,7 @@
 														code="lbl.firstName" /></label>
 												<div class="col-sm-6">
 													<form:input path="firstName" cssClass="form-control" />
-													<form:errors path="firstName" cssClass="alert-danger" />
+													<form:errors path="firstName" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -49,7 +49,7 @@
 														code="lbl.lastName" /></label>
 												<div class="col-sm-6">
 													<form:input path="lastName" cssClass="form-control" />
-													<form:errors path="lastName" cssClass="alert-danger" />
+													<form:errors path="lastName" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -60,7 +60,7 @@
 														code="lbl.placeOfBirth" /></label>
 												<div class="col-sm-6">
 													<form:input path="placeOfBirth" cssClass="form-control" />
-													<form:errors path="placeOfBirth" cssClass="alert-danger" />
+													<form:errors path="placeOfBirth" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -71,8 +71,8 @@
 														code="lbl.dateOfBirth" /></label>
 												<div class="col-sm-6">
 													<form:input path="dateOfBirth" cssClass="form-control"
-														id="dateOfBirth" />
-													<form:errors path="dateOfBirth" cssClass="alert-danger" />
+														id="dateOfBirth" readonly="true"/>
+													<form:errors path="dateOfBirth" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -82,7 +82,7 @@
 														code="lbl.age" /></label>
 												<div class="col-sm-6">
 													<form:input path="age" cssClass="form-control" />
-													<form:errors path="age" cssClass="alert-danger" />
+													<form:errors path="age" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -94,7 +94,7 @@
 												<div class="col-sm-6">
 													<form:input path="createdBy"
 														cssClass="form-control input-sm" readonly="true" />
-													<form:errors path="createdBy" cssClass="alert-danger" />
+													<form:errors path="createdBy" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -108,7 +108,7 @@
 														code="lbl.address" /></label>
 												<div class="col-sm-6">
 													<form:input path="address" cssClass="form-control" />
-													<form:errors path="address" cssClass="alert-danger" />
+													<form:errors path="address" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -118,7 +118,7 @@
 														code="lbl.city" /></label>
 												<div class="col-sm-6">
 													<form:input path="city" cssClass="form-control" />
-													<form:errors path="city" cssClass="alert-danger" />
+													<form:errors path="city" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -129,7 +129,7 @@
 														code="lbl.province" /></label>
 												<div class="col-sm-6">
 													<form:input path="province" cssClass="form-control" />
-													<form:errors path="province" cssClass="alert-danger" />
+													<form:errors path="province" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -140,7 +140,7 @@
 														code="lbl.country" /></label>
 												<div class="col-sm-6">
 													<form:input path="country" cssClass="form-control" />
-													<form:errors path="country" cssClass="alert-danger" />
+													<form:errors path="country" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -153,7 +153,7 @@
 													<form:select path="divisionId" items="${divlist}"
 														itemValue="divisionId" itemLabel="divisionName"
 														cssClass="form-control" />
-													<form:errors path="country" cssClass="alert-danger" />
+													<form:errors path="country" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -165,18 +165,19 @@
 												<div class="col-sm-6">
 													<form:input path="createdDate"
 														cssClass="form-control input-sm" readonly="true" />
-													<form:errors path="createdDate" cssClass="alert-danger" />
+													<form:errors path="createdDate" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
 										</div>
-
-										<div class="form-group row">
-											<div class="col-sm-12" style="margin-left: 12.4em">
-												<input type="submit" value="Save" class="btn btn-primary"
-													name="btnSubmit" />
-											</div>
+									</div>
+									
+									<div class="form-group row">
+										<div class="col-sm-12" style="margin-left: 12.4em">
+											<input type="submit" value="Save" class="btn btn-primary"
+												name="btnSubmit" />
 										</div>
+									</div>
 								</form:form>
 							</div>
 						</div>

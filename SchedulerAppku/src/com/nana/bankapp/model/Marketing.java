@@ -2,23 +2,50 @@ package com.nana.bankapp.model;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Marketing {
 
-	protected String marketingId;
-	protected String firstName;
-	protected String lastName;
-	protected String placeOfBirth;
-	protected Date dateOfBirth;
-	protected Integer age;
-	protected String address;
-	protected String city;
-	protected String province;
-	protected String country;
-	protected String divisionId;
-	protected String createdBy;
-	protected Date createdDate;
-	protected String updatedBy;
-	protected Date updatedDate;
+	private String marketingId;
+	
+	@NotEmpty(message = "First Name Name No can't be blank")
+	private String firstName;
+	
+	@NotEmpty(message = "Last Name Name No can't be blank")
+	private String lastName;
+	
+	@NotEmpty(message = "Place Of Birth Name No can't be blank")
+	private String placeOfBirth;
+	
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@NotNull(message = "Date of birth can't be null")
+	private Date dateOfBirth;
+	
+	@NotNull(message = "Age of birth can't be null")
+	private Integer age;
+	
+	@NotEmpty(message = "Address Name No can't be blank")
+	private String address;
+	
+	@NotEmpty(message = "City Name No can't be blank")
+	private String city;
+	
+	@NotEmpty(message = "Province Name No can't be blank")
+	private String province;
+	
+	@NotEmpty(message = "Country Name No can't be blank")
+	private String country;
+	
+	@NotEmpty(message = "DivisionId Name No can't be blank")
+	private String divisionId;
+	
+	private String createdBy;
+	private Date createdDate;
+	private String updatedBy;
+	private Date updatedDate;
 
 	public Marketing() {
 	}

@@ -28,7 +28,7 @@
 												<div class="col-sm-6">
 													<form:input path="sender" cssClass="form-control"
 														autocomplete="off" />
-													<form:errors path="sender" cssClass="alert-danger" />
+													<form:errors path="sender" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -40,7 +40,7 @@
 												<div class="col-sm-6">
 													<form:input path="recipients" cssClass="form-control"
 														autocomplete="off" />
-													<form:errors path="recipients" cssClass="alert-danger" />
+													<form:errors path="recipients" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -52,7 +52,7 @@
 												<div class="col-sm-6">
 													<form:textarea path="content" cssClass="form-control"
 														autocomplete="off" />
-													<form:errors path="content" cssClass="alert-danger" />
+													<form:errors path="content" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -65,7 +65,7 @@
 												<div class="col-sm-6">
 													<form:input path="header" cssClass="form-control"
 														autocomplete="off" />
-													<form:errors path="header" cssClass="alert-danger" />
+													<form:errors path="header" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -77,7 +77,7 @@
 												<div class="col-sm-6">
 													<form:input path="subject" cssClass="form-control"
 														autocomplete="off" />
-													<form:errors path="subject" cssClass="alert-danger" />
+													<form:errors path="subject" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -88,7 +88,7 @@
 												<div class="col-sm-6">
 													<form:input path="footer" cssClass="form-control"
 														autocomplete="off" />
-													<form:errors path="footer" cssClass="alert-danger" />
+													<form:errors path="footer" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>

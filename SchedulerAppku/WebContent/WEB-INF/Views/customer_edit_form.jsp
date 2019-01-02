@@ -41,7 +41,7 @@
 												<div class="col-sm-6">
 													<form:input path="customerName" cssClass="form-control"
 														autocomplete="off" />
-													<form:errors path="customerName" cssClass="alert-danger" />
+													<form:errors path="customerName" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -53,7 +53,7 @@
 												<div class="col-sm-6">
 													<form:input path="address" cssClass="form-control"
 														autocomplete="off" />
-													<form:errors path="address" cssClass="alert-danger" />
+													<form:errors path="address" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -64,7 +64,7 @@
 												<div class="col-sm-6">
 													<form:input path="city" cssClass="form-control"
 														autocomplete="off" />
-													<form:errors path="city" cssClass="alert-danger" />
+													<form:errors path="city" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -76,7 +76,7 @@
 												<div class="col-sm-6">
 													<form:input path="province" cssClass="form-control"
 														autocomplete="off" />
-													<form:errors path="province" cssClass="alert-danger" />
+													<form:errors path="province" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -87,7 +87,7 @@
 												<div class="col-sm-6">
 													<form:input path="createdBy"
 														cssClass="form-control input-sm" readonly="true" />
-													<form:errors path="createdBy" cssClass="alert-danger" />
+													<form:errors path="createdBy" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -101,7 +101,7 @@
 												<div class="col-sm-6">
 													<form:input path="country" cssClass="form-control"
 														autocomplete="off" />
-													<form:errors path="country" cssClass="alert-danger" />
+													<form:errors path="country" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -113,7 +113,7 @@
 												<div class="col-sm-6">
 													<form:input path="faxNumber" cssClass="form-control"
 														autocomplete="off" />
-													<form:errors path="faxNumber" cssClass="alert-danger" />
+													<form:errors path="faxNumber" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -125,7 +125,7 @@
 												<div class="col-sm-6">
 													<form:input path="phoneNumber" cssClass="form-control"
 														autocomplete="off" />
-													<form:errors path="phoneNumber" cssClass="alert-danger" />
+													<form:errors path="phoneNumber" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -137,7 +137,7 @@
 												<div class="col-sm-6">
 													<form:input path="postalCode" cssClass="form-control"
 														autocomplete="off" />
-													<form:errors path="postalCode" cssClass="alert-danger" />
+													<form:errors path="postalCode" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -149,7 +149,7 @@
 												<div class="col-sm-6">
 													<form:input path="createdDate"
 														cssClass="form-control input-sm" readonly="true" />
-													<form:errors path="createdDate" cssClass="alert-danger" />
+													<form:errors path="createdDate" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>

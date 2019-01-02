@@ -2,16 +2,34 @@ package com.nana.bankapp.model;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotEmpty;
+
 public class Customer {
 
 	protected String customerId;
+	
+	@NotEmpty(message = "Customer Name No can't be blank")
 	protected String customerName;
+	
+	@NotEmpty(message = "Addres No can't be blank")
 	protected String address;
+	
+	@NotEmpty(message = "City No can't be blank")
 	protected String city;
+	
+	@NotEmpty(message = "Province No can't be blank")
 	protected String province;
+	
+	@NotEmpty(message = "Account No can't be blank")
 	protected String country;
+	
+	@NotEmpty(message = "Fax Number No can't be blank")
 	protected String faxNumber;
+	
+	@NotEmpty(message = "Phone Number No can't be blank")
 	protected String phoneNumber;
+	
+	@NotEmpty(message = "Postal Code No can't be blank")
 	protected String postalCode;
 	protected String createdBy;
 	protected Date createdDate;

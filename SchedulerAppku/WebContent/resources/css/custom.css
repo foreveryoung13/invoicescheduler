@@ -12,5 +12,12 @@
 }
 
 #form-group-custom {
-    margin-bottom: 0.5em !important;
+	margin-bottom: 0.5em !important;
+}
+
+.alert-danger-custom {
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+	font-size: 12px;
 }

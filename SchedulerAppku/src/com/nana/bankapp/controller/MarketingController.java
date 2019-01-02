@@ -9,6 +9,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -41,11 +42,15 @@ public class MarketingController {
 	
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
+		StringTrimmerEditor ste = new StringTrimmerEditor(true);
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
 		SimpleDateFormat dob = new SimpleDateFormat("dd/MM/yyyy"); 
+		
 		binder.registerCustomEditor(Date.class, "createdDate", new CustomDateEditor(dateFormat, false));
 		binder.registerCustomEditor(Date.class, "updatedDate", new CustomDateEditor(dateFormat, false));
-		binder.registerCustomEditor(Date.class, "dateOfBirth", new CustomDateEditor(dob, false));
+		binder.registerCustomEditor(Date.class, "dateOfBirth", new CustomDateEditor(dob, true, 10));
+		
+		binder.registerCustomEditor(String.class, ste);
 	}
 	
 	@ModelAttribute("divlist")
