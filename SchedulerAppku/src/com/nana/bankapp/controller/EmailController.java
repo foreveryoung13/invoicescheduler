@@ -1,12 +1,18 @@
 package com.nana.bankapp.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,6 +31,13 @@ public class EmailController {
 
 	@Autowired
 	AuthenticationName authName;
+	
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
+		binder.registerCustomEditor(Date.class, "createdDate", new CustomDateEditor(dateFormat, false));
+		binder.registerCustomEditor(Date.class, "updatedDate", new CustomDateEditor(dateFormat, false));
+	}
 
 	@RequestMapping("/add")
 	public String newRcustomer(Model model) {
@@ -50,6 +63,11 @@ public class EmailController {
 	public String updateEmail(@RequestParam("emailId") String emailId, Model model) {
 		Email email = es.getEmail(emailId);
 		String name = authName.getLoginName();
+		
+		if (email != null ) {
+		System.out.println(email.getCreatedBy());
+		System.out.println(email.getCreatedDate());
+		}
 		
 		model.addAttribute("username", name);
 		model.addAttribute("email", email);

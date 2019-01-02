@@ -43,20 +43,24 @@
 											<text class="alert-danger">${message}</text>
 										</div>
 									</div>
-									
+
 									<div class="form-group" hidden="true">
-										<label></label>
-										<div class="col-sm-4">
-											<form:input path="createdBy"
-												cssClass="form-control input-sm" readonly="true"/>
+										<label for="createdBy"
+											class="col-sm-4 control-label labelname"><spring:message
+												code="lbl.createdBy" /></label>
+										<div class="col-sm-6">
+											<form:input path="createdBy" cssClass="form-control input-sm"
+												readonly="true" />
 											<form:errors path="createdBy" cssClass="alert-danger" />
 											<text class="alert-danger">${message}</text>
 										</div>
 									</div>
-									
+
 									<div class="form-group" hidden="true">
-										<label></label>
-										<div class="col-sm-4">
+										<label for=createdDate
+											class="col-sm-4 control-label labelname"><spring:message
+												code="lbl.createdDate" /></label>
+										<div class="col-sm-6">
 											<form:input path="createdDate"
 												cssClass="form-control input-sm" readonly="true" />
 											<form:errors path="createdDate" cssClass="alert-danger" />
@@ -66,8 +70,8 @@
 
 									<div class="form-group">
 										<div class="col-sm-12" style="margin-left: 12.4em">
-											<input type="submit" value="Save"
-												class="btn btn-primary" name="btnSubmit" />
+											<input type="submit" value="Save" class="btn btn-primary"
+												name="btnSubmit" />
 										</div>
 									</div>
 								</form:form>

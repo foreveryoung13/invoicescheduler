@@ -157,6 +157,10 @@ public class EmailDAOImpl implements EmailDAO {
 			email.setHeader(ee.getHeader());
 			email.setFooter(ee.getFooter());
 			email.setContent(ee.getContent());
+			email.setCreatedBy(ee.getCreatedBy());
+			email.setCreatedDate(ee.getCreatedDate());
+			email.setUpdatedBy(ee.getUpdatedBy());
+			email.setUpdatedDate(ee.getUpdatedDate());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

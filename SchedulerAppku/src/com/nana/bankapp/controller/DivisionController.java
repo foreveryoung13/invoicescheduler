@@ -39,7 +39,6 @@ public class DivisionController {
 		binder.registerCustomEditor(Date.class, "updatedDate", new CustomDateEditor(dateFormat, false));
 	}
 
-
 	@RequestMapping("/add")
 	public String newRcustomer(Model model) {
 		String name = authName.getLoginName();

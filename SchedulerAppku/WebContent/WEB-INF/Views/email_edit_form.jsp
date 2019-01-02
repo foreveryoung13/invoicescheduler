@@ -67,6 +67,18 @@
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
+
+											<div class="form-group" hidden="true">
+												<label for="createdBy"
+													class="col-sm-4 control-label labelname"><spring:message
+														code="lbl.createdBy" /></label>
+												<div class="col-sm-6">
+													<form:input path="createdBy"
+														cssClass="form-control input-sm" readonly="true" />
+													<form:errors path="createdBy" cssClass="alert-danger" />
+													<text class="alert-danger">${message}</text>
+												</div>
+											</div>
 										</div>
 
 										<div class="col-sm-6" style="margin-left: -8em">
@@ -103,6 +115,18 @@
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
+
+											<div class="form-group" hidden="true">
+												<label for=createdDate class="col-sm-4 control-label labelname"><spring:message
+														code="lbl.createdDate" /></label>
+												<div class="col-sm-6">
+													<form:input path="createdDate"
+														cssClass="form-control input-sm" readonly="true" />
+													<form:errors path="createdDate" cssClass="alert-danger" />
+													<text class="alert-danger">${message}</text>
+												</div>
+											</div>
+
 										</div>
 									</div>
 
