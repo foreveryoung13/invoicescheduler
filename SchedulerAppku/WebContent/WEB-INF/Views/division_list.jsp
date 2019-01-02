@@ -25,11 +25,11 @@
 								<table class="table table-hover">
 									<thead>
 										<tr>
-											<th style="font-size: 12px;"><spring:message
+											<th class="labelname"><spring:message
 													code="lbl.divisionName" /></th>
-											<th style="font-size: 12px;"><spring:message
+											<th class="labelname"><spring:message
 													code="lbl.edit" /></th>
-											<th style="font-size: 12px;"><spring:message
+											<th class="labelname"><spring:message
 													code="lbl.delete" /></th>
 										</tr>
 									</thead>
@@ -42,8 +42,8 @@
 												<c:param name="divisionId" value="${divs.divisionId}" />
 											</c:url>
 											<tr>
-												<td style="font-size: 12px;">${divs.divisionName}</td>
-												<td style="font-size: 12px;"><a href="${updateLink}"
+												<td class="labelname">${divs.divisionName}</td>
+												<td class="labelname"><a href="${updateLink}"
 													class="btn-custom btn-warning"><span
 														class="glyphicon glyphicon-pencil"></span></a></td>
 												<td><a href="${deleteLink}"

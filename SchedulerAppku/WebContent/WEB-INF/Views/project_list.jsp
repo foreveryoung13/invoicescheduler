@@ -23,11 +23,11 @@
 								<table class="table table-hover">
 									<thead>
 										<tr>
-											<th style="font-size: 12px;"><spring:message
+											<th class="labelname"><spring:message
 													code="lbl.projectName" /></th>
-											<th style="font-size: 12px;"><spring:message
+											<th class="labelname"><spring:message
 													code="lbl.edit" /></th>
-											<th style="font-size: 12px;"><spring:message
+											<th class="labelname"><spring:message
 													code="lbl.delete" /></th>
 										</tr>
 									</thead>
@@ -40,7 +40,7 @@
 												<c:param name="projectId" value="${pro.projectId}" />
 											</c:url>
 											<tr>
-												<td style="font-size: 12px;">${pro.projectName}</td>
+												<td class="labelname">${pro.projectName}</td>
 												<td><a href="${updateLink}"
 													class="btn-custom btn-warning"><span
 														class="glyphicon glyphicon-pencil"></span></a></td>

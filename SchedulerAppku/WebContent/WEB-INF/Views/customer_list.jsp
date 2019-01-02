@@ -24,14 +24,10 @@
 								<table class="table table-hover">
 									<thead>
 										<tr>
-											<th style="font-size: 12px;"><spring:message
-													code="lbl.customerName" /></th>
-											<th style="font-size: 12px;"><spring:message
-													code="lbl.phoneNumber" /></th>
-											<th style="font-size: 12px;"><spring:message
-													code="lbl.edit" /></th>
-											<th style="font-size: 12px;"><spring:message
-													code="lbl.delete" /></th>
+											<th class="labelname"><spring:message code="lbl.customerName" /></th>
+											<th class="labelname"><spring:message code="lbl.phoneNumber" /></th>
+											<th class="labelname"><spring:message code="lbl.edit" /></th>
+											<th class="labelname"><spring:message code="lbl.delete" /></th>
 										</tr>
 									</thead>
 									<tbody>
@@ -43,8 +39,8 @@
 												<c:param name="customerId" value="${rcust.customerId}" />
 											</c:url>
 											<tr>
-												<td style="font-size: 12px;">${rcust.customerName}</td>
-												<td style="font-size: 12px;">${rcust.phoneNumber}</td>
+												<td class="labelname">${rcust.customerName}</td>
+												<td class="labelname">${rcust.phoneNumber}</td>
 												<td><a href="${updateLink}"
 													class="btn-custom btn-warning"><span
 														class="glyphicon glyphicon-pencil"></span></a></td>

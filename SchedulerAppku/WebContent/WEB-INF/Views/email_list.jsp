@@ -24,19 +24,19 @@
 								<table class="table table-hover">
 									<thead>
 										<tr>
-											<th style="font-size: 12px;"><spring:message
+											<th class="labelname"><spring:message
 													code="lbl.sender" /></th>
-											<th style="font-size: 12px;"><spring:message
+											<th class="labelname"><spring:message
 													code="lbl.recipients" /></th>
-											<th style="font-size: 12px;"><spring:message
+											<th class="labelname"><spring:message
 													code="lbl.subject" /></th>
-											<th style="font-size: 12px;"><spring:message
+											<th class="labelname"><spring:message
 													code="lbl.header" /></th>
-											<th style="font-size: 12px;"><spring:message
+											<th class="labelname"><spring:message
 													code="lbl.footer" /></th>
-											<th style="font-size: 12px;"><spring:message
+											<th class="labelname"><spring:message
 													code="lbl.edit" /></th>
-											<th style="font-size: 12px;"><spring:message
+											<th class="labelname"><spring:message
 													code="lbl.delete" /></th>
 										</tr>
 									</thead>
@@ -49,11 +49,11 @@
 												<c:param name="emailId" value="${email.emailId}" />
 											</c:url>
 											<tr>
-												<td style="font-size: 12px;">${email.sender}</td>
-												<td style="font-size: 12px;">${email.recipients}</td>
-												<td style="font-size: 12px;">${email.subject}</td>
-												<td style="font-size: 12px;">${email.header}</td>
-												<td style="font-size: 12px;">${email.footer}</td>
+												<td class="labelname">${email.sender}</td>
+												<td class="labelname">${email.recipients}</td>
+												<td class="labelname">${email.subject}</td>
+												<td class="labelname">${email.header}</td>
+												<td class="labelname">${email.footer}</td>
 												<td><a href="${updateLink}"
 													class="btn-custom btn-warning"><span
 														class="glyphicon glyphicon-pencil"></span></a></td>

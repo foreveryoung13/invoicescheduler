@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -24,14 +25,12 @@
 								<table class="table table-hover">
 									<thead>
 										<tr>
-											<th style="font-size: 12px;"><spring:message
-													code="lbl.firstName" /></th>
-											<th style="font-size: 12px;"><spring:message
-													code="lbl.lastName" /></th>
-											<th style="font-size: 12px;"><spring:message
-													code="lbl.edit" /></th>
-											<th style="font-size: 12px;"><spring:message
-													code="lbl.delete" /></th>
+											<th class="labelname"><spring:message code="lbl.firstName" /></th>
+											<th class="labelname"><spring:message code="lbl.lastName" /></th>
+											<th class="labelname"><spring:message code="lbl.age" /></th>
+											<th class="labelname"><spring:message code="lbl.dateOfBirth" /></th>
+											<th class="labelname"><spring:message code="lbl.edit" /></th>
+											<th class="labelname"><spring:message code="lbl.delete" /></th>
 										</tr>
 									</thead>
 									<tbody>
@@ -43,8 +42,15 @@
 												<c:param name="marketingId" value="${mark.marketingId}" />
 											</c:url>
 											<tr>
-												<td style="font-size: 12px;">${mark.firstName}</td>
-												<td style="font-size: 12px;">${mark.lastName}</td>
+												<c:set value="${mark.dateOfBirth}" var="dob" />
+												<fmt:parseDate value="${dob}" var="dobject" pattern="yyyy-MM-dd" />
+																							
+												<td class="labelname">${mark.firstName}</td>
+												<td class="labelname">${mark.lastName}</td>
+												<td class="labelname">${mark.age}</td>
+												<td class="labelname">
+												<fmt:formatDate value="${dobject}" pattern="dd/MM/yyyy" /></td>
+												
 												<td><a href="${updateLink}"
 													class="btn-custom btn-warning"><span
 														class="glyphicon glyphicon-pencil"></span></a></td>
