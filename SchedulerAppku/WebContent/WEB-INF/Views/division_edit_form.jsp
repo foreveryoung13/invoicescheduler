@@ -44,21 +44,21 @@
 										</div>
 									</div>
 									
-									<div class="form-group" >
+									<div class="form-group" hidden="true">
 										<label></label>
 										<div class="col-sm-4">
 											<form:input path="createdBy"
-												cssClass="form-control input-sm" />
+												cssClass="form-control input-sm" readonly="true"/>
 											<form:errors path="createdBy" cssClass="alert-danger" />
 											<text class="alert-danger">${message}</text>
 										</div>
 									</div>
 									
-									<div class="form-group" >
+									<div class="form-group" hidden="true">
 										<label></label>
 										<div class="col-sm-4">
 											<form:input path="createdDate"
-												cssClass="form-control input-sm" />
+												cssClass="form-control input-sm" readonly="true" />
 											<form:errors path="createdDate" cssClass="alert-danger" />
 											<text class="alert-danger">${message}</text>
 										</div>

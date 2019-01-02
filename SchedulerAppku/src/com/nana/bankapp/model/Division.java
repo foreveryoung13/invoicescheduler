@@ -2,9 +2,13 @@ package com.nana.bankapp.model;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotEmpty;
+
 public class Division {
 
 	private String divisionId;
+	
+	@NotEmpty(message = "Division Name can't be blank")
 	private String divisionName;
 	private String createdBy;
 	private Date createdDate;
