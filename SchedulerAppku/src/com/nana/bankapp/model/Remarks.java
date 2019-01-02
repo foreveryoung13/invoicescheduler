@@ -2,9 +2,13 @@ package com.nana.bankapp.model;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotEmpty;
+
 public class Remarks {
 
 	protected String remarksId;
+	
+	@NotEmpty(message = "Remarks Name can't be blank")
 	protected String remarksName;
 	protected String createdBy;
 	protected Date createdDate;

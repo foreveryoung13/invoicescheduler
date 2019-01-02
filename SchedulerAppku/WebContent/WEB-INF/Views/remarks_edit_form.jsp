@@ -38,7 +38,7 @@
 										<div class="col-sm-4">
 											<form:input path="remarksName" cssClass="form-control"
 												autocomplete="off" />
-											<form:errors path="remarksName" cssClass="alert-danger" />
+											<form:errors path="remarksName" cssClass="alert-danger-custom" />
 											<text class="alert-danger">${message}</text>
 										</div>
 									</div>
@@ -49,7 +49,7 @@
 										<div class="col-sm-6">
 											<form:input path="createdBy" cssClass="form-control input-sm"
 												readonly="true" />
-											<form:errors path="createdBy" cssClass="alert-danger" />
+											<form:errors path="createdBy" cssClass="alert-danger-custom" />
 											<text class="alert-danger">${message}</text>
 										</div>
 									</div>
@@ -60,7 +60,7 @@
 										<div class="col-sm-6">
 											<form:input path="createdDate"
 												cssClass="form-control input-sm" readonly="true" />
-											<form:errors path="createdDate" cssClass="alert-danger" />
+											<form:errors path="createdDate" cssClass="alert-danger-custom" />
 											<text class="alert-danger">${message}</text>
 										</div>
 									</div>

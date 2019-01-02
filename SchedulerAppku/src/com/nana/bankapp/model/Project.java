@@ -2,9 +2,13 @@ package com.nana.bankapp.model;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotEmpty;
+
 public class Project {
 
 	protected String projectId;
+	
+	@NotEmpty(message = "Project Name can't be blank")
 	protected String projectName;
 	protected String createdBy;
 	protected Date createdDate;

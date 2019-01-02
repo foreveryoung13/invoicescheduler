@@ -2,9 +2,13 @@ package com.nana.bankapp.model;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotEmpty;
+
 public class Term {
 
 	protected String termId;
+	
+	@NotEmpty(message = "Term Name can't be blank")
 	protected String termName;
 	protected String createdBy;
 	protected Date createdDate;

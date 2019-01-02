@@ -28,7 +28,7 @@
 										<div class="col-sm-4">
 											<form:input path="remarksName" cssClass="form-control"
 												autocomplete="off" />
-											<form:errors path="remarksName" cssClass="alert-danger" />
+											<form:errors path="remarksName" cssClass="alert-danger-custom" />
 											<text class="alert-danger">${message}</text>
 										</div>
 									</div>

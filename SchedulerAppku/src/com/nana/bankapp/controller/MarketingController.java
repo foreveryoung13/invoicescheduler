@@ -42,7 +42,6 @@ public class MarketingController {
 	
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
-		StringTrimmerEditor ste = new StringTrimmerEditor(true);
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
 		SimpleDateFormat dob = new SimpleDateFormat("dd/MM/yyyy"); 
 		
@@ -50,7 +49,6 @@ public class MarketingController {
 		binder.registerCustomEditor(Date.class, "updatedDate", new CustomDateEditor(dateFormat, false));
 		binder.registerCustomEditor(Date.class, "dateOfBirth", new CustomDateEditor(dob, true, 10));
 		
-		binder.registerCustomEditor(String.class, ste);
 	}
 	
 	@ModelAttribute("divlist")
