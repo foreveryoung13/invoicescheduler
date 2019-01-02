@@ -17,6 +17,8 @@ public class Invoice {
 	@NotNull(message = "No Po can't be null")
 	protected String noPo;
 	protected String marketingId;
+	
+	@NotNull(message = "No Invoice can't be null")
 	protected String noInvoice;
 	
 	@DateTimeFormat(pattern = "dd/MM/yyyy")

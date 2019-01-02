@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.nana.bankapp.customeditor.NoInvoiceEditor;
 import com.nana.bankapp.customeditor.NoPoEditor;
 import com.nana.bankapp.model.Customer;
 import com.nana.bankapp.model.Invoice;
@@ -72,6 +73,7 @@ public class InvoiceController {
 		binder.registerCustomEditor(Date.class, "updatedDate", new CustomDateEditor(dateFormat, false));
 		
 		binder.registerCustomEditor(String.class, "noPo", new NoPoEditor());
+		binder.registerCustomEditor(String.class, "noInvoice", new NoInvoiceEditor());
 	}
 
 	@ModelAttribute("customerlist")
