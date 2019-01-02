@@ -64,11 +64,6 @@ public class EmailController {
 		Email email = es.getEmail(emailId);
 		String name = authName.getLoginName();
 		
-		if (email != null ) {
-		System.out.println(email.getCreatedBy());
-		System.out.println(email.getCreatedDate());
-		}
-		
 		model.addAttribute("username", name);
 		model.addAttribute("email", email);
 		return "email_edit_form";
