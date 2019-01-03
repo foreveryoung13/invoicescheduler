@@ -82,8 +82,8 @@ public class InvoiceDAOImpl implements InvoiceDAO {
 		me.setTanggalLunas(invoice.getTanggalLunas());
 		me.setCreatedBy(invoice.getCreatedBy());
 		me.setCreatedDate(invoice.getCreatedDate());
-		me.setUpdatedBy(invoice.getUpdatedBy());
-		me.setUpdatedDate(invoice.getUpdatedDate());
+		me.setUpdatedBy("User");
+		me.setUpdatedDate(new Date());
 		try {
 			Session currentSession = sessionFactory.getCurrentSession();
 			currentSession.update(me);
@@ -135,11 +135,18 @@ public class InvoiceDAOImpl implements InvoiceDAO {
 	}
 
 	@Override
-	public List<Invoice> pageInvoiceList(Integer offset, Integer maxResults) {
+	public List<Invoice> pageInvoiceList(Integer offset, Integer maxResults, boolean condition) {
 		List<Invoice> list = new ArrayList<Invoice>();
+		
+		String querySql = "FROM InvoiceEntity ORDER BY createdDate DESC";
+
+		if (condition) {
+			querySql = "FROM InvoiceEntity ORDER BY updatedDate DESC";
+		}
+
 		try {
 			Session session = sessionFactory.getCurrentSession();
-			Query<InvoiceEntity> query = session.createQuery("FROM InvoiceEntity", InvoiceEntity.class);
+			Query<InvoiceEntity> query = session.createQuery(querySql, InvoiceEntity.class);
 			query.setFirstResult(offset != null ? offset : 0);
 			query.setMaxResults(maxResults != null ? maxResults : 10);
 

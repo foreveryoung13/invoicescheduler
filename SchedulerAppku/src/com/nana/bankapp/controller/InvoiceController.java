@@ -208,16 +208,21 @@ public class InvoiceController {
 		} else {
 			model.addAttribute("username", name);
 			is.editInvoice(invoice);
-			return "redirect:/invoice/list";
+			return "redirect:/invoice/list?edit=true";
 		}
 	}
 	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public String list(Model model, Integer offset, Integer maxResults) {
+	public String list(Model model, Integer offset, Integer maxResults, @RequestParam(required=false) boolean edit) {
 		String name = authName.getLoginName();
 		
+		if (edit) {
+			model.addAttribute("invoice", is.pageInvoiceList(offset, maxResults, true));
+		} else {
+			model.addAttribute("invoice", is.pageInvoiceList(offset, maxResults, false));
+		}
+		
 		model.addAttribute("username", name);
-		model.addAttribute("invoice", is.pageInvoiceList(offset, maxResults));
 		model.addAttribute("count", is.count());
 		model.addAttribute("offset", offset);
 		return "invoice_list";

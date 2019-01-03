@@ -36,8 +36,8 @@ public class InvoiceServiceImpl implements InvoiceService {
 
 	@Override
 	@Transactional
-	public List<Invoice> pageInvoiceList(Integer offset, Integer maxResults) {
-		return invoiceDAO.pageInvoiceList(offset, maxResults);
+	public List<Invoice> pageInvoiceList(Integer offset, Integer maxResults, boolean condition) {
+		return invoiceDAO.pageInvoiceList(offset, maxResults, condition);
 	}
 
 	@Override
