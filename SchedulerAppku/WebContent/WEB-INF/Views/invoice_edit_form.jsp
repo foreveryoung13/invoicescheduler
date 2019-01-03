@@ -41,7 +41,7 @@
 													<form:select path="customerId" items="${customerlist}"
 														itemValue="customerId" itemLabel="customerName"
 														cssClass="form-control" />
-													<form:errors path="customerId" cssClass="alert-danger" />
+													<form:errors path="customerId" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -53,7 +53,7 @@
 													<form:select path="remarksId" items="${remarklist}"
 														itemValue="remarksId" itemLabel="remarksName"
 														cssClass="form-control" />
-													<form:errors path="remarksId" cssClass="alert-danger" />
+													<form:errors path="remarksId" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -64,7 +64,7 @@
 												<div class="col-sm-6">
 													<form:input path="noPo" cssClass="form-control"
 														autocomplete="off" />
-													<form:errors path="noPo" cssClass="alert-danger" />
+													<form:errors path="noPo" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -76,7 +76,7 @@
 													<form:select path="marketingId" items="${marketinglist}"
 														itemValue="marketingId" itemLabel="firstName"
 														cssClass="form-control" />
-													<form:errors path="marketingId" cssClass="alert-danger" />
+													<form:errors path="marketingId" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -87,7 +87,7 @@
 												<div class="col-sm-6">
 													<form:input path="noInvoice" cssClass="form-control"
 														autocomplete="off" />
-													<form:errors path="noInvoice" cssClass="alert-danger" />
+													<form:errors path="noInvoice" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -98,7 +98,7 @@
 												<div class="col-sm-6">
 													<form:input path="noPajak" cssClass="form-control"
 														autocomplete="off" />
-													<form:errors path="noPajak" cssClass="alert-danger" />
+													<form:errors path="noPajak" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -108,8 +108,8 @@
 														code="lbl.tanggalInvoice" /></label>
 												<div class="col-sm-6">
 													<form:input path="tanggalInvoice" id="tanggalInvoice"
-														cssClass="form-control" autocomplete="off" />
-													<form:errors path="tanggalInvoice" cssClass="alert-danger" />
+														cssClass="form-control" autocomplete="off" readonly="true"/>
+													<form:errors path="tanggalInvoice" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -119,8 +119,8 @@
 														code="lbl.tanggalTt" /></label>
 												<div class="col-sm-6">
 													<form:input path="tanggalTt" cssClass="form-control"
-														id="tanggalTt" autocomplete="off" />
-													<form:errors path="tanggalTt" cssClass="alert-danger" />
+														id="tanggalTt" autocomplete="off" readonly="true" />
+													<form:errors path="tanggalTt" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -132,10 +132,23 @@
 													<form:select path="termId" items="${termlist}"
 														itemValue="termId" itemLabel="termName"
 														cssClass="form-control" />
-													<form:errors path="termId" cssClass="alert-danger" />
+													<form:errors path="termId" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
+											
+											<div class="form-group" hidden="true">
+												<label for="createdBy"
+													class="col-sm-4 control-label labelname"><spring:message
+														code="lbl.createdBy" /></label>
+												<div class="col-sm-6">
+													<form:input path="createdBy"
+														cssClass="form-control input-sm" readonly="true" />
+													<form:errors path="createdBy" cssClass="alert-danger-custom" />
+													<text class="alert-danger">${message}</text>
+												</div>
+											</div>
+											
 										</div>
 										<!-- end left column -->
 
@@ -146,8 +159,8 @@
 														code="lbl.tanggalTempo" /></label>
 												<div class="col-sm-6">
 													<form:input path="tanggalTempo" cssClass="form-control"
-														id="tanggalTempo" autocomplete="off" />
-													<form:errors path="tanggalTempo" cssClass="alert-danger" />
+														id="tanggalTempo" autocomplete="off" readonly="true" />
+													<form:errors path="tanggalTempo" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -158,7 +171,7 @@
 												<div class="col-sm-6">
 													<form:input path="piutangUsaha" cssClass="form-control"
 														autocomplete="off" />
-													<form:errors path="piutangUsaha" cssClass="alert-danger" />
+													<form:errors path="piutangUsaha" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -169,7 +182,7 @@
 													<form:select path="projectId" items="${projectlist}"
 														itemValue="projectId" itemLabel="projectName"
 														cssClass="form-control" />
-													<form:errors path="projectId" cssClass="alert-danger" />
+													<form:errors path="projectId" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -180,7 +193,7 @@
 												<div class="col-sm-6">
 													<form:input path="dpp" cssClass="form-control"
 														autocomplete="off" />
-													<form:errors path="dpp" cssClass="alert-danger" />
+													<form:errors path="dpp" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -191,7 +204,7 @@
 												<div class="col-sm-6">
 													<form:input path="ppn" cssClass="form-control"
 														autocomplete="off" />
-													<form:errors path="ppn" cssClass="alert-danger" />
+													<form:errors path="ppn" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -202,7 +215,7 @@
 												<div class="col-sm-6">
 													<form:input path="pph" cssClass="form-control"
 														autocomplete="off" />
-													<form:errors path="pph" cssClass="alert-danger" />
+													<form:errors path="pph" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -213,7 +226,7 @@
 												<div class="col-sm-6">
 													<form:input path="uangMasuk" cssClass="form-control"
 														autocomplete="off" />
-													<form:errors path="uangMasuk" cssClass="alert-danger" />
+													<form:errors path="uangMasuk" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
@@ -223,8 +236,20 @@
 														code="lbl.tanggalLunas" /></label>
 												<div class="col-sm-6">
 													<form:input path="tanggalLunas" cssClass="form-control"
-														id="tanggalLunas" autocomplete="off" />
-													<form:errors path="tanggalLunas" cssClass="alert-danger" />
+														id="tanggalLunas" autocomplete="off" readonly="true" />
+													<form:errors path="tanggalLunas" cssClass="alert-danger-custom" />
+													<text class="alert-danger">${message}</text>
+												</div>
+											</div>
+											
+											<div class="form-group" hidden="true">
+												<label for=createdDate
+													class="col-sm-4 control-label labelname"><spring:message
+														code="lbl.createdDate" /></label>
+												<div class="col-sm-6">
+													<form:input path="createdDate"
+														cssClass="form-control input-sm" readonly="true" />
+													<form:errors path="createdDate" cssClass="alert-danger-custom" />
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>

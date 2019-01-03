@@ -1,6 +1,7 @@
 package com.nana.bankapp.dao;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -43,10 +44,10 @@ public class InvoiceDAOImpl implements InvoiceDAO {
 		me.setPph(invoice.getPph());
 		me.setUangMasuk(invoice.getUangMasuk());
 		me.setTanggalLunas(invoice.getTanggalLunas());
-		me.setCreatedBy(invoice.getCreatedBy());
-		me.setCreatedDate(invoice.getCreatedDate());
-		me.setUpdatedBy(invoice.getUpdatedBy());
-		me.setUpdatedDate(invoice.getUpdatedDate());
+		me.setCreatedBy("User");
+		me.setCreatedDate(new Date());
+		me.setUpdatedBy(null);
+		me.setUpdatedDate(null);
 		try {
 			Session currentSession = sessionFactory.getCurrentSession();
 			currentSession.save(me);

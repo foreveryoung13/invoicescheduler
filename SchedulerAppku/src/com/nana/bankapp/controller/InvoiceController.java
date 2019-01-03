@@ -64,11 +64,14 @@ public class InvoiceController {
 	
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy"); 
-		binder.registerCustomEditor(Date.class, "tanggalInvoice", new CustomDateEditor(dateFormat, false));
-		binder.registerCustomEditor(Date.class, "tanggalTt", new CustomDateEditor(dateFormat, false));
-		binder.registerCustomEditor(Date.class, "tanggalTempo", new CustomDateEditor(dateFormat, false));
-		binder.registerCustomEditor(Date.class, "tanggalLunas", new CustomDateEditor(dateFormat, false));
+		SimpleDateFormat dob = new SimpleDateFormat("dd/MM/yyyy"); 
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
+		
+		binder.registerCustomEditor(Date.class, "tanggalInvoice", new CustomDateEditor(dob, true, 10));
+		binder.registerCustomEditor(Date.class, "tanggalTt", new CustomDateEditor(dob, true, 10));
+		binder.registerCustomEditor(Date.class, "tanggalTempo", new CustomDateEditor(dob, true, 10));
+		binder.registerCustomEditor(Date.class, "tanggalLunas", new CustomDateEditor(dob, true, 10));
+		
 		binder.registerCustomEditor(Date.class, "createdDate", new CustomDateEditor(dateFormat, false));
 		binder.registerCustomEditor(Date.class, "updatedDate", new CustomDateEditor(dateFormat, false));
 		

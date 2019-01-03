@@ -21,7 +21,6 @@ public class Invoice {
 	@NotNull(message = "No Invoice can't be null")
 	protected String noInvoice;
 	
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@NotNull(message = "No Pajak can't be null")
 	protected String noPajak;
 	
@@ -37,10 +36,20 @@ public class Invoice {
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@NotNull(message = "Tanggal Tempo can't be null")
 	protected Date tanggalTempo;
+	
+	@NotNull(message = "Piutang Usaha of birth can't be null")
 	protected BigDecimal piutangUsaha;
+	
+	@NotNull(message = "DPP of birth can't be null")
 	protected BigDecimal dpp;
+	
+	@NotNull(message = "PPN of birth can't be null")
 	protected BigDecimal ppn;
+	
+	@NotNull(message = "PPH of birth can't be null")
 	protected BigDecimal pph;
+	
+	@NotNull(message = "Uang Masuk of birth can't be null")
 	protected BigDecimal uangMasuk;
 	
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
