@@ -29,6 +29,10 @@
 											<th class="labelname"><spring:message code="lbl.lastName" /></th>
 											<th class="labelname"><spring:message code="lbl.age" /></th>
 											<th class="labelname"><spring:message code="lbl.dateOfBirth" /></th>
+											<th class="labelname"><spring:message code="lbl.address" /></th>
+											<th class="labelname"><spring:message code="lbl.city" /></th>
+											<th class="labelname"><spring:message code="lbl.country" /></th>
+											
 											<th class="labelname"><spring:message code="lbl.edit" /></th>
 											<th class="labelname"><spring:message code="lbl.delete" /></th>
 										</tr>
@@ -48,8 +52,10 @@
 												<td class="labelname">${mark.firstName}</td>
 												<td class="labelname">${mark.lastName}</td>
 												<td class="labelname">${mark.age}</td>
-												<td class="labelname">
-												<fmt:formatDate value="${dobject}" pattern="dd/MM/yyyy" /></td>
+												<td class="labelname"><fmt:formatDate value="${dobject}" pattern="dd/MM/yyyy" /></td>
+												<td class="labelname">${mark.address}</td>
+												<td class="labelname">${mark.city}</td>
+												<td class="labelname">${mark.country}</td>
 												
 												<td><a href="${updateLink}"
 													class="btn-custom btn-warning"><span

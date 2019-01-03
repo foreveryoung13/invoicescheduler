@@ -25,7 +25,10 @@
 									<thead>
 										<tr>
 											<th class="labelname"><spring:message code="lbl.customerName" /></th>
+											<th class="labelname"><spring:message code="lbl.address" /></th>
+											<th class="labelname"><spring:message code="lbl.country" /></th>
 											<th class="labelname"><spring:message code="lbl.phoneNumber" /></th>
+											<th class="labelname"><spring:message code="lbl.postalCode" /></th>
 											<th class="labelname"><spring:message code="lbl.edit" /></th>
 											<th class="labelname"><spring:message code="lbl.delete" /></th>
 										</tr>
@@ -40,7 +43,11 @@
 											</c:url>
 											<tr>
 												<td class="labelname">${rcust.customerName}</td>
+												<td class="labelname">${rcust.address}</td>
+												<td class="labelname">${rcust.country}</td>
 												<td class="labelname">${rcust.phoneNumber}</td>
+												<td class="labelname">${rcust.postalCode}</td>
+												
 												<td><a href="${updateLink}"
 													class="btn-custom btn-warning"><span
 														class="glyphicon glyphicon-pencil"></span></a></td>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -25,12 +26,13 @@
 								<table class="table table-hover">
 									<thead>
 										<tr>
-											<th class="labelname"><spring:message
-													code="lbl.divisionName" /></th>
-											<th class="labelname"><spring:message
-													code="lbl.edit" /></th>
-											<th class="labelname"><spring:message
-													code="lbl.delete" /></th>
+											<th class="labelname"><spring:message code="lbl.divisionName" /></th>
+											<th class="labelname"><spring:message code="lbl.createdBy" /></th>
+											<th class="labelname"><spring:message code="lbl.createdDate" /></th>
+											
+											<th class="labelname"><spring:message code="lbl.edit" /></th>
+											<th class="labelname"><spring:message code="lbl.delete" /></th>
+													
 										</tr>
 									</thead>
 									<tbody>
@@ -42,7 +44,13 @@
 												<c:param name="divisionId" value="${divs.divisionId}" />
 											</c:url>
 											<tr>
+												<c:set value="${divs.createdDate}" var="createdDate" />
+												<fmt:parseDate value="${createdDate}" var="createdDateOut" pattern="yyyy-MM-dd HH:mm:ss" />
+											
 												<td class="labelname">${divs.divisionName}</td>
+												<td class="labelname">${divs.createdBy}</td>
+												<td class="labelname"><fmt:formatDate value="${createdDateOut}" pattern="dd/MM/yyyy" /></td>
+												
 												<td class="labelname"><a href="${updateLink}"
 													class="btn-custom btn-warning"><span
 														class="glyphicon glyphicon-pencil"></span></a></td>

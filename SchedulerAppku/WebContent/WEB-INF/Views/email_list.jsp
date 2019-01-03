@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -24,20 +25,15 @@
 								<table class="table table-hover">
 									<thead>
 										<tr>
-											<th class="labelname"><spring:message
-													code="lbl.sender" /></th>
-											<th class="labelname"><spring:message
-													code="lbl.recipients" /></th>
-											<th class="labelname"><spring:message
-													code="lbl.subject" /></th>
-											<th class="labelname"><spring:message
-													code="lbl.header" /></th>
-											<th class="labelname"><spring:message
-													code="lbl.footer" /></th>
-											<th class="labelname"><spring:message
-													code="lbl.edit" /></th>
-											<th class="labelname"><spring:message
-													code="lbl.delete" /></th>
+											<th class="labelname"><spring:message code="lbl.sender" /></th>
+											<th class="labelname"><spring:message code="lbl.recipients" /></th>
+											<th class="labelname"><spring:message code="lbl.subject" /></th>
+											<th class="labelname"><spring:message code="lbl.header" /></th>
+											<th class="labelname"><spring:message code="lbl.footer" /></th>
+											<th class="labelname"><spring:message code="lbl.createdBy" /></th>
+											<th class="labelname"><spring:message code="lbl.createdDate" /></th>
+											<th class="labelname"><spring:message code="lbl.edit" /></th>
+											<th class="labelname"><spring:message code="lbl.delete" /></th>
 										</tr>
 									</thead>
 									<tbody>
@@ -49,11 +45,17 @@
 												<c:param name="emailId" value="${email.emailId}" />
 											</c:url>
 											<tr>
+												<c:set value="${email.createdDate}" var="createdDate" />
+												<fmt:parseDate value="${createdDate}" var="createdDateOut" pattern="yyyy-MM-dd HH:mm:ss" />
+											
 												<td class="labelname">${email.sender}</td>
 												<td class="labelname">${email.recipients}</td>
 												<td class="labelname">${email.subject}</td>
 												<td class="labelname">${email.header}</td>
 												<td class="labelname">${email.footer}</td>
+												<td class="labelname">${email.createdBy}</td>
+												<td class="labelname"><fmt:formatDate value="${createdDateOut}" pattern="dd/MM/yyyy" /></td>
+												
 												<td><a href="${updateLink}"
 													class="btn-custom btn-warning"><span
 														class="glyphicon glyphicon-pencil"></span></a></td>

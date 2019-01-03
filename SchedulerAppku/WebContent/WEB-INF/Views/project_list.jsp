@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -23,12 +24,11 @@
 								<table class="table table-hover">
 									<thead>
 										<tr>
-											<th class="labelname"><spring:message
-													code="lbl.projectName" /></th>
-											<th class="labelname"><spring:message
-													code="lbl.edit" /></th>
-											<th class="labelname"><spring:message
-													code="lbl.delete" /></th>
+											<th class="labelname"><spring:message code="lbl.projectName" /></th>
+											<th class="labelname"><spring:message code="lbl.createdBy" /></th>
+											<th class="labelname"><spring:message code="lbl.createdDate" /></th>
+											<th class="labelname"><spring:message code="lbl.edit" /></th>
+											<th class="labelname"><spring:message code="lbl.delete" /></th>
 										</tr>
 									</thead>
 									<tbody>
@@ -40,7 +40,12 @@
 												<c:param name="projectId" value="${pro.projectId}" />
 											</c:url>
 											<tr>
+												<c:set value="${pro.createdDate}" var="createdDate" />
+												<fmt:parseDate value="${createdDate}" var="createdDateOut" pattern="yyyy-MM-dd HH:mm:ss" />
+												
 												<td class="labelname">${pro.projectName}</td>
+												<td class="labelname">${pro.createdBy}</td>
+												<td class="labelname"><fmt:formatDate value="${createdDateOut}" pattern="dd/MM/yyyy" /></td>
 												<td><a href="${updateLink}"
 													class="btn-custom btn-warning"><span
 														class="glyphicon glyphicon-pencil"></span></a></td>
@@ -52,11 +57,11 @@
 										</c:forEach>
 									</tbody>
 								</table>
-								
+
 								<tag:paginate max="15" offset="${offset}" count="${count}"
 									uri="${pageContext.request.contextPath}/project/list"
 									next="&raquo;" previous="&laquo;" />
-								
+
 							</div>
 						</div>
 					</div>
