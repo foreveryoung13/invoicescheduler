@@ -53,6 +53,18 @@
 													<text class="alert-danger">${message}</text>
 												</div>
 											</div>
+											
+											<div class="form-group row" id="form-group-custom">
+												<label for="emailAddress"
+													class="col-sm-4 control-label labelname"><spring:message
+														code="lbl.emailAddress" /></label>
+												<div class="col-sm-6">
+													<form:input path="emailAddress" cssClass="form-control"
+														autocomplete="off" />
+													<form:errors path="emailAddress" cssClass="alert-danger-custom" />
+													<text class="alert-danger">${message}</text>
+												</div>
+											</div>
 
 											<div class="form-group row" id="form-group-custom">
 												<label for="placeOfBirth"

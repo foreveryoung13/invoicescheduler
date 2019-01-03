@@ -57,12 +57,15 @@ public class MarketingEntity {
 	@Column(name = "UPDATED_DATE")
 	protected Date updatedDate;
 
+	@Column(name = "EMAIL_ADDRESS")
+	protected String emailAddress;
+
 	public MarketingEntity() {
 	}
 
 	public MarketingEntity(String marketingId, String firstName, String lastName, String placeOfBirth, Date dateOfBirth,
 			Integer age, String address, String city, String province, String country, String divisionId,
-			String createdBy, Date createdDate, String updatedBy, Date updatedDate) {
+			String createdBy, Date createdDate, String updatedBy, Date updatedDate, String emailAddress) {
 		super();
 		this.marketingId = marketingId;
 		this.firstName = firstName;
@@ -79,126 +82,135 @@ public class MarketingEntity {
 		this.createdDate = createdDate;
 		this.updatedBy = updatedBy;
 		this.updatedDate = updatedDate;
+		this.emailAddress = emailAddress;
 	}
 
 	public String getMarketingId() {
 		return marketingId;
 	}
 
-	public void setMarketingId(String marketingId) {
-		this.marketingId = marketingId;
-	}
-
 	public String getFirstName() {
 		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
 	}
 
 	public String getLastName() {
 		return lastName;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
 	public String getPlaceOfBirth() {
 		return placeOfBirth;
-	}
-
-	public void setPlaceOfBirth(String placeOfBirth) {
-		this.placeOfBirth = placeOfBirth;
 	}
 
 	public Date getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(Date dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
-	}
-
 	public Integer getAge() {
 		return age;
-	}
-
-	public void setAge(Integer age) {
-		this.age = age;
 	}
 
 	public String getAddress() {
 		return address;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
 	public String getCity() {
 		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
 	}
 
 	public String getProvince() {
 		return province;
 	}
 
-	public void setProvince(String province) {
-		this.province = province;
-	}
-
 	public String getCountry() {
 		return country;
-	}
-
-	public void setCountry(String country) {
-		this.country = country;
 	}
 
 	public String getDivisionId() {
 		return divisionId;
 	}
 
-	public void setDivisionId(String divisionId) {
-		this.divisionId = divisionId;
-	}
-
 	public String getCreatedBy() {
 		return createdBy;
-	}
-
-	public void setCreatedBy(String createdBy) {
-		this.createdBy = createdBy;
 	}
 
 	public Date getCreatedDate() {
 		return createdDate;
 	}
 
-	public void setCreatedDate(Date createdDate) {
-		this.createdDate = createdDate;
-	}
-
 	public String getUpdatedBy() {
 		return updatedBy;
-	}
-
-	public void setUpdatedBy(String updatedBy) {
-		this.updatedBy = updatedBy;
 	}
 
 	public Date getUpdatedDate() {
 		return updatedDate;
 	}
 
+	public String getEmailAddress() {
+		return emailAddress;
+	}
+
+	public void setMarketingId(String marketingId) {
+		this.marketingId = marketingId;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public void setPlaceOfBirth(String placeOfBirth) {
+		this.placeOfBirth = placeOfBirth;
+	}
+
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public void setProvince(String province) {
+		this.province = province;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public void setDivisionId(String divisionId) {
+		this.divisionId = divisionId;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public void setUpdatedBy(String updatedBy) {
+		this.updatedBy = updatedBy;
+	}
+
 	public void setUpdatedDate(Date updatedDate) {
 		this.updatedDate = updatedDate;
+	}
+
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
 	}
 
 }

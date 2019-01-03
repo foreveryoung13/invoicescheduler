@@ -39,6 +39,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 		ce.setCreatedDate(new Date());
 		ce.setUpdatedBy(null);
 		ce.setUpdatedDate(null);
+		ce.setEmailAddress(customer.getEmailAddress());
 		try {
 			Session currentSession = sessionFactory.getCurrentSession();
 			currentSession.save(ce);
@@ -66,7 +67,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 		ce.setCreatedDate(customer.getCreatedDate());
 		ce.setUpdatedBy("User");
 		ce.setUpdatedDate(new Date());
-		
+		ce.setEmailAddress(customer.getEmailAddress());
 		try {
 			Session currentSession = sessionFactory.getCurrentSession();
 			currentSession.update(ce);
@@ -101,6 +102,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 				ce.setCreatedDate(customerEntity.getCreatedDate());
 				ce.setUpdatedBy(customerEntity.getUpdatedBy());
 				ce.setUpdatedDate(customerEntity.getUpdatedDate());
+				ce.setEmailAddress(customerEntity.getEmailAddress());
 				list.add(ce);
 			}
 
@@ -143,6 +145,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 					ce.setCreatedDate(customerEntity.getCreatedDate());
 					ce.setUpdatedBy(customerEntity.getUpdatedBy());
 					ce.setUpdatedDate(customerEntity.getUpdatedDate());
+					ce.setEmailAddress(customerEntity.getEmailAddress());
 					list.add(ce);
 				}
 			}
@@ -171,6 +174,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 			cu.setCreatedDate(ce.getCreatedDate());
 			cu.setUpdatedBy(ce.getUpdatedBy());
 			cu.setUpdatedDate(ce.getUpdatedDate());
+			cu.setEmailAddress(ce.getEmailAddress());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

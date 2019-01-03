@@ -41,6 +41,7 @@ public class MarketingDAOImpl implements MarketingDAO {
 		me.setCreatedDate(new Date());
 		me.setUpdatedBy(null);
 		me.setUpdatedDate(null);
+		me.setEmailAddress(marketing.getEmailAddress());
 		try {
 			Session currentSession = sessionFactory.getCurrentSession();
 			currentSession.save(me);
@@ -70,7 +71,7 @@ public class MarketingDAOImpl implements MarketingDAO {
 		me.setCreatedDate(marketing.getCreatedDate());
 		me.setUpdatedBy("User");
 		me.setUpdatedDate(new Date());
-		
+		me.setEmailAddress(marketing.getEmailAddress());
 		try {
 			Session currentSession = sessionFactory.getCurrentSession();
 			currentSession.update(me);
@@ -106,6 +107,7 @@ public class MarketingDAOImpl implements MarketingDAO {
 				me.setCreatedDate(marketing.getCreatedDate());
 				me.setUpdatedBy(marketing.getUpdatedBy());
 				me.setUpdatedDate(marketing.getUpdatedDate());
+				me.setEmailAddress(marketing.getEmailAddress());
 				list.add(me);
 			}
 
@@ -151,6 +153,7 @@ public class MarketingDAOImpl implements MarketingDAO {
 					me.setCreatedDate(marketing.getCreatedDate());
 					me.setUpdatedBy(marketing.getUpdatedBy());
 					me.setUpdatedDate(marketing.getUpdatedDate());
+					me.setEmailAddress(marketing.getEmailAddress());
 					list.add(me);
 				}
 			}
@@ -181,6 +184,7 @@ public class MarketingDAOImpl implements MarketingDAO {
 			me.setCreatedDate(marketing.getCreatedDate());
 			me.setUpdatedBy(marketing.getUpdatedBy());
 			me.setUpdatedDate(marketing.getUpdatedDate());
+			me.setEmailAddress(marketing.getEmailAddress());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

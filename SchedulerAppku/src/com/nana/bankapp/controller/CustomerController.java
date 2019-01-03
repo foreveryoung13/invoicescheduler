@@ -62,6 +62,7 @@ public class CustomerController {
 	@GetMapping("/edit")
 	public String updateCustomer(@RequestParam("customerId") String customerId, Model model) {
 		Customer customer = cs.getCustomer(customerId);
+		
 		String name = authName.getLoginName();
 		model.addAttribute("username", name);
 		model.addAttribute("customer", customer);
