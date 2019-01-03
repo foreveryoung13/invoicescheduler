@@ -85,7 +85,7 @@
 	<tx:annotation-driven transaction-manager="myTransactionManager" />
 	
 	<!-- Sheduler task -->
-	<!-- <task:annotation-driven/> -->
+	<task:annotation-driven/> 
 	
 	<!-- Configuration Bootstrap -->
 	<mvc:annotation-driven />

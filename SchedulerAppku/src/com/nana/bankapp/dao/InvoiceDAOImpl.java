@@ -48,6 +48,7 @@ public class InvoiceDAOImpl implements InvoiceDAO {
 		me.setCreatedDate(new Date());
 		me.setUpdatedBy(null);
 		me.setUpdatedDate(null);
+		me.setFlag("N");
 		try {
 			Session currentSession = sessionFactory.getCurrentSession();
 			currentSession.save(me);
@@ -84,6 +85,7 @@ public class InvoiceDAOImpl implements InvoiceDAO {
 		me.setCreatedDate(invoice.getCreatedDate());
 		me.setUpdatedBy("User");
 		me.setUpdatedDate(new Date());
+		me.setFlag(invoice.getFlag());
 		try {
 			Session currentSession = sessionFactory.getCurrentSession();
 			currentSession.update(me);
@@ -126,6 +128,7 @@ public class InvoiceDAOImpl implements InvoiceDAO {
 				me.setCreatedDate(invoice.getCreatedDate());
 				me.setUpdatedBy(invoice.getUpdatedBy());
 				me.setUpdatedDate(invoice.getUpdatedDate());
+				me.setFlag(invoice.getFlag());
 				list.add(me);
 			}
 		} catch (Exception e) {
@@ -178,6 +181,7 @@ public class InvoiceDAOImpl implements InvoiceDAO {
 					me.setCreatedDate(invoice.getCreatedDate());
 					me.setUpdatedBy(invoice.getUpdatedBy());
 					me.setUpdatedDate(invoice.getUpdatedDate());
+					me.setFlag(invoice.getFlag());
 					list.add(me);
 				}
 			}
@@ -215,6 +219,7 @@ public class InvoiceDAOImpl implements InvoiceDAO {
 			me.setCreatedDate(invoice.getCreatedDate());
 			me.setUpdatedBy(invoice.getUpdatedBy());
 			me.setUpdatedDate(invoice.getUpdatedDate());
+			me.setFlag(invoice.getFlag());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

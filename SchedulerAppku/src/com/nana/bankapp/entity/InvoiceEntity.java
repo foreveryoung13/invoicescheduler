@@ -79,180 +79,191 @@ public class InvoiceEntity {
 	@Column(name = "UPDATED_DATE")
 	protected Date updatedDate;
 
+	@Column(name = "FLAG")
+	protected String flag;
+
 	public String getInvoiceId() {
 		return invoiceId;
-	}
-
-	public void setInvoiceId(String invoiceId) {
-		this.invoiceId = invoiceId;
 	}
 
 	public String getCustomerId() {
 		return customerId;
 	}
 
-	public void setCustomerId(String customerId) {
-		this.customerId = customerId;
-	}
-
 	public String getProjectId() {
 		return projectId;
-	}
-
-	public void setProjectId(String projectId) {
-		this.projectId = projectId;
 	}
 
 	public String getRemarksId() {
 		return remarksId;
 	}
 
-	public void setRemarksId(String remarksId) {
-		this.remarksId = remarksId;
-	}
-
 	public String getNoPo() {
 		return noPo;
-	}
-
-	public void setNoPo(String noPo) {
-		this.noPo = noPo;
 	}
 
 	public String getMarketingId() {
 		return marketingId;
 	}
 
-	public void setMarketingId(String marketingId) {
-		this.marketingId = marketingId;
-	}
-
 	public String getNoInvoice() {
 		return noInvoice;
-	}
-
-	public void setNoInvoice(String noInvoice) {
-		this.noInvoice = noInvoice;
 	}
 
 	public String getNoPajak() {
 		return noPajak;
 	}
 
-	public void setNoPajak(String noPajak) {
-		this.noPajak = noPajak;
-	}
-
 	public Date getTanggalInvoice() {
 		return tanggalInvoice;
-	}
-
-	public void setTanggalInvoice(Date tanggalInvoice) {
-		this.tanggalInvoice = tanggalInvoice;
 	}
 
 	public Date getTanggalTt() {
 		return tanggalTt;
 	}
 
-	public void setTanggalTt(Date tanggalTt) {
-		this.tanggalTt = tanggalTt;
-	}
-
 	public String getTermId() {
 		return termId;
-	}
-
-	public void setTermId(String termId) {
-		this.termId = termId;
 	}
 
 	public Date getTanggalTempo() {
 		return tanggalTempo;
 	}
 
-	public void setTanggalTempo(Date tanggalTempo) {
-		this.tanggalTempo = tanggalTempo;
-	}
-
 	public BigDecimal getPiutangUsaha() {
 		return piutangUsaha;
-	}
-
-	public void setPiutangUsaha(BigDecimal piutangUsaha) {
-		this.piutangUsaha = piutangUsaha;
 	}
 
 	public BigDecimal getDpp() {
 		return dpp;
 	}
 
-	public void setDpp(BigDecimal dpp) {
-		this.dpp = dpp;
-	}
-
 	public BigDecimal getPpn() {
 		return ppn;
-	}
-
-	public void setPpn(BigDecimal ppn) {
-		this.ppn = ppn;
 	}
 
 	public BigDecimal getPph() {
 		return pph;
 	}
 
-	public void setPph(BigDecimal pph) {
-		this.pph = pph;
-	}
-
 	public BigDecimal getUangMasuk() {
 		return uangMasuk;
-	}
-
-	public void setUangMasuk(BigDecimal uangMasuk) {
-		this.uangMasuk = uangMasuk;
 	}
 
 	public Date getTanggalLunas() {
 		return tanggalLunas;
 	}
 
-	public void setTanggalLunas(Date tanggalLunas) {
-		this.tanggalLunas = tanggalLunas;
-	}
-
 	public String getCreatedBy() {
 		return createdBy;
-	}
-
-	public void setCreatedBy(String createdBy) {
-		this.createdBy = createdBy;
 	}
 
 	public Date getCreatedDate() {
 		return createdDate;
 	}
 
-	public void setCreatedDate(Date createdDate) {
-		this.createdDate = createdDate;
-	}
-
 	public String getUpdatedBy() {
 		return updatedBy;
-	}
-
-	public void setUpdatedBy(String updatedBy) {
-		this.updatedBy = updatedBy;
 	}
 
 	public Date getUpdatedDate() {
 		return updatedDate;
 	}
 
+	public String getFlag() {
+		return flag;
+	}
+
+	public void setInvoiceId(String invoiceId) {
+		this.invoiceId = invoiceId;
+	}
+
+	public void setCustomerId(String customerId) {
+		this.customerId = customerId;
+	}
+
+	public void setProjectId(String projectId) {
+		this.projectId = projectId;
+	}
+
+	public void setRemarksId(String remarksId) {
+		this.remarksId = remarksId;
+	}
+
+	public void setNoPo(String noPo) {
+		this.noPo = noPo;
+	}
+
+	public void setMarketingId(String marketingId) {
+		this.marketingId = marketingId;
+	}
+
+	public void setNoInvoice(String noInvoice) {
+		this.noInvoice = noInvoice;
+	}
+
+	public void setNoPajak(String noPajak) {
+		this.noPajak = noPajak;
+	}
+
+	public void setTanggalInvoice(Date tanggalInvoice) {
+		this.tanggalInvoice = tanggalInvoice;
+	}
+
+	public void setTanggalTt(Date tanggalTt) {
+		this.tanggalTt = tanggalTt;
+	}
+
+	public void setTermId(String termId) {
+		this.termId = termId;
+	}
+
+	public void setTanggalTempo(Date tanggalTempo) {
+		this.tanggalTempo = tanggalTempo;
+	}
+
+	public void setPiutangUsaha(BigDecimal piutangUsaha) {
+		this.piutangUsaha = piutangUsaha;
+	}
+
+	public void setDpp(BigDecimal dpp) {
+		this.dpp = dpp;
+	}
+
+	public void setPpn(BigDecimal ppn) {
+		this.ppn = ppn;
+	}
+
+	public void setPph(BigDecimal pph) {
+		this.pph = pph;
+	}
+
+	public void setUangMasuk(BigDecimal uangMasuk) {
+		this.uangMasuk = uangMasuk;
+	}
+
+	public void setTanggalLunas(Date tanggalLunas) {
+		this.tanggalLunas = tanggalLunas;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public void setUpdatedBy(String updatedBy) {
+		this.updatedBy = updatedBy;
+	}
+
 	public void setUpdatedDate(Date updatedDate) {
 		this.updatedDate = updatedDate;
+	}
+
+	public void setFlag(String flag) {
+		this.flag = flag;
 	}
 
 }

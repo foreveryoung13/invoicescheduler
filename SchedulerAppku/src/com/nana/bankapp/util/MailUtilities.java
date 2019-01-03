@@ -10,6 +10,9 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class MailUtilities {
 
 	public static void main(String[] args) {
@@ -18,11 +21,11 @@ public class MailUtilities {
 		String subject = "hello";
 		String content = "mantul";
 		
-		sendMailForReminderAuth(emailFrom, emailRecipent, subject, content);
+		sendMailForInvoiceReminderAuth(emailFrom, emailRecipent, subject, content);
 		
 	}
 
-	public static String sendMailForReminderAuth(String emailFrom, String emailRecipent, String subject, String content) {
+	public static String sendMailForInvoiceReminderAuth(String emailFrom, String emailRecipent, String subject, String content) {
 		String strReturn = "";
 
 		Properties props = new Properties();

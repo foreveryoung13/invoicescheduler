@@ -13,45 +13,45 @@ public class Invoice {
 	protected String customerId;
 	protected String projectId;
 	protected String remarksId;
-	
+
 	@NotNull(message = "No Po can't be null")
 	protected String noPo;
 	protected String marketingId;
-	
+
 	@NotNull(message = "No Invoice can't be null")
 	protected String noInvoice;
-	
+
 	@NotNull(message = "No Pajak can't be null")
 	protected String noPajak;
-	
+
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@NotNull(message = "Tanggal Invoice can't be null")
 	protected Date tanggalInvoice;
-	
+
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@NotNull(message = "Tanggal TT can't be null")
 	protected Date tanggalTt;
 	protected String termId;
-	
+
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@NotNull(message = "Tanggal Tempo can't be null")
 	protected Date tanggalTempo;
-	
+
 	@NotNull(message = "Piutang Usaha of birth can't be null")
 	protected BigDecimal piutangUsaha;
-	
+
 	@NotNull(message = "DPP of birth can't be null")
 	protected BigDecimal dpp;
-	
+
 	@NotNull(message = "PPN of birth can't be null")
 	protected BigDecimal ppn;
-	
+
 	@NotNull(message = "PPH of birth can't be null")
 	protected BigDecimal pph;
-	
+
 	@NotNull(message = "Uang Masuk of birth can't be null")
 	protected BigDecimal uangMasuk;
-	
+
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@NotNull(message = "Tanggal lunas can't be null")
 	protected Date tanggalLunas;
@@ -59,6 +59,7 @@ public class Invoice {
 	protected Date createdDate;
 	protected String updatedBy;
 	protected Date updatedDate;
+	protected String flag;
 
 	public Invoice() {
 	}
@@ -67,7 +68,7 @@ public class Invoice {
 			String marketingId, String noInvoice, String noPajak, Date tanggalInvoice, Date tanggalTt, String termId,
 			Date tanggalTempo, BigDecimal piutangUsaha, BigDecimal dpp, BigDecimal ppn, BigDecimal pph,
 			BigDecimal uangMasuk, Date tanggalLunas, String createdBy, Date createdDate, String updatedBy,
-			Date updatedDate) {
+			Date updatedDate, String flag) {
 		super();
 		this.invoiceId = invoiceId;
 		this.customerId = customerId;
@@ -91,6 +92,7 @@ public class Invoice {
 		this.createdDate = createdDate;
 		this.updatedBy = updatedBy;
 		this.updatedDate = updatedDate;
+		this.flag = flag;
 	}
 
 	public String getInvoiceId() {
@@ -267,6 +269,14 @@ public class Invoice {
 
 	public void setUpdatedDate(Date updatedDate) {
 		this.updatedDate = updatedDate;
+	}
+
+	public String getFlag() {
+		return flag;
+	}
+
+	public void setFlag(String flag) {
+		this.flag = flag;
 	}
 
 }

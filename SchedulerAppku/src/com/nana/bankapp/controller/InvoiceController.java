@@ -36,6 +36,8 @@ import com.nana.bankapp.services.ProjectService;
 import com.nana.bankapp.services.RemarksService;
 import com.nana.bankapp.services.TermService;
 import com.nana.bankapp.util.AuthenticationName;
+import com.nana.bankapp.util.FormatDate;
+import com.nana.bankapp.util.MailUtilities;
 
 @Controller
 @RequestMapping("/invoice")
@@ -58,23 +60,29 @@ public class InvoiceController {
 
 	@Autowired
 	TermService ts;
-	
+
 	@Autowired
 	AuthenticationName authName;
+
+	@Autowired
+	FormatDate dt;
 	
+	@Autowired
+	MailUtilities mu;
+
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
-		SimpleDateFormat dob = new SimpleDateFormat("dd/MM/yyyy"); 
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
-		
+		SimpleDateFormat dob = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
 		binder.registerCustomEditor(Date.class, "tanggalInvoice", new CustomDateEditor(dob, true, 10));
 		binder.registerCustomEditor(Date.class, "tanggalTt", new CustomDateEditor(dob, true, 10));
 		binder.registerCustomEditor(Date.class, "tanggalTempo", new CustomDateEditor(dob, true, 10));
 		binder.registerCustomEditor(Date.class, "tanggalLunas", new CustomDateEditor(dob, true, 10));
-		
+
 		binder.registerCustomEditor(Date.class, "createdDate", new CustomDateEditor(dateFormat, false));
 		binder.registerCustomEditor(Date.class, "updatedDate", new CustomDateEditor(dateFormat, false));
-		
+
 		binder.registerCustomEditor(String.class, "noPo", new NoPoEditor());
 		binder.registerCustomEditor(String.class, "noInvoice", new NoInvoiceEditor());
 	}
@@ -147,12 +155,12 @@ public class InvoiceController {
 	@RequestMapping("/add")
 	public String newInvoice(Model model) {
 		String name = authName.getLoginName();
-		
+
 		model.addAttribute("username", name);
 		model.addAttribute("invoice", new Invoice());
 		return "invoice_add_form";
 	}
-
+	
 	/*
 	@GetMapping("/list")
 	public String listInvoice(Model model) {
@@ -163,31 +171,30 @@ public class InvoiceController {
 		model.addAttribute("invoice", invoice);
 		return "invoice_list";
 	} */
-	
+
 	@GetMapping("/edit")
 	public String updateInvoice(@RequestParam("invoiceId") String invoiceId, Model model) {
 		String name = authName.getLoginName();
 		Invoice invoice = is.getInvoice(invoiceId);
-		
+
 		model.addAttribute("username", name);
 		model.addAttribute("invoice", invoice);
 		return "invoice_edit_form";
 	}
-	
+
 	@GetMapping("/delete")
 	public String deleteInvoice(@RequestParam("invoiceId") String invoiceId, Model model) {
 		String name = authName.getLoginName();
-		
+
 		model.addAttribute("username", name);
 		is.deleteInvoice(invoiceId);
 		return "redirect:/invoice/list";
 	}
 
-	
 	@RequestMapping(value = "/saveinvoice", method = RequestMethod.POST)
 	public String saveInvoice(@Valid @ModelAttribute("invoice") Invoice invoice, BindingResult result, Model model) {
 		String name = authName.getLoginName();
-		
+
 		if (result.hasErrors()) {
 			model.addAttribute("username", name);
 			return "invoice_add_form";
@@ -197,11 +204,11 @@ public class InvoiceController {
 			return "redirect:/invoice/list";
 		}
 	}
-	
+
 	@RequestMapping(value = "/editinvoice", method = RequestMethod.POST)
 	public String editInvoice(@Valid @ModelAttribute("invoice") Invoice invoice, BindingResult result, Model model) {
 		String name = authName.getLoginName();
-		
+
 		if (result.hasErrors()) {
 			model.addAttribute("username", name);
 			return "invoice_edit_form";
@@ -211,26 +218,40 @@ public class InvoiceController {
 			return "redirect:/invoice/list?edit=true";
 		}
 	}
-	
+
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public String list(Model model, Integer offset, Integer maxResults, @RequestParam(required=false) boolean edit) {
+	public String list(Model model, Integer offset, Integer maxResults, @RequestParam(required = false) boolean edit) {
 		String name = authName.getLoginName();
-		
+
 		if (edit) {
 			model.addAttribute("invoice", is.pageInvoiceList(offset, maxResults, true));
 		} else {
 			model.addAttribute("invoice", is.pageInvoiceList(offset, maxResults, false));
 		}
-		
+
 		model.addAttribute("username", name);
 		model.addAttribute("count", is.count());
 		model.addAttribute("offset", offset);
 		return "invoice_list";
 	}
-	
+
 	@Scheduled(fixedDelay = 5000)
 	public void run() throws InterruptedException {
-		System.out.println("Fixed delay scheduler is running at " + new Date());
+		/* Scheduler Mengirim email ke
+		 * 1. Customer 
+		 * 2. Marketing */
+		
+		List<Invoice> invList = is.getInvoices();
+
+		if (invList.size() > 0) {
+			for (Invoice i : invList) {
+				if (dt.formatDate(i.getTanggalTempo()).equals(dt.formatDate(new Date()))) {
+					System.out.println("-----------------TRUE-------------------");
+					
+				}
+			}
+		}
+
 		Thread.sleep(3000);
 	}
 
