@@ -28,7 +28,7 @@
 											<th class="labelname"><spring:message code="lbl.address" /></th>
 											<th class="labelname"><spring:message code="lbl.country" /></th>
 											<th class="labelname"><spring:message code="lbl.phoneNumber" /></th>
-											<th class="labelname"><spring:message code="lbl.postalCode" /></th>
+											<th class="labelname"><spring:message code="lbl.emailAddress" /></th>
 											<th class="labelname"><spring:message code="lbl.edit" /></th>
 											<th class="labelname"><spring:message code="lbl.delete" /></th>
 										</tr>
@@ -46,7 +46,7 @@
 												<td class="labelname">${rcust.address}</td>
 												<td class="labelname">${rcust.country}</td>
 												<td class="labelname">${rcust.phoneNumber}</td>
-												<td class="labelname">${rcust.postalCode}</td>
+												<td class="labelname">${rcust.emailAddress}</td>
 												
 												<td><a href="${updateLink}"
 													class="btn-custom btn-warning"><span

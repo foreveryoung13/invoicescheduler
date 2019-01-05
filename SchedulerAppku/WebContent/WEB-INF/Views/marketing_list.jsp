@@ -27,7 +27,7 @@
 										<tr>
 											<th class="labelname"><spring:message code="lbl.firstName" /></th>
 											<th class="labelname"><spring:message code="lbl.lastName" /></th>
-											<th class="labelname"><spring:message code="lbl.age" /></th>
+											<th class="labelname"><spring:message code="lbl.emailAddress" /></th>
 											<th class="labelname"><spring:message code="lbl.dateOfBirth" /></th>
 											<th class="labelname"><spring:message code="lbl.address" /></th>
 											<th class="labelname"><spring:message code="lbl.city" /></th>
@@ -51,7 +51,7 @@
 																							
 												<td class="labelname">${mark.firstName}</td>
 												<td class="labelname">${mark.lastName}</td>
-												<td class="labelname">${mark.age}</td>
+												<td class="labelname">${mark.emailAddress}</td>
 												<td class="labelname"><fmt:formatDate value="${dobject}" pattern="dd/MM/yyyy" /></td>
 												<td class="labelname">${mark.address}</td>
 												<td class="labelname">${mark.city}</td>

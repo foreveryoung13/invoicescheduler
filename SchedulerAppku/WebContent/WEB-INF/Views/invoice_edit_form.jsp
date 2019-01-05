@@ -149,6 +149,18 @@
 												</div>
 											</div>
 											
+											<div class="form-group" hidden="true">
+												<label for="flag"
+													class="col-sm-4 control-label labelname"><spring:message
+														code="lbl.flag" /></label>
+												<div class="col-sm-6">
+													<form:input path="flag"
+														cssClass="form-control input-sm" readonly="true" />
+													<form:errors path="flag" cssClass="alert-danger-custom" />
+													<text class="alert-danger">${message}</text>
+												</div>
+											</div>
+											
 										</div>
 										<!-- end left column -->
 

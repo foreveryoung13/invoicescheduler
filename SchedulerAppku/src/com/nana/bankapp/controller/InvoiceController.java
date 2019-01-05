@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.nana.bankapp.customeditor.NoInvoiceEditor;
 import com.nana.bankapp.customeditor.NoPoEditor;
 import com.nana.bankapp.model.Customer;
+import com.nana.bankapp.model.Email;
 import com.nana.bankapp.model.Invoice;
 import com.nana.bankapp.model.Marketing;
 import com.nana.bankapp.model.Project;
@@ -66,7 +67,7 @@ public class InvoiceController {
 
 	@Autowired
 	FormatDate dt;
-	
+
 	@Autowired
 	MailUtilities mu;
 
@@ -237,17 +238,32 @@ public class InvoiceController {
 
 	@Scheduled(fixedDelay = 5000)
 	public void run() throws InterruptedException {
-		/* Scheduler Mengirim email ke
-		 * 1. Customer 
-		 * 2. Marketing */
-		
 		List<Invoice> invList = is.getInvoices();
 
 		if (invList.size() > 0) {
 			for (Invoice i : invList) {
-				if (dt.formatDate(i.getTanggalTempo()).equals(dt.formatDate(new Date()))) {
-					System.out.println("-----------------TRUE-------------------");
-					
+				if (dt.formatDate(i.getTanggalTempo()).equals(dt.formatDate(new Date())) && i.getFlag().equals("N") ) {
+					Customer customer = cs.getCustomer(i.getCustomerId());
+					Marketing marketing = ms.getMarketing(i.getMarketingId());
+
+					Email emailCustomer = new Email();
+					emailCustomer.setRecipients(customer.getEmailAddress());
+					emailCustomer.setSubject("Invoice");
+					emailCustomer.setContent("Dengan Hormat, Harap melunasi invoice");
+
+					Boolean emailFeedCust = mu.sendMailForInvoiceReminder(emailCustomer);
+
+					Email emailMarketing = new Email();
+					emailMarketing.setRecipients(marketing.getEmailAddress());
+					emailMarketing.setSubject("Invoice");
+					emailMarketing.setContent("Dengan Hormat, Harap melunasi invoice");
+
+					Boolean emailFeedMark = mu.sendMailForInvoiceReminder(emailMarketing);
+
+					if (emailFeedCust.equals(true) && emailFeedMark.equals(true)) {
+						i.setFlag("Y");
+						is.editInvoice(i);
+					}
 				}
 			}
 		}
