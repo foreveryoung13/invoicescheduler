@@ -14,6 +14,7 @@ import javax.mail.internet.MimeMessage;
 import org.springframework.stereotype.Component;
 
 import com.nana.bankapp.model.Email;
+import com.nana.bankapp.request.EmailRequester;
 
 @Component
 public class MailUtilities {
@@ -85,6 +86,54 @@ public class MailUtilities {
 			message.setFrom(new InternetAddress("nana.febriana@inspirotechs.com"));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email.getRecipients()));
 			message.addRecipient(RecipientType.TO, new InternetAddress("febriana.nana93@gmail.com"));
+			message.addRecipient(RecipientType.CC, new InternetAddress("febriana.nana93@gmail.com"));
+			message.addRecipient(RecipientType.BCC, new InternetAddress("oktaviansandi13@gmail.com"));
+			message.setSubject(email.getSubject());
+			message.setText(email.getContent());
+			Transport.send(message);
+
+			feedBack = true;
+
+		} catch (MessagingException e) {
+			throw new RuntimeException(e);
+		}
+
+		return feedBack;
+	}
+
+	public static Boolean sendMailForInvoice(EmailRequester email) {
+		Boolean feedBack = false;
+
+		Properties props = new Properties();
+		props.put("mail.smtp.host", "smtp.gmail.com");
+		props.put("mail.smtp.socketFactory.port", "465");
+		props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.smtp.port", "465");
+
+		Session session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication("nana.febriana@inspirotechs.com", "Password.123");
+			}
+		});
+
+		try {
+			Message message = new MimeMessage(session);
+			message.setFrom(new InternetAddress("nana.febriana@inspirotechs.com"));
+
+			if (email != null) {
+				System.out.println("--------------------------------------------------------------------");
+				System.out.println(email.getRecipients().size());
+				if (email.getRecipients().size() > 0) {
+					for (String s : email.getRecipients()) {
+						System.out.println(s);
+						message.addRecipient(RecipientType.TO, new InternetAddress(s));
+						message.addRecipient(RecipientType.TO, new InternetAddress(s));
+					}
+				}
+				System.out.println("--------------------------------------------------------------------");
+			}
+
 			message.addRecipient(RecipientType.CC, new InternetAddress("febriana.nana93@gmail.com"));
 			message.addRecipient(RecipientType.BCC, new InternetAddress("oktaviansandi13@gmail.com"));
 			message.setSubject(email.getSubject());

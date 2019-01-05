@@ -30,6 +30,7 @@ import com.nana.bankapp.model.Marketing;
 import com.nana.bankapp.model.Project;
 import com.nana.bankapp.model.Remarks;
 import com.nana.bankapp.model.Term;
+import com.nana.bankapp.request.EmailRequester;
 import com.nana.bankapp.services.CustomerService;
 import com.nana.bankapp.services.InvoiceService;
 import com.nana.bankapp.services.MarketingService;
@@ -242,25 +243,23 @@ public class InvoiceController {
 
 		if (invList.size() > 0) {
 			for (Invoice i : invList) {
-				if (dt.formatDate(i.getTanggalTempo()).equals(dt.formatDate(new Date())) && i.getFlag().equals("N") ) {
+				if (dt.formatDate(i.getTanggalTempo()).equals(dt.formatDate(new Date())) && i.getFlag().equals("N")) {
 					Customer customer = cs.getCustomer(i.getCustomerId());
 					Marketing marketing = ms.getMarketing(i.getMarketingId());
 
-					Email emailCustomer = new Email();
-					emailCustomer.setRecipients(customer.getEmailAddress());
-					emailCustomer.setSubject("Invoice");
-					emailCustomer.setContent("Dengan Hormat, Harap melunasi invoice");
+					List<String> recipients = new ArrayList<>();
+					recipients.add(customer.getEmailAddress());
+					recipients.add(marketing.getEmailAddress());
 
-					Boolean emailFeedCust = mu.sendMailForInvoiceReminder(emailCustomer);
+					EmailRequester er = new EmailRequester();
+					er.setRecipients(recipients);
+					er.setSubject("Invoice");
+					er.setContent("Dengan Hormat, Harap melunasi invoice");
 
-					Email emailMarketing = new Email();
-					emailMarketing.setRecipients(marketing.getEmailAddress());
-					emailMarketing.setSubject("Invoice");
-					emailMarketing.setContent("Dengan Hormat, Harap melunasi invoice");
-
-					Boolean emailFeedMark = mu.sendMailForInvoiceReminder(emailMarketing);
-
-					if (emailFeedCust.equals(true) && emailFeedMark.equals(true)) {
+					Boolean emailFeed = mu.sendMailForInvoice(er);
+					System.out.println("email feed: " + emailFeed);
+					
+					if (emailFeed.equals(true)) {
 						i.setFlag("Y");
 						is.editInvoice(i);
 					}
