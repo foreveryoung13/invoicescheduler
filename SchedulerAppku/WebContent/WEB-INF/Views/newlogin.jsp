@@ -17,24 +17,31 @@
 
 		<div class="col-6 offset-3 align-self-center">
 			<div class="card">
-				<div class="card-header bg-info text-white">LOGIN</div>
+				<div class="card-header bg-info text-white">
+					<h4>LOGIN</h4>
+				</div>
 				<div class="card-body">
-					<form role="form" method="post" action="<c:url value='/login'/>">
+					<form:form modelAttribute="member"
+						action="${pageContext.request.contextPath}/user/login"
+						cssClass="form-horizontal" role="form" method="post">
+
 						<div class="form-group">
-							<label for="Username">User Name :</label> <input type="text"
-								class="form-control" placeholder="Enter Username"
-								name="username" autocomplete="off"/>
+							<label for="Username">User Name :</label>
+							<form:input path="username" cssClass="form-control"
+								autocomplete="off" placeholder="Enter Username" />
 						</div>
 						<div class="form-group">
-							<label for="Password">Password :</label> <input type="password"
-								class="form-control" placeholder="Password" name="password" />
+							<label for="Password">Password :</label>
+							<form:password path="password" cssClass="form-control"
+								autocomplete="off" placeholder="Enter Password" />
 						</div>
-
-						<input type="hidden" name="${_csrf.parameterName}"
-							value="${_csrf.token}" /> <input type="submit" value="Login"
-							name="submit" class="btn btn-primary" />
-					</form>
-
+						<div class="form-group row">
+							<div class="col-sm-12" style="margin-left: 12.4em">
+								<input type="submit" value="Login" class="btn btn-primary"
+									name="btnSubmit" />
+							</div>
+						</div>
+					</form:form>
 					<div class="row">
 						<div class="col-12">
 							<c:if test="${not empty error} ">
@@ -45,7 +52,6 @@
 							</c:if>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
