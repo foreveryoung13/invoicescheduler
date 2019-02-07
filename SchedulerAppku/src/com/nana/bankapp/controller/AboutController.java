@@ -24,5 +24,4 @@ public class AboutController {
 		model.addAttribute("username", name);
 		return "about";
 	}
-
 }
